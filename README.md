@@ -10,8 +10,10 @@ Your guide links (replace YOUR-USERNAME):
 `status.txt` on the guide branch shows the last run and which channels had no
 listings anywhere.
 
-When your provider login changes, update the secret `PROVIDER_EPG_URL` under
-Settings > Secrets and variables > Actions.
+Two providers feed it. Secrets (Settings > Secrets and variables > Actions):
+- `PROVIDER_EPG_URL`: jordan-tv's provider guide link (xmltv.php)
+- `PROVIDER2_EPG_URL`: tv-general's provider guide link (xmltv.php)
+When a login changes, update that secret.
 
 When the lineup changes, upload the new `channels.txt` here.
 

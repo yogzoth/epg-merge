@@ -21,7 +21,8 @@ import xml.etree.ElementTree as ET
 from xml.sax.saxutils import escape, quoteattr
 
 SOURCES = [
-    "env:PROVIDER_EPG_URL",   # your provider's xmltv.php link (secret)
+    "env:PROVIDER_EPG_URL",   # provider 1 (jordan-tv) xmltv.php link (secret)
+    "env:PROVIDER2_EPG_URL",  # provider 2 (tv-general) xmltv.php link (secret)
     "https://epgshare01.online/epgshare01/epg_ripper_CA2.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_US2.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_US_LOCALS1.xml.gz",
@@ -48,10 +49,10 @@ def wanted_ids():
 def open_source(src, tmpdir):
     """Download a source to a temp file and return a readable (un-gzipped) stream."""
     if src.startswith("env:"):
+        label = "provider guide" if src == "env:PROVIDER_EPG_URL" else "provider 2 guide"
         src = os.environ.get(src[4:], "")
         if not src:
-            return None, "skipped (secret not set)"
-        label = "provider guide"
+            return None, f"{label}: skipped (secret not set)"
     else:
         label = src.rsplit("/", 1)[-1]
     path = os.path.join(tmpdir, "src.bin")
@@ -112,11 +113,12 @@ GENERIC_WORDS = set("""hd fhd uhd sd d raw event events only fite tv netflix ppv
 sky sports box office tnt live dazn now streaming exclusive 8k 4k 1080 720 next no""".split())
 
 
-def provider_names():
-    """stream number -> channel name, from the provider playlist (login stays in the secret)."""
-    url = os.environ.get("PROVIDER_M3U_URL", "")
+def provider_names(n=1):
+    """stream number -> channel name, from provider n's playlist (login stays in the secret)."""
+    sfx = "" if n == 1 else str(n)
+    url = os.environ.get(f"PROVIDER{sfx}_M3U_URL", "")
     if not url:
-        g = os.environ.get("PROVIDER_EPG_URL", "")
+        g = os.environ.get(f"PROVIDER{sfx}_EPG_URL", "")
         if "xmltv.php" not in g:
             return {}
         url = g.replace("xmltv.php", "get.php") + "&type=m3u_plus&output=ts"
@@ -151,6 +153,11 @@ def parse_event(raw):
     s = re.sub(r"[^\x00-\x7FÀ-ſ]+", " ", raw)            # drop superscript tags
     if re.search(r"no event", s, re.I):
         return None
+    m = "\u2605" in raw and re.match(r"^\s*(?:US|CA|UK|TRILLERTV)?\s*(?:UFC|BOXING|EVENT|DAZN|SN\+|TSN\+|PPV|NFL)\s*0*\d+\s*(?:HD)?\s*:\s*(.*)$", s, re.I)
+    if m:
+        s = m.group(1)
+        if not s.strip(" :-"):
+            return None
     start = stop = None
     m = re.search(r"start:(\d{4})-(\d\d)-(\d\d) (\d\d):(\d\d):\d\d(?:\s*stop:(\d{4})-(\d\d)-(\d\d) (\d\d):(\d\d):\d\d)?", s)
     if m:                                                            # UFC slots, UTC
@@ -250,8 +257,8 @@ def event_slots():
         with open(EVENT_SLOTS_FILE, encoding="utf-8") as fh:
             for line in fh:
                 if line.strip() and not line.startswith("#"):
-                    cid, num = line.split("\t")[:2]
-                    out[cid.strip()] = num.strip()
+                    parts = line.rstrip("\n").split("\t")
+                    out[parts[0].strip()] = (parts[2].strip() if len(parts) > 2 else "1", parts[1].strip())
     return out
 
 
@@ -299,14 +306,16 @@ def main():
 
     ph = placeholders()
     slots = event_slots()
-    names = provider_names() if slots else {}
-    if slots:
-        report.append(f"event names: read {len(names)} provider channel names")
+    names = {}
+    for tag in sorted({t for t, _ in slots.values()}):
+        names[tag] = provider_names(int(tag))
+        report.append(f"event names: provider {tag}: read {len(names[tag])} channel names")
     old_state, new_state = (load_state() if slots else {}), {}
     ph_used = ev_used = 0
     for cid in sorted(ids - filled):
         if cid in ph:
-            event = parse_event(names[slots[cid]]) if slots.get(cid) in names else None
+            tag, num = slots.get(cid, ("1", None))
+            event = parse_event(names.get(tag, {})[num]) if num in names.get(tag, {}) else None
             if event and not event[1]:
                 prev = old_state.get(cid)
                 first = prev[1] if prev and prev[0] == event[0] else int(time.time())
