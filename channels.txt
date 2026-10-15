@@ -728,7 +728,6 @@ EEntertainmentTelevisionPacific.us
 EEntertainmentTelevision.us
 FreeformPacific.us
 FXPacific.us
-FXXPacific.us
 HallmarkChannel.us
 HallmarkMoviesandMore.us
 Lifetime.us
