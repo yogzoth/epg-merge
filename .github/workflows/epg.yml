@@ -20,6 +20,7 @@ jobs:
       - name: Merge guides
         env:
           PROVIDER_EPG_URL: ${{ secrets.PROVIDER_EPG_URL }}
+          PROVIDER2_EPG_URL: ${{ secrets.PROVIDER2_EPG_URL }}
         run: python merge_epg.py
       - name: Publish to the "guide" branch
         # The guide branch only ever holds today's files, so the repo never grows.
