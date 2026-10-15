@@ -1,4 +1,5 @@
 # One guide ID per line. Upload this to your epg-merge repo after changing the lineup.
+ph.DIV.CA
 CBUT.ca
 CTV.Vancouver.HD.ca2
 ca.Global BC DV
@@ -94,6 +95,7 @@ EWTN.us
 ca.CBC News Network
 ca.CTV News Channel
 GlobalNewsBC1.ca
+ph.CITYNEWS.24.7
 CityTVMontreal.ca
 ca.CP24 (CablePulse 24)
 ca.BNN Bloomberg
@@ -134,6 +136,7 @@ TSN5.ca
 TSN.4K.ca2
 NBATV.ca
 OneSoccer.ca
+ph.DIV.US
 ca.ABC (KOMO) Seattle, WA HD
 loc.CBS (KIRO) Seattle, WA
 ca.NBC (KING) Seattle, WA HD
@@ -216,6 +219,7 @@ AdultSwim.us
 MTVLive.us
 MTVClassic.us
 CMT.us
+ph.CMT.MUSIC
 BETjams.us
 Revolt.us
 FuseTV.us
@@ -291,7 +295,6 @@ HBO.Hits.us2
 HBOSignature.us
 HBOComedy.us
 HBO.Movies.us2
-HBOFamily.us
 US-Cinemax - Pacific Feed
 US| CINEMAX EAST HD
 Cinemax.Action.us2
@@ -375,6 +378,7 @@ AltitudeSports.us
 Monumental.Sports.Network.HD.us2
 MASN.-.Mid.Atlantic.Sports.Network.us2
 Space.City.Home.Network.HD.us2
+ph.DIV.UK
 BBC1.uk
 BBC2.uk
 BBC3CBBC.uk
@@ -391,13 +395,10 @@ More4.uk
 FiveUSA.uk
 5star.uk
 5Action.uk
-SkyShowcase.uk
 SkyAtlantic.uk
-SkyMax.uk
 SkyComedy.uk
 SkyWitness.uk
 SkyArts.uk
-Sky.Replay.uk
 Sky.Mix.HD.uk
 ComedyCentral.uk
 UandDave.uk
@@ -436,8 +437,6 @@ Blaze.uk
 InvestigationDiscovery.uk
 CrimeAndInvestigationNetwork.uk
 FoodNetwork.uk
-TravelChannel.uk
-HGTV.uk
 TLC.uk
 BBCNews.uk
 SkyNews.uk
@@ -458,7 +457,6 @@ SkyCinemaDrama.uk
 SkyThriller.uk
 Sky.Sci-Fi.HD.ie
 Sky.Family.HD.uk
-SkyCinemaAnimation.uk
 Sky.Cinema.Select.uk
 Film4.uk
 GreatMovies.uk
@@ -466,7 +464,8 @@ GreatAction.uk
 GreatRomance.uk
 Movies24.uk
 TalkingPictures.uk
-HorrorChannel.uk
+Legend.uk
+Legend.Xtra.uk
 SkySportsMainEvent.uk
 uk.Sky Sports Premier League HD
 SkySportsFootball.uk
@@ -486,12 +485,10 @@ TNT.Sports.4.HD.uk
 TNT.Sports.5.HD.uk
 PremierSports1.uk
 PremierSports2.uk
-LaLiga.uk
-uk.Eurosport 1
-uk.Eurosport 2 HD
 Racing.TV.HD.uk
 MUTV.uk
 LiverpoolFCTV.uk
+ph.DIV.IE
 RTEOne.ie
 RTE.Two.HD.ie
 VirginMediaOne.ie
@@ -501,6 +498,7 @@ Virgin.Media.Four.HD.ie
 TG4.ie
 RTEJr.ie
 RTENewsNow.ie
+ph.DIV.AU
 ABC.au
 SBS.au
 7Sydney.au
@@ -511,6 +509,7 @@ Three.nz
 SBSFood.au
 ABCNewsSydney.au
 SBSWorldMovies.au
+ph.DIV.PT
 Rtp1.pt
 Rtp2.pt
 Sic.pt
@@ -546,7 +545,106 @@ DAZN.2.pt
 DAZN.3.pt
 DAZN.4.pt
 DAZN.5.pt
-WWE.us
+ph.DIV.PPV
+ph.UFC
+ph.WWE
 The.Fight.Network.HD.ca2
+ph.TRILLERTV
 TNT.Sport.BoxOffice.HD.uk
-SkySpBoxOff.uk
+ph.SKY.SPORTS.BOX.OFFICE
+ph.UFC.MAIN.CARD
+ph.UFC.01
+ph.UFC.02
+ph.UFC.03
+ph.UFC.04
+ph.UFC.05
+ph.UFC.06
+ph.BOXING.01
+ph.BOXING.02
+ph.BOXING.03
+ph.BOXING.04
+ph.BOXING.05
+ph.BOXING.06
+ph.BOXING.07
+ph.PPV.01
+ph.PPV.02
+ph.PPV.03
+ph.PPV.04
+ph.DAZN.01
+ph.DAZN.02
+ph.DAZN.03
+ph.DAZN.04
+ph.TRILLERTV.01
+ph.TRILLERTV.02
+ph.TRILLERTV.03
+ph.TRILLERTV.04
+ph.LIVE.EVENT.01
+ph.LIVE.EVENT.02
+ph.LIVE.EVENT.03
+ph.LIVE.EVENT.04
+ph.LIVE.EVENT.05
+ph.LIVE.EVENT.06
+ph.LIVE.EVENT.07
+ph.LIVE.EVENT.08
+ph.LIVE.EVENT.09
+ph.LIVE.EVENT.10
+ph.NETFLIX.01
+ph.NETFLIX.02
+ph.SPORTSNET.01
+ph.SPORTSNET.02
+ph.SPORTSNET.03
+ph.SPORTSNET.04
+ph.TSN.01
+ph.TSN.02
+ph.TSN.03
+ph.TSN.04
+ph.NFL.01
+ph.NFL.02
+ph.NFL.03
+ph.NFL.04
+ph.NFL.05
+ph.NFL.06
+ph.DIV.CHILL
+ph.CHILL.OCEAN
+ph.CHILL.TROPICAL.BEACH
+ph.CHILL.FOREST
+ph.CHILL.AMERICAN.FOREST
+ph.CHILL.EARTH
+ph.CHILL.NATURE
+ph.CHILL.FLOWERS
+ph.CHILL.MORNING
+ph.CHILL.NORWAY
+ph.CHILL.ICELAND
+ph.CHILL.SWITZERLAND
+ph.CHILL.WINTER
+ph.CHILL.STARDUST
+ph.CHILL.ITALY
+ph.CHILL.MOROCCO
+ph.CHILL.TURKEY
+ph.CHILL.VIETNAM
+ph.CHILL.AUSTRALIA
+ph.CHILL.EUROPEAN.TOWNS
+ph.DIV.XMAS
+ph.XMAS.CHRISTMAS.01
+ph.XMAS.CHRISTMAS.02
+ph.XMAS.CHRISTMAS.03
+ph.XMAS.CHRISTMAS.04
+ph.XMAS.CHRISTMAS.05
+ph.XMAS.CHRISTMAS.06
+ph.XMAS.CHRISTMAS.07
+ph.XMAS.CHRISTMAS.08
+ph.XMAS.CHRISTMAS.09
+ph.XMAS.CHRISTMAS.10
+ph.XMAS.CHRISTMAS.MOVIES
+ph.XMAS.CHRISTMAS.PLUS
+ph.XMAS.CHRISTMAS.CARTOONS
+ph.XMAS.COOKIE.CHALLENGE
+ph.XMAS.LIGHT.FIGHT
+ph.XMAS.HOLIDAY.WARS
+ph.XMAS.NAILED.IT..HOLIDAY
+ph.XMAS.SUGAR.RUSH
+ph.XMAS.CAROLER.CHALLENGE
+ph.XMAS.VEVO.CHRISTMAS.HITS
+ph.XMAS.VEVO.HOLIDAY.HIP.HOP
+ph.XMAS.VEVO.HOLIDAY.MUSIC
+ph.XMAS.YULE.LOG

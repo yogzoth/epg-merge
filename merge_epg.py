@@ -33,6 +33,8 @@ SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_PLEX1.xml.gz",
 ]
 CHANNELS_FILE = "channels.txt"
+PLACEHOLDERS_FILE = "placeholders.txt"   # simple fallback listings for channels with no schedule anywhere
+PLACEHOLDER_DAYS = 4
 OUTPUT = "epg.xml.gz"
 PLAIN_OUTPUT = "epg.xml"     # same guide, unzipped, for apps that prefer it
 DAYS_BACK_KEPT = 1          # drop listings that ended more than this many days ago
@@ -71,6 +73,186 @@ def open_source(src, tmpdir):
         magic = fh.read(2)
     fh = gzip.open(path, "rb") if magic == b"\x1f\x8b" else open(path, "rb")
     return fh, label
+
+
+def placeholders():
+    out = {}
+    if os.path.exists(PLACEHOLDERS_FILE):
+        with open(PLACEHOLDERS_FILE, encoding="utf-8") as fh:
+            for line in fh:
+                if line.strip() and not line.startswith("#"):
+                    parts = line.rstrip("\n").split("\t")
+                    if len(parts) >= 2:
+                        out[parts[0]] = (parts[1], parts[2] if len(parts) > 2 else "")
+    return out
+
+
+def placeholder_listings(cid, title, desc):
+    """Hourly blocks from yesterday through PLACEHOLDER_DAYS ahead."""
+    start = (int(time.time()) // 3600) * 3600 - 86400
+    rows = []
+    for h in range((PLACEHOLDER_DAYS + 1) * 24):
+        a = time.strftime("%Y%m%d%H%M%S +0000", time.gmtime(start + h * 3600))
+        b = time.strftime("%Y%m%d%H%M%S +0000", time.gmtime(start + (h + 1) * 3600))
+        rows.append(f'<programme start="{a}" stop="{b}" channel={quoteattr(cid)}>'
+                    f'<title>{escape(title)}</title><desc>{escape(desc)}</desc></programme>')
+    return "\n".join(rows) + "\n"
+
+
+# ---------------------------------------------------------------- event slots
+# PPV and event channels have no schedule anywhere, but the provider writes
+# today's event into the channel NAME in its playlist. We read those names and
+# turn them into guide listings. event_slots.txt maps guide ID -> stream number.
+EVENT_SLOTS_FILE = "event_slots.txt"
+EVENT_HOURS = 3             # assumed length when the provider gives a start but no end
+UNTIMED_MAX_HOURS = 36      # a name with no date is trusted this long; providers leave old names up
+STATE_FILE = "slot_state.json"
+
+GENERIC_WORDS = set("""hd fhd uhd sd d raw event events only fite tv netflix ppv nfl ufc us uk ca ar prime wwe
+sky sports box office tnt live dazn now streaming exclusive 8k 4k 1080 720 next no""".split())
+
+
+def provider_names():
+    """stream number -> channel name, from the provider playlist (login stays in the secret)."""
+    url = os.environ.get("PROVIDER_M3U_URL", "")
+    if not url:
+        g = os.environ.get("PROVIDER_EPG_URL", "")
+        if "xmltv.php" not in g:
+            return {}
+        url = g.replace("xmltv.php", "get.php") + "&type=m3u_plus&output=ts"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (epg-merge)"})
+    try:
+        with urllib.request.urlopen(req, timeout=300) as r:
+            text = r.read().decode("utf-8", "replace")
+    except Exception:
+        return {}
+    names, last = {}, None
+    for line in text.splitlines():
+        if line.startswith("#EXTINF"):
+            last = line.split('",', 1)[-1] if '",' in line else line.rsplit(",", 1)[-1]
+        elif last is not None and line.strip() and not line.startswith("#"):
+            names[line.strip().rstrip("/").rsplit("/", 1)[-1].split(".")[0]] = last.strip()
+            last = None
+    return names
+
+
+def _utc(y, mo, d, h, mi, tz=None):
+    import calendar
+    if tz is None:
+        return calendar.timegm((y, mo, d, h, mi, 0))
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    return int(datetime(y, mo, d, h, mi, tzinfo=ZoneInfo(tz)).timestamp())
+
+
+def parse_event(raw):
+    """Return (title, start, stop) from a provider slot name, or None when the slot is empty."""
+    import re
+    s = re.sub(r"[^\x00-\x7FÀ-ſ]+", " ", raw)            # drop superscript tags
+    if re.search(r"no event", s, re.I):
+        return None
+    start = stop = None
+    m = re.search(r"start:(\d{4})-(\d\d)-(\d\d) (\d\d):(\d\d):\d\d(?:\s*stop:(\d{4})-(\d\d)-(\d\d) (\d\d):(\d\d):\d\d)?", s)
+    if m:                                                            # UFC slots, UTC
+        g = [int(x) if x else None for x in m.groups()]
+        start = _utc(*g[:5])
+        if g[5]:
+            stop = _utc(*g[5:10])
+        s = s[:m.start()]
+    m = re.search(r"\|\s*(\d{4})-(\d\d)-(\d\d)\s*\|\s*(\d\d):(\d\d)\s*\(GMT\)", s)
+    if m:                                                            # DAZN slots
+        start = _utc(*map(int, m.groups()))
+        s = s[:m.start()]
+    m = re.search(r"\((\d{4})-(\d\d)-(\d\d) (\d\d):(\d\d):\d\d\)", s)
+    if m:                                                            # SN+ / TSN+ slots, Eastern time
+        start = _utc(*map(int, m.groups()), tz="America/New_York")
+        s = s[:m.start()]
+    m = re.search(r"-\s*\w{3},\s*(\d+)\s+(\w{3})\s+(\d\d):(\d\d)\s*ET", s)
+    if m:                                                            # TrillerTV slots
+        mon = "jan feb mar apr may jun jul aug sep oct nov dec".split().index(m.group(2).lower()[:3]) + 1
+        yr = time.gmtime().tm_year
+        start = _utc(yr, mon, int(m.group(1)), int(m.group(3)), int(m.group(4)), tz="America/New_York")
+        if start > time.time() + 180 * 86400:
+            start = _utc(yr - 1, mon, int(m.group(1)), int(m.group(3)), int(m.group(4)), tz="America/New_York")
+        s = s[:m.start()]
+    # strip slot labels and provider tags
+    for pat in [r"^\s*next\s*\|", r"\|\s*8K EXCLUSIVE.*$", r"\|\s*(US|AR):\s*DAZN PPV \d+.*$", r"^\s*(US|UK|CA|TV|PRIME|NFL|UFC)\s*\|\s*",
+                r"^\s*(CA|US) \([^)]*\)\s*\|\s*", r"^\s*UFC \d+\s*:\s*", r"^\s*Boxing\s+\d+\s*[|:]\s*",
+                r"^\s*Pay Per View \d+\s*", r"^\s*LIVE EVENT \d+\s*-\s*", r"^\s*\d+ HD \(D\):\s*(TrillerTV-)?",
+                r"\(Backup\)", r"\s+-\s*$"]:
+        s = re.sub(pat, " ", s, flags=re.I).strip()
+    parts = [p.strip() for p in s.split("|") if p.strip()]
+    if len(parts) >= 2 and start:                                    # DAZN: title | league
+        s = f"{parts[0]} ({parts[1]})"
+    else:
+        s = " | ".join(parts)
+    s = re.sub(r"\s{2,}", " ", s).strip(" -:|")
+    words = [w for w in re.findall(r"[A-Za-z]+", s.lower()) if w not in GENERIC_WORDS]
+    if len(" ".join(words)) < 4:
+        return None
+    now = time.time()
+    if start and (stop or start + EVENT_HOURS * 3600) < now - 2 * 3600:
+        return None                                                  # old event still in the name
+    return s, start, stop
+
+
+def event_listings(cid, event, fallback):
+    """Fallback blocks all day, with the event in its time slot (or all day if no time given)."""
+    title, start, stop = event
+    if not start:
+        return placeholder_listings(cid, title, "Today's event on this channel, per the provider. Times are not exact.")
+    stop = stop or start + EVENT_HOURS * 3600
+    t0 = (int(time.time()) // 3600) * 3600 - 86400
+    t1 = t0 + (PLACEHOLDER_DAYS + 1) * 86400
+    blocks, t = [], t0
+    while t < t1:
+        nxt = t + 3600
+        if nxt <= start or t >= stop:
+            blocks.append((t, nxt, fallback[0], fallback[1]))
+        else:
+            if t < start:
+                blocks.append((t, start, fallback[0], fallback[1]))
+            if t <= start < nxt:
+                blocks.append((start, stop, title, "Live event. Time from the provider listing."))
+            if t < stop < nxt:
+                blocks.append((stop, nxt, fallback[0], fallback[1]))
+        t = nxt
+    if start < t0 or start >= t1:
+        blocks.append((start, stop, title, "Live event. Time from the provider listing."))
+    rows = []
+    for a, b, ti, de in sorted(blocks):
+        rows.append(f'<programme start="{time.strftime("%Y%m%d%H%M%S +0000", time.gmtime(a))}" '
+                    f'stop="{time.strftime("%Y%m%d%H%M%S +0000", time.gmtime(b))}" channel={quoteattr(cid)}>'
+                    f'<title>{escape(ti)}</title><desc>{escape(de)}</desc></programme>')
+    return "\n".join(rows) + "\n"
+
+
+def load_state():
+    """Last run's slot names, so a name with no date can be aged out."""
+    import json
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    try:
+        if repo:
+            url = f"https://raw.githubusercontent.com/{repo}/guide/{STATE_FILE}"
+            with urllib.request.urlopen(url, timeout=60) as r:
+                return json.loads(r.read().decode("utf-8"))
+        if os.path.exists(STATE_FILE):
+            with open(STATE_FILE, encoding="utf-8") as fh:
+                return json.load(fh)
+    except Exception:
+        pass
+    return {}
+
+
+def event_slots():
+    out = {}
+    if os.path.exists(EVENT_SLOTS_FILE):
+        with open(EVENT_SLOTS_FILE, encoding="utf-8") as fh:
+            for line in fh:
+                if line.strip() and not line.startswith("#"):
+                    cid, num = line.split("\t")[:2]
+                    out[cid.strip()] = num.strip()
+    return out
 
 
 def cutoff_stamp():
@@ -114,6 +296,36 @@ def main():
             fh.close()
         filled |= got
         report.append(f"{label}: {len(got)} channels, {n_prog} listings")
+
+    ph = placeholders()
+    slots = event_slots()
+    names = provider_names() if slots else {}
+    if slots:
+        report.append(f"event names: read {len(names)} provider channel names")
+    old_state, new_state = (load_state() if slots else {}), {}
+    ph_used = ev_used = 0
+    for cid in sorted(ids - filled):
+        if cid in ph:
+            event = parse_event(names[slots[cid]]) if slots.get(cid) in names else None
+            if event and not event[1]:
+                prev = old_state.get(cid)
+                first = prev[1] if prev and prev[0] == event[0] else int(time.time())
+                new_state[cid] = [event[0], first]
+                if time.time() - first > UNTIMED_MAX_HOURS * 3600:
+                    event = None                     # same undated name for too long: stale
+            if event:
+                body.write(event_listings(cid, event, ph[cid]))
+                ev_used += 1
+            else:
+                body.write(placeholder_listings(cid, *ph[cid]))
+            channels.setdefault(cid, f"<channel id={quoteattr(cid)}><display-name>{escape(ph[cid][0])}</display-name></channel>")
+            filled.add(cid)
+            ph_used += 1
+    report.append(f"placeholders: {ph_used} channels, {ev_used} of them showing a live event")
+    if slots:
+        import json
+        with open(STATE_FILE, "w", encoding="utf-8") as fh:
+            json.dump(new_state, fh, ensure_ascii=False, indent=0)
 
     missing = sorted(ids - filled)
     with gzip.open(OUTPUT, "wt", encoding="utf-8") as out:

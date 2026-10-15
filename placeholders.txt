@@ -1,0 +1,110 @@
+# id<TAB>title<TAB>description  (used only when no real listings exist)
+ph.CITYNEWS.24.7	CityNews 24/7	Live news, weather and traffic around the clock.
+ph.CMT.MUSIC	Country Music Videos	Nonstop country music videos.
+ph.UFC	UFC	UFC fights, replays and shows.
+ph.WWE	WWE	WWE shows, replays and live events.
+ph.TRILLERTV	TrillerTV	Combat sports, replays and live events.
+ph.SKY.SPORTS.BOX.OFFICE	Sky Sports Box Office	Pay-per-view events when scheduled.
+ph.UFC.MAIN.CARD	UFC Main Card	Live UFC main card on fight nights.
+ph.UFC.01	UFC 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.UFC.02	UFC 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.UFC.03	UFC 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.UFC.04	UFC 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.UFC.05	UFC 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.UFC.06	UFC 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.BOXING.01	Boxing 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.BOXING.02	Boxing 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.BOXING.03	Boxing 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.BOXING.04	Boxing 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.BOXING.05	Boxing 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.BOXING.06	Boxing 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.BOXING.07	Boxing 07 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.PPV.01	PPV 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.PPV.02	PPV 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.PPV.03	PPV 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.PPV.04	PPV 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.DAZN.01	DAZN 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.DAZN.02	DAZN 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.DAZN.03	DAZN 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.DAZN.04	DAZN 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TRILLERTV.01	TrillerTV 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TRILLERTV.02	TrillerTV 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TRILLERTV.03	TrillerTV 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TRILLERTV.04	TrillerTV 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.01	Live Event 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.02	Live Event 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.03	Live Event 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.04	Live Event 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.05	Live Event 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.06	Live Event 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.07	Live Event 07 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.08	Live Event 08 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.09	Live Event 09 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.10	Live Event 10 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NETFLIX.01	Netflix 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NETFLIX.02	Netflix 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.SPORTSNET.01	Sportsnet+ 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.SPORTSNET.02	Sportsnet+ 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.SPORTSNET.03	Sportsnet+ 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.SPORTSNET.04	Sportsnet+ 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TSN.01	TSN+ 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TSN.02	TSN+ 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TSN.03	TSN+ 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TSN.04	TSN+ 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.01	NFL 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.02	NFL 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.03	NFL 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.04	NFL 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.05	NFL 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.06	NFL 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.CHILL.OCEAN	Ocean · Ambient 4K	Open water and rolling waves, around the clock.
+ph.CHILL.TROPICAL.BEACH	Tropical Beach · Ambient 4K	White sand, palms and turquoise water.
+ph.CHILL.FOREST	Forest · Ambient 4K	Deep forest scenes and natural sound.
+ph.CHILL.AMERICAN.FOREST	American Forest · Ambient 4K	North American woods and trails.
+ph.CHILL.EARTH	Earth · Ambient 4K	Landscapes from around the planet.
+ph.CHILL.NATURE	Nature · Ambient 4K	Slow nature scenes to switch off to.
+ph.CHILL.FLOWERS	Flowers · Ambient 4K	Gardens, blooms and close-up flowers.
+ph.CHILL.MORNING	Morning · Ambient 4K	Sunrises and soft morning light.
+ph.CHILL.NORWAY	Norway · Ambient 4K	Fjords, peaks and northern light.
+ph.CHILL.ICELAND	Iceland · Ambient 4K	Volcanic coasts, glaciers and waterfalls.
+ph.CHILL.SWITZERLAND	Switzerland · Ambient 4K	Alpine valleys and mountain villages.
+ph.CHILL.WINTER	Winter · Ambient 4K	Falling snow and quiet winter scenes.
+ph.CHILL.STARDUST	Stardust · Ambient 4K	Stars, nebulae and deep space.
+ph.CHILL.ITALY	Italy · Ambient 4K	Coastlines, hill towns and old streets.
+ph.CHILL.MOROCCO	Morocco · Ambient 4K	Desert, medinas and Atlas mountains.
+ph.CHILL.TURKEY	Turkey · Ambient 4K	Coasts, bazaars and Istanbul views.
+ph.CHILL.VIETNAM	Vietnam · Ambient 4K	Rice terraces, rivers and temples.
+ph.CHILL.AUSTRALIA	Australia · Ambient 4K	Reefs, beaches and the outback.
+ph.CHILL.EUROPEAN.TOWNS	European Towns · Ambient 4K	Walks through old European towns.
+ph.DIV.XMAS	CHRISTMAS · Channels 9101 to 9161	Start of the Christmas section.
+ph.XMAS.CHRISTMAS.01	Christmas 01 · Holiday movies	Christmas movies around the clock, in 4K.
+ph.XMAS.CHRISTMAS.02	Christmas 02 · Holiday movies	Christmas movies around the clock, in 4K.
+ph.XMAS.CHRISTMAS.03	Christmas 03 · Holiday movies	Christmas movies around the clock, in 4K.
+ph.XMAS.CHRISTMAS.04	Christmas 04 · Holiday movies	Christmas movies around the clock, in 4K.
+ph.XMAS.CHRISTMAS.05	Christmas 05 · Holiday movies	Christmas movies around the clock, in 4K.
+ph.XMAS.CHRISTMAS.06	Christmas 06 · Holiday movies	Christmas movies around the clock, in 4K.
+ph.XMAS.CHRISTMAS.07	Christmas 07 · Holiday movies	Christmas movies around the clock, in 4K.
+ph.XMAS.CHRISTMAS.08	Christmas 08 · Holiday movies	Christmas movies around the clock, in 4K.
+ph.XMAS.CHRISTMAS.09	Christmas 09 · Holiday movies	Christmas movies around the clock, in 4K.
+ph.XMAS.CHRISTMAS.10	Christmas 10 · Holiday movies	Christmas movies around the clock, in 4K.
+ph.XMAS.CHRISTMAS.MOVIES	Christmas Movies · Holiday films all day	Holiday movies around the clock.
+ph.XMAS.CHRISTMAS.PLUS	Christmas Plus · Holiday favourites	Holiday movies and specials.
+ph.XMAS.CHRISTMAS.CARTOONS	Christmas Cartoons · Holiday classics	Animated Christmas specials and cartoons.
+ph.XMAS.COOKIE.CHALLENGE	Christmas Cookie Challenge	Bakers compete with holiday cookies.
+ph.XMAS.LIGHT.FIGHT	The Great Christmas Light Fight	Families go all out on holiday light displays.
+ph.XMAS.HOLIDAY.WARS	Holiday Wars	Cake artists battle with holiday showpieces.
+ph.XMAS.NAILED.IT..HOLIDAY	Nailed It! Holiday	Home bakers attempt holiday cakes.
+ph.XMAS.SUGAR.RUSH	Sugar Rush Christmas	Bakers race the clock with holiday sweets.
+ph.XMAS.CAROLER.CHALLENGE	The Caroler Challenge	Carolling groups compete.
+ph.XMAS.VEVO.CHRISTMAS.HITS	Christmas Hits · Music videos	The biggest Christmas songs, nonstop.
+ph.XMAS.VEVO.HOLIDAY.HIP.HOP	Holiday Hip Hop · Music videos	Holiday hip hop and R&B videos.
+ph.XMAS.VEVO.HOLIDAY.MUSIC	Holiday Music · Music videos	Holiday music videos, nonstop.
+ph.XMAS.YULE.LOG	Yule Log · Crackling fire, all night	A fireplace and holiday music, around the clock.
+ph.DIV.CA	CANADA · Channels 1101 to 1616	Start of the Canada section.
+ph.DIV.US	UNITED STATES · Channels 2101 to 2646	Start of the United States section.
+ph.DIV.UK	UNITED KINGDOM · Channels 3201 to 3642	Start of the United Kingdom section.
+ph.DIV.IE	IRELAND · Channels 4201 to 4401	Start of the Ireland section.
+ph.DIV.AU	AUSTRALIA & NZ · Channels 5201 to 5501	Start of the Australia & NZ section.
+ph.DIV.PT	PORTUGAL · Channels 6201 to 6625	Start of the Portugal section.
+ph.DIV.PPV	PPV · Channels 7101 to 7196	Start of the PPV section.
+ph.DIV.CHILL	CHILL · Channels 8101 to 8146	Start of the Chill section.
