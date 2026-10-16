@@ -10,7 +10,6 @@ ca.CTV (CFTO) Toronto, ON HD
 ca.Global (CIII-DT-41) Toronto
 CityTVToronto.ca
 CKVR.ca
-ca.TVO (TV Ontario) DV
 CHCH.ca
 ca.CBC (CBRT) Calgary, AB
 ca.CTV (CFCN) Calgary, AB HD
@@ -91,6 +90,7 @@ CTVLife.ca
 OutdoorLifeNetwork.ca
 SaltLightTV.ca
 EWTN.us
+ca.TVO (TV Ontario) DV
 ca.CBC News Network
 ca.CTV News Channel
 GlobalNewsBC1.ca
@@ -250,7 +250,7 @@ SmithsonianChannel.us
 ViceOnTV.us
 US| ID WEST HD
 InvestigationDiscovery.us
-CrimeInvestigation.us
+Crime.and.Investigation.Network.HD.us2
 US| OXYGEN WEST HD
 Oxygen.us
 US-Motor Trend
@@ -356,7 +356,7 @@ MLBNetwork.us
 US-NHL Network USA
 beINSports.us
 Fanduel.us
-WillowCricket.us
+Willow.Cricket.HD.us2
 MAVTV.us
 YESNetwork.us
 SNY.SportsNet.New.York.HD.us2
@@ -613,7 +613,6 @@ CTVToronto-CFTO.ca
 GlobalToronto-CIII.ca
 CityTv.ca
 CTV2Barrie-CKVR.ca
-TVOntario-CICA.ca
 CBCCalgary-CBRT.ca
 CTVCalgary-CFCN.ca
 GlobalCalgary-CICT.ca
@@ -670,6 +669,7 @@ Cottage.Life.HD.ca2
 Makeful.TV.SD.ca2
 CTV.LIFE.CHANNEL.HD.ca2
 SALTLIGHT.ca
+TVOntario-CICA.ca
 CBC.News.Network.HD.ca2
 CTV.News.Channel.HD.ca2
 CP24.ca
@@ -748,6 +748,7 @@ west.Logo.us2
 Logo.us2
 MTV.-.Music.Television.HD.us2
 west.MTV2:.Music.Television.HD.us2
+MTV2:.Music.Television.HD.us2
 Oprah.Winfrey.Network.(Pacific.A.Feed).us2
 west.Paramount.Network.HD.us2
 west.POP.HD.us2
@@ -794,7 +795,6 @@ Disney.Channel.(Pacific).us2
 Disney.Channel.HD.us2
 Disney.Junior.HD.(Pacific).us2
 Disney.Junior.HD.us2
-Disney.XD.HD.(Pacific).us2
 Disney.XD.HD.us2
 Cartoon.Network.(Pacific).us2
 Cartoon.Network.HD.us2
@@ -815,7 +815,6 @@ west.Smithsonian.HD.Network.us2
 Smithsonian.HD.Network.us2
 Vice.HD.us2
 Investigation.Discovery.HD.us2
-CrimeandInvestigationNetwork.us
 west.Oxygen.True.Crime.HD.us2
 Oxygen.True.Crime.HD.us2
 MOTORTREND.HD.us2
@@ -823,7 +822,6 @@ Food.Network.HD.us2
 Cooking.Channel.HD.us2
 The.Travel.Channel.HD.us2
 Tastemade.us2
-HGTVPacific.us
 Magnolia.Network.HD.us2
 TLC.HD.(US).us2
 Outside.Television.HD.us2
@@ -845,7 +843,6 @@ HBO.West.us2
 HBO.East.us2
 west.HBO.Drama.us2
 HBO.Drama.us2
-west.HBO.Comedy.HD.us2
 HBO.Comedy.HD.us2
 west.HBO.Movies.us2
 Cinemax.HD.(Pacific).us2
@@ -917,7 +914,6 @@ MLB.Network.HD.us2
 NHL.Network.HD.us2
 beIN.Sports.USA.HD.us2
 FanDuelTV.us
-Willow.us
 MAVTVSelect.us
 Yes.Network.us2
 NESN.us
@@ -1026,19 +1022,50 @@ SPORT.TV4.HD.pt
 SPORT.TV5.HD.pt
 Sporting.TV.HD.pt
 Canal.11.HD.pt
-ph.G.SKY.SPORTS.BOX.OFFICE
+ph.G.NFL.01
+ph.G.NFL.02
+ph.G.NFL.03
+ph.G.NFL.04
+ph.G.NFL.05
+ph.G.NFL.06
+ph.G.VANCOUVER.CANUCKS
+ph.G.NHL.01
+ph.G.NHL.02
+ph.G.NHL.03
+ph.G.NHL.04
+ph.G.NHL.05
+ph.G.NHL.06
+ph.G.NBA.01
+ph.G.NBA.02
+ph.G.NBA.03
+ph.G.NBA.04
+ph.G.NBA.05
+ph.G.NBA.06
+ph.G.MLB.01
+ph.G.MLB.02
 ph.G.UFC.01
 ph.G.UFC.02
-ph.G.UFC.03
-ph.G.UFC.04
-ph.G.UFC.05
-ph.G.UFC.06
+ph.G.PARAMOUNT.01
+ph.G.PARAMOUNT.02
+ph.G.PARAMOUNT.03
+ph.G.PARAMOUNT.04
+ph.G.PARAMOUNT.05
+ph.G.PARAMOUNT.06
+ph.G.SPORTSNET.01
+ph.G.SPORTSNET.02
+ph.G.SPORTSNET.03
+ph.G.SPORTSNET.04
+ph.G.TSN.01
+ph.G.TSN.02
+ph.G.TSN.03
+ph.G.TSN.04
 ph.G.BOXING.01
 ph.G.BOXING.02
 ph.G.BOXING.03
 ph.G.BOXING.04
 ph.G.BOXING.05
 ph.G.BOXING.06
+ph.G.SKY.SPORTS.BOX.OFFICE
 ph.G.PPV.01
 ph.G.PPV.02
 ph.G.PPV.03
@@ -1049,6 +1076,8 @@ ph.G.DAZN.01
 ph.G.DAZN.02
 ph.G.DAZN.03
 ph.G.DAZN.04
+ph.G.NETFLIX.01
+ph.G.NETFLIX.02
 ph.G.TRILLERTV.01
 ph.G.TRILLERTV.02
 ph.G.TRILLERTV.03
@@ -1063,22 +1092,6 @@ ph.G.LIVE.EVENT.07
 ph.G.LIVE.EVENT.08
 ph.G.LIVE.EVENT.09
 ph.G.LIVE.EVENT.10
-ph.G.NETFLIX.01
-ph.G.NETFLIX.02
-ph.G.SPORTSNET.01
-ph.G.SPORTSNET.02
-ph.G.SPORTSNET.03
-ph.G.SPORTSNET.04
-ph.G.TSN.01
-ph.G.TSN.02
-ph.G.TSN.03
-ph.G.TSN.04
-ph.G.NFL.01
-ph.G.NFL.02
-ph.G.NFL.03
-ph.G.NFL.04
-ph.G.NFL.05
-ph.G.NFL.06
 ph.CHILL.OCEAN
 ph.CHILL.TROPICAL.BEACH
 ph.CHILL.FOREST

@@ -119,6 +119,27 @@ ph.G.NFL.03	NFL 03 · Event slot	Shows a live event when one is scheduled. Check
 ph.G.NFL.04	NFL 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.G.NFL.05	NFL 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.G.NFL.06	NFL 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.VANCOUVER.CANUCKS	Vancouver Canucks	Canucks team channel. Live on game nights, replays and shows in between.
+ph.G.NHL.01	Nhl 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NHL.02	Nhl 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NHL.03	Nhl 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NHL.04	Nhl 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NHL.05	Nhl 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NHL.06	Nhl 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NBA.01	Nba 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NBA.02	Nba 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NBA.03	Nba 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NBA.04	Nba 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NBA.05	Nba 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NBA.06	Nba 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.MLB.01	Mlb 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.MLB.02	Mlb 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.PARAMOUNT.01	Paramount+ 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.PARAMOUNT.02	Paramount+ 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.PARAMOUNT.03	Paramount+ 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.PARAMOUNT.04	Paramount+ 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.PARAMOUNT.05	Paramount+ 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.PARAMOUNT.06	Paramount+ 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.CHILL.OCEAN	Ocean · Ambient	Open water and rolling waves, around the clock.
 ph.CHILL.TROPICAL.BEACH	Tropical Beach · Ambient	White sand, palms and turquoise water.
 ph.CHILL.FOREST	Forest · Ambient	Deep forest scenes and natural sound.

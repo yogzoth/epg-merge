@@ -154,7 +154,7 @@ def parse_event(raw):
     s = re.sub(r"[^\x00-\x7FÀ-ſ]+", " ", raw)            # drop superscript tags
     if re.search(r"no event", s, re.I):
         return None
-    m = "\u2605" in raw and re.match(r"^\s*(?:US|CA|UK|TRILLERTV)?\s*(?:UFC|BOXING|EVENT|DAZN|SN\+|TSN\+|PPV|NFL)\s*0*\d+\s*(?:HD)?\s*:\s*(.*)$", s, re.I)
+    m = "\u2605" in raw and re.match(r"^\s*(?:US|CA|UK|TRILLERTV)?\s*(?:UFC|BOXING|EVENT|DAZN|SN\+|TSN\+|PPV|NFL|NHL GAME|NBA|MLB|PARAMOUNT)\s*0*\d+\s*(?:HD)?\s*:\s*(.*)$", s, re.I)
     if m:
         s = m.group(1)
         if not s.strip(" :-"):
@@ -183,9 +183,24 @@ def parse_event(raw):
         if start > time.time() + 180 * 86400:
             start = _utc(yr - 1, mon, int(m.group(1)), int(m.group(3)), int(m.group(4)), tz="America/New_York")
         s = s[:m.start()]
+    m = re.search(r"\s+(\d{1,2}):(\d\d)\s*(AM|PM)\s*ET\s*$", s, re.I)
+    if m and not start:                                              # league game slots: "8:00 PM ET", today
+        from datetime import datetime
+        from zoneinfo import ZoneInfo
+        h = int(m.group(1)) % 12 + (12 if m.group(3).upper() == "PM" else 0)
+        today = datetime.now(ZoneInfo("America/New_York"))
+        start = _utc(today.year, today.month, today.day, h, int(m.group(2)), tz="America/New_York")
+        if start - time.time() > 14 * 3600:                         # last night's game still in the name
+            start -= 86400
+        s = s[:m.start()]
+        if s.isupper():                                              # "CANADIENS AT CAPITALS" -> "Canadiens at Capitals"
+            s = " ".join(w if re.fullmatch(r"(UFC|PBR|NHL|NBA|MLB|NFL|WWE|II|III|\d+:?)", w) else
+                         w.lower() if w.lower() in ("at", "vs", "vs.", "and", "of", "the", "@") and i else w.capitalize()
+                         for i, w in enumerate(s.split()))
+        s = s.replace("_IN", "-In").replace("_in", "-In").replace(" _ ", " / ").replace("@", "at")
     # strip slot labels and provider tags
     for pat in [r"^\s*next\s*\|", r"\|\s*8K EXCLUSIVE.*$", r"\|\s*(US|AR):\s*DAZN PPV \d+.*$", r"^\s*(US|UK|CA|TV|PRIME|NFL|UFC)\s*\|\s*",
-                r"^\s*(CA|US) \([^)]*\)\s*\|\s*", r"^\s*UFC \d+\s*:\s*", r"^\s*Boxing\s+\d+\s*[|:]\s*",
+                r"^\s*(CA|US) \([^)]*\)\s*\|\s*", r"^\s*UFC \d{1,2}\s*:\s*", r"^\s*Boxing\s+\d+\s*[|:]\s*",
                 r"^\s*Pay Per View \d+\s*", r"^\s*LIVE EVENT \d+\s*-\s*", r"^\s*\d+ HD \(D\):\s*(TrillerTV-)?",
                 r"\(Backup\)", r"\s+-\s*$"]:
         s = re.sub(pat, " ", s, flags=re.I).strip()
@@ -388,6 +403,12 @@ def clean_programme(el):
                 title, episode = a.strip(), b.strip()
             break
     t.text = title.strip()
+    # Movies get their year in the title, so remakes and same-named films are easy to tell apart.
+    cats = [(c.text or "").strip().lower() for c in el.findall("category")]
+    year = (el.findtext("date") or "").strip()[:4]
+    if any(c in ("movie", "movies", "film", "feature film") for c in cats) and re.fullmatch(r"(19|20)\d\d", year) \
+            and not re.search(r"\(\d{4}\)$", t.text):
+        t.text = f"{t.text} ({year})"
     # Some apps glue the sub-title and episode number onto the title in the grid
     # ("Gold Rush: The Weasel. S16 E6"), so fold them into the description instead.
     parts = []
@@ -414,6 +435,16 @@ def clean_programme(el):
         if d is None:
             d = ET.Element("desc"); el.insert(list(el).index(t) + 1, d)
         d.text = (" · ".join(head) + ("\n" + body if body else "")).strip()
+
+
+_PH_IDS = None
+
+
+def ph_ids_cache():
+    global _PH_IDS
+    if _PH_IDS is None:
+        _PH_IDS = set(placeholders())
+    return _PH_IDS
 
 
 def cutoff_stamp():
@@ -520,6 +551,52 @@ def main():
                 channels[w_id] = f"<channel id={quoteattr(w_id)}><display-name>{name.group(1) if name else escape(e_id)} (West)</display-name></channel>"
         ids |= set(west)
         report.append(f"west feeds: {made} of {len(west)} made from their East guide, 3 hours later")
+
+    # Fill holes from the guide this job published last time: the first hours of a
+    # West feed (its East guide starts 3 hours too late), or a source that failed today.
+    repo = os.environ.get("GITHUB_REPOSITORY", "")
+    prev_url = os.environ.get("PREVIOUS_GUIDE_URL") or (f"https://raw.githubusercontent.com/{repo}/guide/epg.xml.gz" if repo else "")
+    if prev_url:
+        first = {}
+        for m in re.finditer(r"<programme\b([^>]*)>", body.getvalue()):
+            a = m.group(1)
+            c, st = re.search(r'channel="([^"]+)"', a), re.search(r'start="([^"]+)"', a)
+            if c and st:
+                t0 = _epoch(st.group(1))
+                if t0 is not None and t0 < first.get(c.group(1), 1e18):
+                    first[c.group(1)] = t0
+        fh, label = open_source(prev_url, tmpdir)
+        kept, revived = 0, set()
+        now = time.time()
+        if fh is not None:
+            try:
+                for _, el in ET.iterparse(fh, events=("end",)):
+                    if el.tag == "channel":
+                        cid = el.get("id")
+                        if cid in ids and cid not in channels and not cid.startswith("ph."):
+                            channels[cid] = ET.tostring(el, encoding="unicode")
+                        el.clear()
+                    elif el.tag == "programme":
+                        cid = el.get("channel")
+                        if cid in ids and not cid.startswith("ph.") and cid not in ph_ids_cache():
+                            s0, e0 = _epoch(el.get("start")), _epoch(el.get("stop"))
+                            lim = first.get(cid)
+                            if s0 is not None and e0 is not None and e0 > now - 6 * 3600 and (lim is None or s0 < lim):
+                                if lim is not None and e0 > lim:
+                                    el.set("stop", time.strftime("%Y%m%d%H%M%S", time.gmtime(lim)) + " +0000")
+                                body.write(ET.tostring(el, encoding="unicode"))
+                                kept += 1
+                                if lim is None:
+                                    revived.add(cid)
+                        el.clear()
+            except ET.ParseError:
+                pass
+            finally:
+                fh.close()
+            filled |= revived
+            report.append(f"last guide: {kept} listings carried over to fill gaps ({len(revived)} channels kept from last time)")
+        else:
+            report.append(f"last guide: not read ({label})")
 
     ph = placeholders()
     slots = event_slots()
