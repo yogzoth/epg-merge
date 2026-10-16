@@ -1117,7 +1117,6 @@ BBC.World.News.ch
 NHK.World.HD.uk
 CNA.HD.my
 TRT.World.HD.uk
-Arirang.TV.HD.uk
 Wion.in
 i24.News.English.us2
 Law.and.Crime.us2
@@ -1132,7 +1131,6 @@ Grit.us2
 Crunchyroll.us
 Boomerang.us2
 MeTV.Toons.us2
-Nicktoons.uk
 ph.G.VANCOUVER.CANUCKS
 ph.G.NHL.01
 ph.G.NHL.02
