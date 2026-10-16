@@ -701,6 +701,30 @@ def main():
         with open(STATE_FILE, "w", encoding="utf-8") as fh:
             json.dump(new_state, fh, ensure_ascii=False, indent=0)
 
+    # Movie channels whose guide has no year: borrow it from the same film elsewhere in the guide.
+    text = body.getvalue()
+    years = {}
+    for m in re.finditer(r"<title[^>]*>([^<]+?) \((\d{4})\)</title>", text):
+        years.setdefault(m.group(1).strip().lower(), set()).add(m.group(2))
+    movie_ch = re.compile(r"cinema|film|movie|hbo|starz|cinemax|showtime|tcm|mgm|crave|screenpix|encore|tvcine|hollywood", re.I)
+    added = [0]
+    def add_year(m):
+        p = m.group(0)
+        ch = re.search(r'channel="([^"]+)"', p)
+        if not ch or not movie_ch.search(ch.group(1)):
+            return p
+        t = re.search(r"(<title[^>]*>)([^<]+)(</title>)", p)
+        if not t or re.search(r"\(\d{4}\)\s*$", t.group(2)):
+            return p
+        y = years.get(t.group(2).strip().lower())
+        if not y or len(y) != 1:
+            return p
+        added[0] += 1
+        return p[:t.start(2)] + t.group(2).strip() + f" ({next(iter(y))})" + p[t.end(2):]
+    text = re.sub(r"<programme\b.*?</programme>", add_year, text, flags=re.S)
+    body = io.StringIO(); body.write(text)
+    report.append(f"movie years borrowed from elsewhere in the guide: {added[0]}")
+
     missing = sorted(ids - filled)
     with gzip.open(OUTPUT, "wt", encoding="utf-8") as out:
         out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
