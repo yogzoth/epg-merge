@@ -262,6 +262,90 @@ def event_slots():
     return out
 
 
+# ---------------------------------------------------------------- clock fix
+# Some providers write their guide in their own local time but label it UTC
+# (+0000), which pushes every show 1 to 2 hours late. Each run compares the
+# provider's CNN schedule with epgshare's and shifts the provider's listings by
+# the difference. If CNN isn't there, provider 2 falls back to Central European
+# time, which is what it used when this was set up.
+ANCHORS = [("CNN.us", "CNN.HD.us2")]
+
+
+def _epoch(stamp):
+    import calendar, re as _re
+    m = _re.match(r"(\d{14})\s*([+-])(\d\d)(\d\d)", stamp or "")
+    if not m:
+        return None
+    t = calendar.timegm(time.strptime(m.group(1), "%Y%m%d%H%M%S"))
+    off = (int(m.group(3)) * 60 + int(m.group(4))) * 60
+    return t - off if m.group(2) == "+" else t + off
+
+
+def _title_key(t):
+    import re as _re
+    return _re.sub(r"[^a-z0-9]", "", _re.sub(r"[^\x00-\x7F]+", "", (t or "").lower()))[:40]
+
+
+def find_shift(prov, ref):
+    """Try shifts from -5 to +5 hours and keep the one that lines up the most shows exactly.
+    Lining up whole schedules (not single shows) is safe against reruns."""
+    refset = {(t, s) for t, starts in ref.items() for s in starts if s}
+    pairs = [(t, s) for t, starts in prov.items() for s in starts if s]
+    if not refset or not pairs:
+        return None
+    score = {sh: sum((t, s - sh) in refset for t, s in pairs) for sh in range(-5 * 3600, 5 * 3600 + 1, 1800)}
+    best = max(score, key=score.get)
+    if score[best] < 5 or score[best] < 2 * max(1, score.get(0, 0) if best else 0):
+        return 0 if score.get(0, 0) >= 5 else None
+    return best
+
+
+def europe_offset():
+    from datetime import datetime, timezone
+    from zoneinfo import ZoneInfo
+    return int(datetime.now(ZoneInfo("Europe/Berlin")).utcoffset().total_seconds())
+
+
+
+def drop_late_copies(items):
+    """Split each channel's listings into copies wherever the start time jumps
+    backwards. With more than one copy, keep the one every other copy is a whole
+    number of hours late against (the earliest), and drop the rest."""
+    import re as _re
+    order, per = [], {}
+    for x in items:
+        cid = _re.search(r'channel="([^"]+)"', x).group(1)
+        if cid not in per:
+            per[cid] = []
+            order.append(cid)
+        per[cid].append(x)
+    out, n = [], 0
+    for cid in order:
+        rows = per[cid]
+        blocks, last = [[]], None
+        for x in rows:
+            s = _epoch(_re.search(r'start="([^"]+)"', x).group(1)) or 0
+            m = _re.search(r"<title[^>]*>([^<]*)", x)
+            if last is not None and s < last:
+                blocks.append([])
+            blocks[-1].append((s, _title_key(m.group(1) if m else ""), x))
+            last = s
+        if len(blocks) == 1:
+            out += rows
+            continue
+        sets = [{(t, s) for s, t, _ in b} for b in blocks]
+        def late(i, j):        # seconds block i runs late against block j (0 if they don't line up)
+            hits = {d: len({(t, s - d) for t, s in sets[i]} & sets[j]) for d in range(-5 * 3600, 5 * 3600 + 1, 1800)}
+            best = max(hits, key=lambda d: (hits[d], -abs(d)))
+            return best if hits[best] >= 3 else 0
+        # earliest copy: the others are late against it; ties go to the biggest copy
+        score = [(sum(late(j, i) > 0 for j in range(len(blocks)) if j != i), len(blocks[i]), -i) for i in range(len(blocks))]
+        keep = max(range(len(blocks)), key=lambda i: score[i])
+        kept = [r for i, b in enumerate(blocks) if i == keep or late(i, keep) <= 0 for r in b]
+        out += [x for _, _, x in sorted(kept, key=lambda r: r[0])]
+        n += len(kept) < len(rows)
+    return out, n
+
 def cutoff_stamp():
     t = time.gmtime(time.time() - DAYS_BACK_KEPT * 86400)
     return time.strftime("%Y%m%d%H%M%S", t)
@@ -276,6 +360,11 @@ def main():
     body = io.StringIO()
     report = []
 
+    held = {}                                   # provider source -> list of programme elements
+    anchor_p = {}                               # provider source -> {title: [start epochs]}
+    anchor_r = {}                               # {title: [start epochs]} from epgshare
+    p_anchor_ids = {a for a, _ in ANCHORS}
+    r_anchor_ids = {b for _, b in ANCHORS}
     for src in SOURCES:
         fh, label = open_source(src, tmpdir)
         if fh is None:
@@ -283,6 +372,7 @@ def main():
             continue
         got = set()
         n_prog = 0
+        is_prov = src.startswith("env:")
         try:
             for _, el in ET.iterparse(fh, events=("end",)):
                 if el.tag == "channel":
@@ -292,8 +382,15 @@ def main():
                     el.clear()
                 elif el.tag == "programme":
                     cid = el.get("channel")
+                    if cid in p_anchor_ids and is_prov:
+                        anchor_p.setdefault(src, {}).setdefault(_title_key(el.findtext("title")), []).append(_epoch(el.get("start")))
+                    if cid in r_anchor_ids and not is_prov:
+                        anchor_r.setdefault(_title_key(el.findtext("title")), []).append(_epoch(el.get("start")))
                     if cid in ids and cid not in filled and el.get("stop", "")[:14] >= cutoff:
-                        body.write(ET.tostring(el, encoding="unicode"))
+                        if is_prov:
+                            held.setdefault(src, []).append(ET.tostring(el, encoding="unicode"))
+                        else:
+                            body.write(ET.tostring(el, encoding="unicode"))
                         got.add(cid)
                         n_prog += 1
                     el.clear()
@@ -303,6 +400,27 @@ def main():
             fh.close()
         filled |= got
         report.append(f"{label}: {len(got)} channels, {n_prog} listings")
+
+    # Provider 2 repeats each channel's schedule two or three times in one file,
+    # with the extra copies 2 to 4 hours late. Keep only the copy the others are
+    # late against, then measure what's left against CNN as a safety net.
+    import re as _re
+    for src, items in held.items():
+        items, n_dupe = drop_late_copies(items)
+        if n_dupe:
+            report.append(f"{'provider 2' if '2' in src else 'provider'} guide: dropped late duplicate schedules on {n_dupe} channels")
+        prov_cnn = {}
+        for x in items:
+            if f'channel="{ANCHORS[0][0]}"' in x:
+                m = _re.search(r"<title[^>]*>([^<]*)", x)
+                prov_cnn.setdefault(_title_key(m.group(1) if m else ""), []).append(_epoch(_re.search(r'start="([^"]+)"', x).group(1)))
+        shift = find_shift(prov_cnn, anchor_r) or 0
+        report.append(f"{'provider 2' if '2' in src else 'provider'} guide clock shift: {shift // 60:+d} min (measured against CNN)")
+        def fix(m):
+            t = _epoch(m.group(2))
+            return f'{m.group(1)}="{time.strftime("%Y%m%d%H%M%S", time.gmtime(t - shift))} +0000"' if t is not None else m.group(0)
+        for x in items:
+            body.write(_re.sub(r'(start|stop)="([^"]+)"', fix, x) if shift else x)
 
     ph = placeholders()
     slots = event_slots()
