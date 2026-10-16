@@ -2,7 +2,7 @@ name: Build merged guide
 
 on:
   schedule:
-    - cron: "17 */3 * * *"    # every 3 hours, so event slots pick up new events
+    - cron: "17 * * * *"      # every hour, so event slots pick up new games quickly
   workflow_dispatch:           # adds a "Run workflow" button for manual runs
 
 permissions:
@@ -28,6 +28,9 @@ jobs:
           mkdir /tmp/out
           cp epg.xml.gz epg.xml status.txt /tmp/out/
           cp slot_state.json /tmp/out/ 2>/dev/null || true
+          # channel index from manual runs; hourly runs keep the last one
+          [ -f index.txt ] || curl -sfL "https://raw.githubusercontent.com/${{ github.repository }}/guide/index.txt" -o index.txt || true
+          cp index.txt /tmp/out/ 2>/dev/null || true
           cd /tmp/out
           git init -q -b guide
           git config user.name "epg-bot"
