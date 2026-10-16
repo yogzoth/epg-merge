@@ -387,22 +387,34 @@ def clean_programme(el):
             if len(a) >= 3 and b and not _MATCH.search(b) and not re.match(r"(?i)part\b", b):
                 title, episode = a.strip(), b.strip()
             break
-    if title == t.text.strip() and not notes:
-        return
     t.text = title.strip()
-    if episode:
-        if sub is None:
-            sub = ET.Element("sub-title"); sub.text = episode; el.insert(list(el).index(t) + 1, sub)
-        elif episode.lower() not in subtext.lower():
-            sub.text = f"{episode}. {subtext}" if subtext else episode
+    # Some apps glue the sub-title and episode number onto the title in the grid
+    # ("Gold Rush: The Weasel. S16 E6"), so fold them into the description instead.
+    parts = []
+    for p in ([episode] if episode else []) + ([subtext] if subtext else []):
+        if p and p.lower() != t.text.lower() and p.lower() not in [q.lower() for q in parts]:
+            parts.append(p)
+    for en in el.findall("episode-num"):
+        num = (en.text or "").strip()
+        if en.get("system") == "xmltv_ns" and num:
+            bits = [x.split("/")[0].strip() for x in num.split(".")]
+            num = " ".join(f"{k}{int(v) + 1}" for k, v in zip("SE", bits[:2]) if v.isdigit())
+        if num and not any(num in q for q in parts):
+            parts.append(num)
+        el.remove(en)
+    if sub is not None:
+        el.remove(sub)
     notes = list(dict.fromkeys(notes))
     if "New" in notes and el.find("new") is None:
         ET.SubElement(el, "new")
-    if notes:
-        d = el.find("desc")
+    d = el.find("desc")
+    body = (d.text or "").strip() if d is not None else ""
+    head = [p for p in notes + parts if p.lower() not in body.lower()[:200]]
+    if head:
         if d is None:
-            d = ET.Element("desc"); d.text = ""; el.insert(list(el).index(sub if sub is not None else t) + 1, d)
-        d.text = (". ".join(notes) + ". " + (d.text or "")).strip()
+            d = ET.Element("desc"); el.insert(list(el).index(t) + 1, d)
+        d.text = (" · ".join(head) + ("\n" + body if body else "")).strip()
+
 
 def cutoff_stamp():
     t = time.gmtime(time.time() - DAYS_BACK_KEPT * 86400)
@@ -411,6 +423,9 @@ def cutoff_stamp():
 
 def main():
     ids = wanted_ids()
+    # "west.<id>" = a West feed: the East channel's guide, 3 hours later.
+    west = {i: i[5:] for i in ids if i.startswith("west.")}
+    ids = (ids - set(west)) | set(west.values())
     filled = set()
     channels = {}             # id -> <channel> xml string (first source wins)
     cutoff = cutoff_stamp()
@@ -481,6 +496,30 @@ def main():
             return f'{m.group(1)}="{time.strftime("%Y%m%d%H%M%S", time.gmtime(t - shift))} +0000"' if t is not None else m.group(0)
         for x in items:
             body.write(_re.sub(r'(start|stop)="([^"]+)"', fix, x) if shift else x)
+
+    if west:
+        import re as _re
+        def later(m):
+            t = _epoch(m.group(2))
+            return f'{m.group(1)}="{time.strftime("%Y%m%d%H%M%S", time.gmtime(t + 3 * 3600))} +0000"' if t is not None else m.group(0)
+        src_ids = set(west.values())
+        copies = []
+        for x in _re.findall(r"<programme\b.*?</programme>", body.getvalue(), _re.S):
+            cid = _re.search(r'channel="([^"]+)"', x).group(1)
+            if cid in src_ids:
+                for w_id, e_id in west.items():
+                    if e_id == cid:
+                        y = x.replace(f'channel="{cid}"', f'channel={quoteattr(w_id)}', 1)
+                        copies.append(_re.sub(r'(start|stop)="([^"]+)"', later, y))
+        body.write("".join(copies))
+        made = 0
+        for w_id, e_id in west.items():
+            if e_id in filled:
+                filled.add(w_id); made += 1
+                name = _re.search(r"<display-name[^>]*>([^<]*)", channels.get(e_id, "")) if e_id in channels else None
+                channels[w_id] = f"<channel id={quoteattr(w_id)}><display-name>{name.group(1) if name else escape(e_id)} (West)</display-name></channel>"
+        ids |= set(west)
+        report.append(f"west feeds: {made} of {len(west)} made from their East guide, 3 hours later")
 
     ph = placeholders()
     slots = event_slots()

@@ -66,38 +66,6 @@ ph.CHILL.PLACES...SPACES	Places & Spaces · Ambient	Beautiful homes, places and 
 ph.CHILL.TOURIST	Tourist · Ambient	Walking tours through cities and towns, in 4K.
 ph.CHILL.SLOW.TV	Slow TV · Ambient	Slow, unhurried journeys in 4K.
 ph.CHILL.MUSEUM	Museum · Ambient	Art and masterpieces up close, in 4K.
-ph.DIV.XMAS	CHRISTMAS · Channels 9101 to 9161	Start of the Christmas section.
-ph.XMAS.CHRISTMAS.01	Christmas 01 · Holiday movies	Christmas movies around the clock, in 4K.
-ph.XMAS.CHRISTMAS.02	Christmas 02 · Holiday movies	Christmas movies around the clock, in 4K.
-ph.XMAS.CHRISTMAS.03	Christmas 03 · Holiday movies	Christmas movies around the clock, in 4K.
-ph.XMAS.CHRISTMAS.04	Christmas 04 · Holiday movies	Christmas movies around the clock, in 4K.
-ph.XMAS.CHRISTMAS.05	Christmas 05 · Holiday movies	Christmas movies around the clock, in 4K.
-ph.XMAS.CHRISTMAS.06	Christmas 06 · Holiday movies	Christmas movies around the clock, in 4K.
-ph.XMAS.CHRISTMAS.07	Christmas 07 · Holiday movies	Christmas movies around the clock, in 4K.
-ph.XMAS.CHRISTMAS.08	Christmas 08 · Holiday movies	Christmas movies around the clock, in 4K.
-ph.XMAS.CHRISTMAS.09	Christmas 09 · Holiday movies	Christmas movies around the clock, in 4K.
-ph.XMAS.CHRISTMAS.10	Christmas 10 · Holiday movies	Christmas movies around the clock, in 4K.
-ph.XMAS.CHRISTMAS.MOVIES	Christmas Movies · Holiday films all day	Holiday movies around the clock.
-ph.XMAS.CHRISTMAS.PLUS	Christmas Plus · Holiday favourites	Holiday movies and specials.
-ph.XMAS.CHRISTMAS.CARTOONS	Christmas Cartoons · Holiday classics	Animated Christmas specials and cartoons.
-ph.XMAS.COOKIE.CHALLENGE	Christmas Cookie Challenge	Bakers compete with holiday cookies.
-ph.XMAS.LIGHT.FIGHT	The Great Christmas Light Fight	Families go all out on holiday light displays.
-ph.XMAS.HOLIDAY.WARS	Holiday Wars	Cake artists battle with holiday showpieces.
-ph.XMAS.NAILED.IT..HOLIDAY	Nailed It! Holiday	Home bakers attempt holiday cakes.
-ph.XMAS.SUGAR.RUSH	Sugar Rush Christmas	Bakers race the clock with holiday sweets.
-ph.XMAS.CAROLER.CHALLENGE	The Caroler Challenge	Carolling groups compete.
-ph.XMAS.VEVO.CHRISTMAS.HITS	Christmas Hits · Music videos	The biggest Christmas songs, nonstop.
-ph.XMAS.VEVO.HOLIDAY.HIP.HOP	Holiday Hip Hop · Music videos	Holiday hip hop and R&B videos.
-ph.XMAS.VEVO.HOLIDAY.MUSIC	Holiday Music · Music videos	Holiday music videos, nonstop.
-ph.XMAS.YULE.LOG	Yule Log · Crackling fire, all night	A fireplace and holiday music, around the clock.
-ph.DIV.CA	CANADA · Channels 1101 to 1617	Start of the Canada section.
-ph.DIV.US	UNITED STATES · Channels 2101 to 2653	Start of the United States section.
-ph.DIV.UK	UNITED KINGDOM · Channels 3201 to 3642	Start of the United Kingdom section.
-ph.DIV.IE	IRELAND · Channels 4201 to 4401	Start of the Ireland section.
-ph.DIV.AU	AUSTRALIA & NZ · Channels 5201 to 5501	Start of the Australia & NZ section.
-ph.DIV.PT	PORTUGAL · Channels 6201 to 6625	Start of the Portugal section.
-ph.DIV.PPV	PPV · Channels 7101 to 7196	Start of the PPV section.
-ph.DIV.CHILL	CHILL · Channels 8101 to 8131	Start of the Chill section.
 ph.G.SKY.SPORTS.BOX.OFFICE	Sky Sports Box Office	Pay-per-view events when scheduled.
 ph.G.UFC.01	UFC 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.G.UFC.02	UFC 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
@@ -151,14 +119,6 @@ ph.G.NFL.03	NFL 03 · Event slot	Shows a live event when one is scheduled. Check
 ph.G.NFL.04	NFL 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.G.NFL.05	NFL 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.G.NFL.06	NFL 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.DIV.CA	CANADA · Channels 1101 to 1616	Start of the Canada section.
-ph.G.DIV.US	UNITED STATES · Channels 2101 to 2653	Start of the United States section.
-ph.G.DIV.UK	UNITED KINGDOM · Channels 3201 to 3642	Start of the United Kingdom section.
-ph.G.DIV.IE	IRELAND · Channels 4201 to 4401	Start of the Ireland section.
-ph.G.DIV.AU	AUSTRALIA & NZ · Channels 5202 to 5401	Start of the Australia & NZ section.
-ph.G.DIV.PT	PORTUGAL · Channels 6201 to 6625	Start of the Portugal section.
-ph.G.DIV.PPV	PPV · Channels 7102 to 7196	Start of the PPV section.
-ph.G.DIV.CHILL	CHILL · Channels 8101 to 8131	Start of the Chill section.
 ph.CHILL.OCEAN	Ocean · Ambient	Open water and rolling waves, around the clock.
 ph.CHILL.TROPICAL.BEACH	Tropical Beach · Ambient	White sand, palms and turquoise water.
 ph.CHILL.FOREST	Forest · Ambient	Deep forest scenes and natural sound.
@@ -167,7 +127,3 @@ ph.CHILL.STARDUST	Stardust · Ambient	Stars, nebulae and deep space.
 ph.CHILL.MYZEN	MyZen · Ambient	Calm visuals and soft music.
 ph.CHILL.NORWAY	Norway · Ambient	Fjords, peaks and northern light.
 ph.CHILL.ICELAND	Iceland · Ambient	Volcanic coasts, glaciers and waterfalls.
-ph.G.DIV.XMAS	CHRISTMAS · Channels 9121 to 9171	Start of the Christmas section.
-ph.XMAS.NAILED.IT.HOLIDAY	Nailed It! Holiday	Home bakers attempt holiday cakes.
-ph.XMAS.FIREPLACE	Fireplace · Crackling fire, all night	A crackling fireplace, around the clock.
-ph.XMAS.SANTA.S.VILLAGE	Santa Claus Village · Live	Live from Santa Claus Village in the Arctic Circle.

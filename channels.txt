@@ -1,5 +1,4 @@
 # One guide ID per line (jordan-tv + tv-general).
-ph.DIV.CA
 CBUT.ca
 CTV.Vancouver.HD.ca2
 ca.Global BC DV
@@ -120,10 +119,7 @@ Hollywood.Suite.2010s+.ca2
 MovieTime.ca
 SilverScreenClassics.ca
 ca.Turner Classic Movies Canada
-SportsnetPacific.ca
-SportsnetWest.ca
-SportsnetOntario.ca
-SportsnetEast.ca
+Sportsnet.(Pacific).HD.ca2
 SportsnetOne.ca
 Sportsnet360.ca
 SportsnetWorld.ca
@@ -137,14 +133,13 @@ TSN.4K.ca2
 NBATV.ca
 OneSoccer.ca
 The.Fight.Network.HD.ca2
-ph.DIV.US
 ca.ABC (KOMO) Seattle, WA HD
-loc.CBS (KIRO) Seattle, WA
+KIRO.7.ca2
 ca.NBC (KING) Seattle, WA HD
-ca.FOX (KCPQ) Tacoma, WA HD - Canada
+KCPQ-DT.ca2
 US-PBS (KCTS) Seattle, WA
 loc.ABC (WABC) New York, NY
-loc.CBS (WCBS) New York, NY
+WCBS-DT.us_locals1
 loc.NBC (WNBC) New York, NY
 loc.FOX (WNYW) New York, NY
 WPIX.us
@@ -382,7 +377,6 @@ Space.City.Home.Network.HD.us2
 ph.UFC
 ph.WWE
 ph.TRILLERTV
-ph.DIV.UK
 BBC1.uk
 BBC2.uk
 BBC3CBBC.uk
@@ -418,6 +412,7 @@ ClublandTV.uk
 CartoonNetwork.uk
 Cartoonito.uk
 Nickelodeon.uk
+Nick.Jr..HD.uk
 SkyKids.uk
 SkyDocumentaries.uk
 SkyNature.uk
@@ -492,7 +487,6 @@ PremierSports2.uk
 Racing.TV.HD.uk
 MUTV.uk
 LiverpoolFCTV.uk
-ph.DIV.IE
 RTEOne.ie
 RTE.Two.HD.ie
 VirginMediaOne.ie
@@ -502,7 +496,6 @@ Virgin.Media.Four.HD.ie
 TG4.ie
 RTEJr.ie
 RTENewsNow.ie
-ph.DIV.AU
 ABC.au
 SBS.au
 7Sydney.au
@@ -513,7 +506,6 @@ Three.nz
 SBSFood.au
 ABCNewsSydney.au
 SBSWorldMovies.au
-ph.DIV.PT
 Rtp1.pt
 Rtp2.pt
 Sic.pt
@@ -549,7 +541,6 @@ DAZN.2.pt
 DAZN.3.pt
 DAZN.4.pt
 DAZN.5.pt
-ph.DIV.PPV
 TNT.Sport.BoxOffice.HD.uk
 ph.SKY.SPORTS.BOX.OFFICE
 ph.UFC.MAIN.CARD
@@ -604,7 +595,6 @@ ph.NFL.03
 ph.NFL.04
 ph.NFL.05
 ph.NFL.06
-ph.DIV.CHILL
 ph.CHILL.NATURESCAPE
 ph.CHILL.BEACH.DAY
 ph.CHILL.EARTHDAY.365
@@ -614,31 +604,6 @@ ph.CHILL.PLACES...SPACES
 ph.CHILL.TOURIST
 ph.CHILL.SLOW.TV
 ph.CHILL.MUSEUM
-ph.DIV.XMAS
-ph.XMAS.CHRISTMAS.01
-ph.XMAS.CHRISTMAS.02
-ph.XMAS.CHRISTMAS.03
-ph.XMAS.CHRISTMAS.04
-ph.XMAS.CHRISTMAS.05
-ph.XMAS.CHRISTMAS.06
-ph.XMAS.CHRISTMAS.07
-ph.XMAS.CHRISTMAS.08
-ph.XMAS.CHRISTMAS.09
-ph.XMAS.CHRISTMAS.10
-ph.XMAS.CHRISTMAS.MOVIES
-ph.XMAS.CHRISTMAS.PLUS
-ph.XMAS.CHRISTMAS.CARTOONS
-ph.XMAS.COOKIE.CHALLENGE
-ph.XMAS.LIGHT.FIGHT
-ph.XMAS.HOLIDAY.WARS
-ph.XMAS.NAILED.IT..HOLIDAY
-ph.XMAS.SUGAR.RUSH
-ph.XMAS.CAROLER.CHALLENGE
-ph.XMAS.VEVO.CHRISTMAS.HITS
-ph.XMAS.VEVO.HOLIDAY.HIP.HOP
-ph.XMAS.VEVO.HOLIDAY.MUSIC
-ph.XMAS.YULE.LOG
-ph.G.DIV.CA
 CBCVancouver-CBUT.ca
 GlobalBC-CHAN.ca
 CityTvVancouver-CKVU.ca
@@ -672,6 +637,7 @@ CTV.DRAMA.CHANNEL.HD.ca2
 CTV.SCI-FI.CHANNEL.HD.ca2
 Showcase.Canada.HD.ca2
 SLICE.HD.ca2
+west.W.Network.HD.ca2
 W.Network.HD.ca2
 FXX.Canada.ca2
 AMC.Canada.HD.ca2
@@ -683,7 +649,7 @@ OUTtv.ca2
 GameTV.Canada.ca2
 Deja.View.ca2
 MuchMusic.ca
-YTVPacific.ca
+west.YTV.HD.ca2
 YTV.HD.ca2
 Treehouse.HD.ca2
 Cartoon.Network.HD.Canada.ca2
@@ -723,9 +689,6 @@ Super.Channel.Vault.HD.ca2
 MovieTime.HD.ca2
 Silver.Screen.Classics.ca2
 TCM.ca
-Sportsnet.East.HD.ca2
-Sportsnet.West.HD.ca2
-Sportsnet.Ontario.HD.ca2
 Sportsnet.One.HD.ca2
 Sportsnet.360.HD.ca2
 Sportsnet.World.HD.ca2
@@ -736,14 +699,10 @@ TSN.4.HD.ca2
 TSN.5.HD.ca2
 NBA.TV.Canada.HD.ca2
 One.Soccer.ca2
-ph.G.DIV.US
 KOMO-DT.us_locals1
-CBSKIRO.us
 KING-DT.us_locals1
-FoxNewsChannel.ca
 KCTS-DT.us_locals1
 ABCWABC.us
-CBSNewsNewYork.pluto
 NBCWNBC.us
 WNYW-DT.us_locals1
 CWWPIX.us
@@ -762,8 +721,9 @@ ABCWSVNDT2.us
 CBSWFOR.us
 NBCWTVJ.us
 FOXWSVN.us
-cw39wsfl.us
+west.A.and.E.HD.East.us2
 A.and.E.HD.East.us2
+west.AMC.HD.us2
 AMC.HD.us2
 BBC.America.HD.us2
 BET.HD.us2
@@ -784,9 +744,13 @@ Hallmark.Mystery.HD.us2
 IFC.HD.us2
 Lifetime.HD.us2
 LMN.HD.us2
-LogoPacific.us
+west.Logo.us2
 Logo.us2
-MTV2:.Music.Television.HD.us2
+MTV.-.Music.Television.HD.us2
+west.MTV2:.Music.Television.HD.us2
+Oprah.Winfrey.Network.(Pacific.A.Feed).us2
+west.Paramount.Network.HD.us2
+west.POP.HD.us2
 POP.HD.us2
 ReelzChannel.us
 SundanceTV.HD.us2
@@ -807,20 +771,24 @@ Ovation.HD.us2
 AXS.TV.us2
 Game.Show.Network.HD.us2
 Court.TV.us2
+west.ION.Television.HD.us2
 ION.Television.HD.us2
-Me.TV.Network.us2
+west.Me.TV.Network.us2
+west.AdultSwim.com.Cartoon.Network.us2
 AdultSwim.com.Cartoon.Network.us2
 MTVLIVE.us2
 MTV.Classic.us2
+west.CMT.HD.us2
 CMT.HD.us2
 BET.Jams.us2
 Revolt.HD.us2
 Fuse.HD.us2
 Nickelodeon.(Pacific).us2
 Nickelodeon.HD.us2
-NickToonsPacific.us
+west.Nick.Jr.HD.us2
+west.Nicktoons.us2
 Nicktoons.us2
-TeenNick.us
+west.Teen.Nick.us2
 Teen.Nick.us2
 Disney.Channel.(Pacific).us2
 Disney.Channel.HD.us2
@@ -843,11 +811,12 @@ National.Geographic.HD.(Pacific).us2
 National.Geographic.HD.us2
 NationalGeographicWild.us
 History.HD.us2
+west.Smithsonian.HD.Network.us2
 Smithsonian.HD.Network.us2
 Vice.HD.us2
 Investigation.Discovery.HD.us2
 CrimeandInvestigationNetwork.us
-OxygenPacific.us
+west.Oxygen.True.Crime.HD.us2
 Oxygen.True.Crime.HD.us2
 MOTORTREND.HD.us2
 Food.Network.HD.us2
@@ -874,31 +843,39 @@ CSPAN3.us2
 The.Weather.Channel.HD.us2
 HBO.West.us2
 HBO.East.us2
+west.HBO.Drama.us2
 HBO.Drama.us2
-HBOComedyPacific.us
+west.HBO.Comedy.HD.us2
 HBO.Comedy.HD.us2
+west.HBO.Movies.us2
 Cinemax.HD.(Pacific).us2
 Cinemax.HD.us2
 Cinemax.Hits.us2
 Paramount+.with.Showtime.HD.(Pacific).us2
 Paramount+.with.Showtime.HD.us2
+west.Showtime.2.HD.us2
 Showtime.2.HD.us2
-ShowtimeExtremePacific.us
+west.Showtime.Extreme.HD.us2
 Showtime.Extreme.HD.us2
+west.Showtime.Next.HD.us2
 Showtime.Next.HD.us2
+west.Showtime.Showcase.HD.us2
 Showtime.Showcase.HD.us2
+west.Showtime.Women.HD.us2
 Showtime.Women.HD.us2
 Showtime.Familyzone.HD.us2
 SHO.x.BET.HD.us2
 Starz.HD.(Pacific).us2
 Starz.HD.us2
-StarzCinemaPacific.us
+west.Starz.Cinema.HD.us2
 Starz.Cinema.HD.us2
-StarzComedyPacific.us
+west.Starz.Comedy.HD.us2
 Starz.Comedy.HD.us2
-StarzEdgePacific.us
+west.Starz.Edge.HD.us2
 Starz.Edge.HD.us2
+west.Starz.in.Black.HD.us2
 Starz.in.Black.HD.us2
+west.Starz.Kids.HD.us2
 Starz.Kids.HD.us2
 Starz.Encore.(Pacific).us2
 Starz.Encore.HD.us2
@@ -908,7 +885,7 @@ Starz.Encore.Classic.us2
 Starz.Encore.Family.SD.us2
 Starz.Encore.Suspense.us2
 Starz.Encore.Westerns.SD.us2
-MGM+Pacific.us
+west.MGM+.HD.us2
 MGM+.HD.us2
 MGM+.Hits.HD.us2
 MGM+.Marquee.HD.us2
@@ -950,7 +927,6 @@ NBC.Sports.Bay.Area.HD.us2
 NBC.Sports.California.SAT.us2
 SpectrumSportsNetLALakers.us
 Altitude.Sports.us2
-ph.G.DIV.UK
 BBC.One.West.HD.uk
 BBC.Two.HD.uk
 BBC.Three.HD.uk
@@ -1014,7 +990,6 @@ Premier.Sports.1.HD.uk
 Premier.Sports.2.HD.uk
 MUTV.HD.uk
 LFCTV.uk
-ph.G.DIV.IE
 RTE.One.HD.ie
 Virgin.Media.One.HD.ie
 Virgin.Media.Two.HD.ie
@@ -1022,11 +997,9 @@ Virgin.Media.Three.HD.ie
 TG4.HD.ie
 RTE.KIDSjr.ie
 RTE.News.Now.ie
-ph.G.DIV.AU
 SBSSydney.au
 9Sydney.au
 SBSFoodSydney.au
-ph.G.DIV.PT
 RTP.1.HD.pt
 RTP.2.HD.pt
 SIC.HD.pt
@@ -1053,7 +1026,6 @@ SPORT.TV4.HD.pt
 SPORT.TV5.HD.pt
 Sporting.TV.HD.pt
 Canal.11.HD.pt
-ph.G.DIV.PPV
 ph.G.SKY.SPORTS.BOX.OFFICE
 ph.G.UFC.01
 ph.G.UFC.02
@@ -1107,7 +1079,6 @@ ph.G.NFL.03
 ph.G.NFL.04
 ph.G.NFL.05
 ph.G.NFL.06
-ph.G.DIV.CHILL
 ph.CHILL.OCEAN
 ph.CHILL.TROPICAL.BEACH
 ph.CHILL.FOREST
@@ -1116,7 +1087,3 @@ ph.CHILL.STARDUST
 ph.CHILL.MYZEN
 ph.CHILL.NORWAY
 ph.CHILL.ICELAND
-ph.G.DIV.XMAS
-ph.XMAS.NAILED.IT.HOLIDAY
-ph.XMAS.FIREPLACE
-ph.XMAS.SANTA.S.VILLAGE
