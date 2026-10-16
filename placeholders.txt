@@ -67,79 +67,79 @@ ph.CHILL.TOURIST	Tourist · Ambient	Walking tours through cities and towns, in 4
 ph.CHILL.SLOW.TV	Slow TV · Ambient	Slow, unhurried journeys in 4K.
 ph.CHILL.MUSEUM	Museum · Ambient	Art and masterpieces up close, in 4K.
 ph.G.SKY.SPORTS.BOX.OFFICE	Sky Sports Box Office	Pay-per-view events when scheduled.
-ph.G.UFC.01	UFC 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.UFC.02	UFC 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.UFC.03	UFC 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.UFC.04	UFC 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.UFC.05	UFC 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.UFC.06	UFC 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.BOXING.01	Boxing 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.BOXING.02	Boxing 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.BOXING.03	Boxing 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.BOXING.04	Boxing 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.BOXING.05	Boxing 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.BOXING.06	Boxing 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PPV.01	PPV 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PPV.02	PPV 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PPV.03	PPV 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PPV.04	PPV 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PPV.05	PPV 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PPV.06	PPV 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.DAZN.01	DAZN 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.DAZN.02	DAZN 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.DAZN.03	DAZN 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.DAZN.04	DAZN 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.TRILLERTV.01	TrillerTV 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.TRILLERTV.02	TrillerTV 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.TRILLERTV.03	TrillerTV 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.TRILLERTV.04	TrillerTV 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.LIVE.EVENT.01	Live Event 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.LIVE.EVENT.02	Live Event 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.LIVE.EVENT.03	Live Event 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.LIVE.EVENT.04	Live Event 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.LIVE.EVENT.05	Live Event 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.LIVE.EVENT.06	Live Event 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.LIVE.EVENT.07	Live Event 07 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.LIVE.EVENT.08	Live Event 08 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.LIVE.EVENT.09	Live Event 09 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.LIVE.EVENT.10	Live Event 10 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NETFLIX.01	Netflix 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NETFLIX.02	Netflix 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.SPORTSNET.01	Sportsnet+ 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.SPORTSNET.02	Sportsnet+ 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.SPORTSNET.03	Sportsnet+ 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.SPORTSNET.04	Sportsnet+ 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.TSN.01	TSN+ 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.TSN.02	TSN+ 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.TSN.03	TSN+ 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.TSN.04	TSN+ 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NFL.01	NFL 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NFL.02	NFL 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NFL.03	NFL 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NFL.04	NFL 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NFL.05	NFL 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NFL.06	NFL 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.UFC.01	UFC · No event yet	UFC events show up here on fight day.
+ph.G.UFC.02	UFC · No event yet	UFC events show up here on fight day.
+ph.G.UFC.03	UFC · No event yet	UFC events show up here on fight day.
+ph.G.UFC.04	UFC · No event yet	UFC events show up here on fight day.
+ph.G.UFC.05	UFC · No event yet	UFC events show up here on fight day.
+ph.G.UFC.06	UFC · No event yet	UFC events show up here on fight day.
+ph.G.BOXING.01	Boxing · No fight yet	Boxing cards show up here on fight night.
+ph.G.BOXING.02	Boxing · No fight yet	Boxing cards show up here on fight night.
+ph.G.BOXING.03	Boxing · No fight yet	Boxing cards show up here on fight night.
+ph.G.BOXING.04	Boxing · No fight yet	Boxing cards show up here on fight night.
+ph.G.BOXING.05	Boxing · No fight yet	Boxing cards show up here on fight night.
+ph.G.BOXING.06	Boxing · No fight yet	Boxing cards show up here on fight night.
+ph.G.PPV.01	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.PPV.02	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.PPV.03	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.PPV.04	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.PPV.05	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.PPV.06	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.DAZN.01	DAZN · No event yet	DAZN fights and matches show up here on the day.
+ph.G.DAZN.02	DAZN · No event yet	DAZN fights and matches show up here on the day.
+ph.G.DAZN.03	DAZN · No event yet	DAZN fights and matches show up here on the day.
+ph.G.DAZN.04	DAZN · No event yet	DAZN fights and matches show up here on the day.
+ph.G.TRILLERTV.01	TrillerTV · No event yet	TrillerTV fights and events show up here on the day.
+ph.G.TRILLERTV.02	TrillerTV · No event yet	TrillerTV fights and events show up here on the day.
+ph.G.TRILLERTV.03	TrillerTV · No event yet	TrillerTV fights and events show up here on the day.
+ph.G.TRILLERTV.04	TrillerTV · No event yet	TrillerTV fights and events show up here on the day.
+ph.G.LIVE.EVENT.01	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.02	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.03	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.04	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.05	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.06	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.07	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.08	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.09	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.10	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.NETFLIX.01	Netflix · No event yet	Netflix live events show up here on event day.
+ph.G.NETFLIX.02	Netflix · No event yet	Netflix live events show up here on event day.
+ph.G.SPORTSNET.01	Sportsnet+ · No event yet	Sportsnet+ games and events show up here on the day.
+ph.G.SPORTSNET.02	Sportsnet+ · No event yet	Sportsnet+ games and events show up here on the day.
+ph.G.SPORTSNET.03	Sportsnet+ · No event yet	Sportsnet+ games and events show up here on the day.
+ph.G.SPORTSNET.04	Sportsnet+ · No event yet	Sportsnet+ games and events show up here on the day.
+ph.G.TSN.01	TSN+ · No event yet	TSN+ games and events show up here on the day.
+ph.G.TSN.02	TSN+ · No event yet	TSN+ games and events show up here on the day.
+ph.G.TSN.03	TSN+ · No event yet	TSN+ games and events show up here on the day.
+ph.G.TSN.04	TSN+ · No event yet	TSN+ games and events show up here on the day.
+ph.G.NFL.01	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
+ph.G.NFL.02	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
+ph.G.NFL.03	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
+ph.G.NFL.04	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
+ph.G.NFL.05	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
+ph.G.NFL.06	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
 ph.G.VANCOUVER.CANUCKS	Vancouver Canucks	Canucks team channel. Live on game nights, replays and shows in between.
-ph.G.NHL.01	Nhl 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NHL.02	Nhl 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NHL.03	Nhl 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NHL.04	Nhl 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NHL.05	Nhl 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NHL.06	Nhl 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NBA.01	Nba 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NBA.02	Nba 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NBA.03	Nba 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NBA.04	Nba 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NBA.05	Nba 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.NBA.06	Nba 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.MLB.01	Mlb 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.MLB.02	Mlb 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PARAMOUNT.01	Paramount+ 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PARAMOUNT.02	Paramount+ 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PARAMOUNT.03	Paramount+ 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PARAMOUNT.04	Paramount+ 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PARAMOUNT.05	Paramount+ 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.G.PARAMOUNT.06	Paramount+ 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.G.NHL.01	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NHL.02	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NHL.03	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NHL.04	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NHL.05	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NHL.06	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NBA.01	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.NBA.02	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.NBA.03	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.NBA.04	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.NBA.05	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.NBA.06	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.MLB.01	MLB · No game yet	Today's MLB games show up here a few hours before first pitch.
+ph.G.MLB.02	MLB · No game yet	Today's MLB games show up here a few hours before first pitch.
+ph.G.PARAMOUNT.01	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.G.PARAMOUNT.02	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.G.PARAMOUNT.03	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.G.PARAMOUNT.04	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.G.PARAMOUNT.05	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.G.PARAMOUNT.06	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
 ph.CHILL.OCEAN	Ocean · Ambient	Open water and rolling waves, around the clock.
 ph.CHILL.TROPICAL.BEACH	Tropical Beach · Ambient	White sand, palms and turquoise water.
 ph.CHILL.FOREST	Forest · Ambient	Deep forest scenes and natural sound.

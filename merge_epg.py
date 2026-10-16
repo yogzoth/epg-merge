@@ -34,6 +34,14 @@ SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_PT1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_PLEX1.xml.gz",
 ]
+EXTRA_SOURCES_FILE = "sources_extra.txt"   # more guide files, one link per line (world channels)
+EPGSHARE = "https://epgshare01.online/epgshare01/epg_ripper_{}.xml.gz"
+# On manual runs, also list every channel in every country guide file, so new
+# channels can be matched to a guide (published as index.txt on the guide branch).
+DISCOVER = os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch" or os.environ.get("DISCOVER") == "1"
+DISCOVER_COUNTRIES = """AL AR AT AU BA BE BG CH CL CN CO CR CY CZ DE DK DO EC EG ES FI FR GR HK HR HU ID IL IN IS IT
+JM JO JP KE KR LB LT LU MA MT MX MY NG NL NO NZ PA PE PH PK PL RO RS RU SA SE SG SI SK SV TH TR TW UA UY VN ZA AE
+IR VE QA KW GH UG ET UK US IE CA""".split()
 CHANNELS_FILE = "channels.txt"
 PLACEHOLDERS_FILE = "placeholders.txt"   # simple fallback listings for channels with no schedule anywhere
 PLACEHOLDER_DAYS = 4
@@ -47,7 +55,7 @@ def wanted_ids():
         return {l.strip() for l in fh if l.strip() and not l.startswith("#")}
 
 
-def open_source(src, tmpdir):
+def open_source(src, tmpdir, tries=3):
     """Download a source to a temp file and return a readable (un-gzipped) stream."""
     if src.startswith("env:"):
         label = "provider guide" if src == "env:PROVIDER_EPG_URL" else "provider 2 guide"
@@ -58,7 +66,7 @@ def open_source(src, tmpdir):
         label = src.rsplit("/", 1)[-1]
     path = os.path.join(tmpdir, "src.bin")
     req = urllib.request.Request(src, headers={"User-Agent": "Mozilla/5.0 (epg-merge)"})
-    for attempt in range(3):
+    for attempt in range(tries):
         try:
             with urllib.request.urlopen(req, timeout=300) as r, open(path, "wb") as out:
                 while True:
@@ -68,7 +76,7 @@ def open_source(src, tmpdir):
                     out.write(chunk)
             break
         except Exception as e:  # network hiccup: retry, then give up on this source only
-            if attempt == 2:
+            if attempt == tries - 1:
                 return None, f"{label}: download failed ({e.__class__.__name__})"
             time.sleep(10)
     with open(path, "rb") as fh:
@@ -138,6 +146,30 @@ def provider_names(n=1):
             last = None
     return names
 
+
+
+def catchup_streams(n=2):
+    """stream number -> days of catch-up, from provider n's channel list (login stays in the secret)."""
+    sfx = "" if n == 1 else str(n)
+    g = os.environ.get(f"PROVIDER{sfx}_EPG_URL", "")
+    if "xmltv.php" not in g:
+        return None
+    url = g.replace("xmltv.php", "player_api.php") + "&action=get_live_streams"
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (epg-merge)"})
+    try:
+        import json
+        with urllib.request.urlopen(req, timeout=300) as r:
+            data = json.loads(r.read().decode("utf-8", "replace"))
+    except Exception:
+        return None
+    out = {}
+    for c in data if isinstance(data, list) else []:
+        try:
+            if int(c.get("tv_archive") or 0) == 1:
+                out[str(c.get("stream_id"))] = int(c.get("tv_archive_duration") or 0)
+        except (TypeError, ValueError):
+            pass
+    return out
 
 def _utc(y, mo, d, h, mi, tz=None):
     import calendar
@@ -447,6 +479,35 @@ def ph_ids_cache():
     return _PH_IDS
 
 
+
+def write_index(index, sources, tmpdir):
+    """index.txt: every channel in every guide source (and every country file that exists)."""
+    have = {s.rsplit("/", 1)[-1] for s in sources}
+    for cc in DISCOVER_COUNTRIES:
+        for n in (1, 2, 3):
+            url = EPGSHARE.format(f"{cc}{n}")
+            if url.rsplit("/", 1)[-1] in have:
+                continue
+            fh, label = open_source(url, tmpdir, tries=1)
+            if fh is None:
+                break                                  # no file with this number: stop for this country
+            try:
+                for _, el in ET.iterparse(fh, events=("end",)):
+                    if el.tag == "channel":
+                        index.setdefault(label, {}).setdefault(el.get("id"), ["", 0])[0] = el.findtext("display-name") or ""
+                    elif el.tag == "programme":
+                        index.setdefault(label, {}).setdefault(el.get("channel"), ["", 0])[1] += 1
+                    el.clear()
+            except ET.ParseError:
+                pass
+            finally:
+                fh.close()
+    with open("index.txt", "w", encoding="utf-8") as out:
+        out.write(time.strftime("# Guide channel index, %Y-%m-%d %H:%M UTC. source<TAB>id<TAB>name<TAB>listings\n", time.gmtime()))
+        for label, chans in index.items():
+            for cid, (name, n) in chans.items():
+                out.write(f"{label}\t{cid}\t{name}\t{n}\n")
+
 def cutoff_stamp():
     t = time.gmtime(time.time() - DAYS_BACK_KEPT * 86400)
     return time.strftime("%Y%m%d%H%M%S", t)
@@ -469,7 +530,13 @@ def main():
     anchor_r = {}                               # {title: [start epochs]} from epgshare
     p_anchor_ids = {a for a, _ in ANCHORS}
     r_anchor_ids = {b for _, b in ANCHORS}
-    for src in SOURCES:
+    sources = list(SOURCES)
+    if os.path.exists(EXTRA_SOURCES_FILE):
+        for l in open(EXTRA_SOURCES_FILE, encoding="utf-8"):
+            if l.strip() and not l.startswith("#") and l.strip() not in sources:
+                sources.append(l.strip())
+    index = {}                                  # label -> {channel id: [name, listings]} (discovery)
+    for src in sources:
         fh, label = open_source(src, tmpdir)
         if fh is None:
             report.append(label)
@@ -481,11 +548,15 @@ def main():
             for _, el in ET.iterparse(fh, events=("end",)):
                 if el.tag == "channel":
                     cid = el.get("id")
+                    if DISCOVER:
+                        index.setdefault(label, {}).setdefault(cid, [el.findtext("display-name") or "", 0])[0] = el.findtext("display-name") or ""
                     if cid in ids and cid not in channels:
                         channels[cid] = ET.tostring(el, encoding="unicode")
                     el.clear()
                 elif el.tag == "programme":
                     cid = el.get("channel")
+                    if DISCOVER:
+                        index.setdefault(label, {}).setdefault(cid, ["", 0])[1] += 1
                     if cid in ids or cid in p_anchor_ids or cid in r_anchor_ids:
                         clean_programme(el)
                     if cid in p_anchor_ids and is_prov:
@@ -656,6 +727,14 @@ def main():
         fh.write(f"Channels with listings: {len(filled)} of {len(ids)}\n")
         if missing:
             fh.write("No listings: " + ", ".join(missing) + "\n")
+        # Which provider 2 streams have catch-up (stream number:days). No login in here.
+        cu = catchup_streams(2)
+        if cu is not None:
+            fh.write(f"Catch-up streams ({len(cu)}): " + ",".join(f"{k}:{v}" for k, v in sorted(cu.items(), key=lambda kv: int(kv[0]) if kv[0].isdigit() else 0)) + "\n")
+        else:
+            fh.write("Catch-up streams: could not read the provider's channel list\n")
+    if DISCOVER:
+        write_index(index, sources, tmpdir)
     if not filled:
         sys.exit("Nothing merged; keeping the previous guide.")
 
