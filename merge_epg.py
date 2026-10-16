@@ -15,6 +15,7 @@ import gzip
 import io
 import os
 import sys
+import re
 import time
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -346,6 +347,63 @@ def drop_late_copies(items):
         n += len(kept) < len(rows)
     return out, n
 
+
+# ---------------------------------------------------------------- clean titles
+# The browsing guide shows only the title, so keep it to the show's name and move
+# episode names, "Live"/"New" tags and season notes into the show info instead.
+_TAGS = re.compile(r"\s*([\u1d2c-\u1d6a\u1d9b-\u1dbf\u02b0-\u02ff\u2070-\u209f]{2,})\s*$")
+_MATCH = re.compile(r"\s(x|vs\.?|v)\s", re.I)
+
+
+def clean_programme(el):
+    t = el.find("title")
+    if t is None or not t.text:
+        return
+    title, notes, sub = t.text.strip(), [], el.find("sub-title")
+    subtext = (sub.text or "").strip() if sub is not None else ""
+    m = _TAGS.search(title)                                   # "Show  ᴺᵉʷ" / "Show  ᴸᶦᵛᵉ"
+    if m:
+        tag = m.group(1)
+        notes.append("Live" if "\u1d38" in tag else "New")
+        title = title[:m.start()].rstrip()
+    m = re.match(r"(?i)live:\s+(.+)", title)                  # "Live: NHL Hockey"
+    if m:
+        notes.append("Live"); title = m.group(1)
+    m = re.search(r"\s*\((Direto|Season \d+)\)\s*$", title)  # "(Season 19)", "(Direto)"
+    if m and m.start() > 0:
+        notes.append("Live" if m.group(1) == "Direto" else m.group(1)); title = title[:m.start()]
+    m = re.search(r"\s+(S\d{1,2}\s?E\d{1,3})$", title)        # "Show S02E05"
+    if m and m.start() > 0:
+        notes.append(m.group(1)); title = title[:m.start()]
+    episode = ""
+    if subtext and len(title) > len(subtext) + 3:              # "Show: Episode" when Episode is the sub-title
+        for sep in (": ", " - ", " : "):
+            if title.lower().endswith((sep + subtext).lower()):
+                title = title[: -len(sep + subtext)]
+                break
+    for sep in (" : ", " - "):                                 # "Show : Episode", "Show - Episode"
+        if sep in title:
+            a, b = title.split(sep, 1)
+            if len(a) >= 3 and b and not _MATCH.search(b) and not re.match(r"(?i)part\b", b):
+                title, episode = a.strip(), b.strip()
+            break
+    if title == t.text.strip() and not notes:
+        return
+    t.text = title.strip()
+    if episode:
+        if sub is None:
+            sub = ET.Element("sub-title"); sub.text = episode; el.insert(list(el).index(t) + 1, sub)
+        elif episode.lower() not in subtext.lower():
+            sub.text = f"{episode}. {subtext}" if subtext else episode
+    notes = list(dict.fromkeys(notes))
+    if "New" in notes and el.find("new") is None:
+        ET.SubElement(el, "new")
+    if notes:
+        d = el.find("desc")
+        if d is None:
+            d = ET.Element("desc"); d.text = ""; el.insert(list(el).index(sub if sub is not None else t) + 1, d)
+        d.text = (". ".join(notes) + ". " + (d.text or "")).strip()
+
 def cutoff_stamp():
     t = time.gmtime(time.time() - DAYS_BACK_KEPT * 86400)
     return time.strftime("%Y%m%d%H%M%S", t)
@@ -382,6 +440,8 @@ def main():
                     el.clear()
                 elif el.tag == "programme":
                     cid = el.get("channel")
+                    if cid in ids or cid in p_anchor_ids or cid in r_anchor_ids:
+                        clean_programme(el)
                     if cid in p_anchor_ids and is_prov:
                         anchor_p.setdefault(src, {}).setdefault(_title_key(el.findtext("title")), []).append(_epoch(el.get("start")))
                     if cid in r_anchor_ids and not is_prov:
