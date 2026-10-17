@@ -446,6 +446,32 @@ _TAGS = re.compile(r"\s*([\u1d2c-\u1d6a\u1d9b-\u1dbf\u02b0-\u02ff\u2070-\u209f]{
 _MATCH = re.compile(r"\s(x|vs\.?|v)\s", re.I)
 
 
+_SPORT_TITLE = re.compile(r"football|hockey|basketball|baseball|soccer|volleyball|rugby|lacrosse|softball|\b(NBA|NHL|NFL|MLB|MLS|NWSL|CFL|WNBA|AFLW?)\b|league|cup\b", re.I)
+_NOT_GAME = re.compile(r"show|tonight|central|scoreboard|today|now\b|preview|magazine|highlights|news|desk|studio|report|talk|daily|weekly", re.I)
+_END = r"(?: in | at | for | on | as | with | to | from |,|\.|$)"
+_NAME = r"[A-Z0-9][\w'&.\- ]{1,40}?"
+_MATCHUPS = [
+    (re.compile(r"^(?:The )?(?P<h>" + _NAME + r") (?:hosts?|welcomes?|entertains?) (?:the )?(?P<a>" + _NAME + r")" + _END), "{a} at {h}"),
+    (re.compile(r"^(?:The )?(?P<a>" + _NAME + r") (?:clash(?:es)? with|faces?|meets?|takes? on|battles?|squares? off with) (?:the )?(?P<b>" + _NAME + r")" + _END), "{a} vs {b}"),
+    (re.compile(r"^(?P<a>" + _NAME + r") (?:v|vs\.?) (?P<b>" + _NAME + r")(?: \(|,|\.| in | at |$)"), "{a} vs {b}"),
+    (re.compile(r"^(?P<a>" + _NAME + r") (?:at|@) (?P<h>" + _NAME + r")(?: From| in |,|\.|$)"), "{a} at {h}"),
+]
+
+
+def sports_matchup(title, body):
+    """'College Football' + 'The Texas Longhorns host Florida Gators in Week 7...' -> 'Florida Gators at Texas Longhorns'."""
+    if not body or not _SPORT_TITLE.search(title) or _NOT_GAME.search(title) or re.search(r"\b(at|vs?|v)\b", title):
+        return None
+    first = body.strip().split("\n")[-1] if body.lstrip().startswith(("S1", "E1")) else body.strip()
+    for rx, fmt in _MATCHUPS:
+        m = rx.match(first[:200])
+        if m:
+            d = {k: re.sub(r"^The ", "", v).strip() for k, v in m.groupdict().items()}
+            if all(2 < len(v) <= 40 for v in d.values()):
+                return fmt.format(**d)
+    return None
+
+
 def clean_programme(el):
     t = el.find("title")
     if t is None or not t.text:
@@ -481,6 +507,10 @@ def clean_programme(el):
     title = re.sub(r"\s*\[(Broadcast Edit|HD|CC|Subtitled)\]\s*$", "", title, flags=re.I)
     title = re.sub(r"\s{2,}", " ", title)
     t.text = title.strip()
+    dd = el.find("desc")
+    mu = sports_matchup(t.text, (dd.text or "") if dd is not None else "")
+    if mu:
+        t.text = f"{t.text}: {mu}"
     # Movies get their year in the title, so remakes and same-named films are easy to tell apart.
     cats = [(c.text or "").strip().lower() for c in el.findall("category")]
     year = (el.findtext("date") or "").strip()[:4]

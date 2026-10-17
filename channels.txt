@@ -773,7 +773,6 @@ AXS.TV.us2
 Game.Show.Network.HD.us2
 west.ION.Television.HD.us2
 ION.Television.HD.us2
-Court.TV.us2
 TV.Land.HD.(Pacific).us2
 TV.Land.HD.us2
 west.Me.TV.Network.us2
@@ -799,7 +798,6 @@ west.Nicktoons.us2
 Nicktoons.us2
 west.Teen.Nick.us2
 Teen.Nick.us2
-Disney.Channel.(Pacific).us2
 Disney.Channel.HD.us2
 Disney.Junior.HD.(Pacific).us2
 Disney.Junior.HD.us2
@@ -814,7 +812,6 @@ Start.TV.Network.us2
 Laff.us2
 BUZZR.Stream.us2
 Grit.us2
-Law.and.Crime.us2
 Crunchyroll.us
 Boomerang.us2
 MeTV.Toons.us2
@@ -867,6 +864,7 @@ The.Travel.Channel.HD.us2
 Tastemade.us2
 MOTORTREND.HD.us2
 Outside.Television.HD.us2
+Law.and.Crime.us2
 MilitaryHistoryChannel.us
 OutdoorChannel.us
 MagellanTVWildest.us
@@ -876,6 +874,7 @@ FilmRiseTrueCrime.us
 Food52.us
 SoYummy.us
 Gusto.us
+Court.TV.us2
 CNN.HD.us2
 Fox.News.Channel.HD.us2
 MS.NOW.HD.us2
@@ -1278,3 +1277,6 @@ ph.CHILL.STARDUST
 ph.CHILL.MYZEN
 ph.CHILL.NORWAY
 ph.CHILL.ICELAND
+west.TBS.HD.us2
+west.TNT.HD.us2
+west.truTV.HD.us2
