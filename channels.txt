@@ -1166,7 +1166,7 @@ LRT.Televizija.lt
 1+1.International.[UA-RU].ua
 Первый.канал.(Россия).[RU].ua
 TRT1.tr
-13reshet.il
+כאן.11.il
 Abu.Dhabi.HD.ae
 EN:.MBC1.sa
 MBC.Masr.HD.ae
