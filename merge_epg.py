@@ -804,12 +804,19 @@ def main():
     for m in re.finditer(r"<title[^>]*>([^<]+?) \((\d{4})\)(?:\s+(?:%s|%s))?</title>" % (NEW_TAG, LIVE_TAG), text):
         years.setdefault(m.group(1).strip().lower(), set()).add(m.group(2))
     movie_ch = re.compile(r"cinema|film|movie|hbo|starz|cinemax|showtime|tcm|mgm|crave|screenpix|encore|tvcine|hollywood"
-                          r"|plex|thriller|cinelife|detective|silver.?screen|sky.?family|fxm|indie", re.I)
+                          r"|(movie|retro|indie)plex|thriller|cinelife|detective|silver.?screen|sky.?family|fxm", re.I)
+    not_films = re.compile(r"true.?crime|western|mysteries|kids", re.I)   # film-named channels that mostly air series
+    movie_cat = re.compile(r"<category[^>]*>\s*(movie|movies|film|feature film)\s*</category>", re.I)
+    unknown = [0]
     added = [0]
     def add_year(m):
         p = m.group(0)
         ch = re.search(r'channel="([^"]+)"', p)
-        if not ch or not movie_ch.search(ch.group(1)):
+        if not ch:
+            return p
+        is_cat = bool(movie_cat.search(p))
+        on_movie_ch = bool(movie_ch.search(ch.group(1))) and not not_films.search(ch.group(1))
+        if not is_cat and not on_movie_ch:
             return p
         t = re.search(r"(<title[^>]*>)([^<]+)(</title>)", p)
         if not t:
@@ -817,7 +824,7 @@ def main():
         b = _BADGE.search(t.group(2))
         badge = b.group(0) if b else ""
         plain = t.group(2)[:b.start()] if b else t.group(2)
-        if re.search(r"\(\d{4}\)\s*$", plain):
+        if re.search(r"\((\d{4}|\?\?\?)\)\s*$", plain):
             return p
         d = re.search(r"(<desc[^>]*>)\s*\(((?:19|20)\d\d)\)\s*", p)      # description that opens with "(1959) ..."
         if d:
@@ -827,12 +834,18 @@ def main():
             return p[:t.start(2)] + plain.strip() + f" ({d.group(2)})" + badge + p[t.end(2):]
         y = years.get(plain.strip().lower())
         if not y or len(y) != 1:
+            # A film with no known year still gets "(???)", so films stand out in the grid.
+            st, sp = re.search(r'start="([^"]+)"', p), re.search(r'stop="([^"]+)"', p)
+            mins = ((_epoch(sp.group(1)) or 0) - (_epoch(st.group(1)) or 0)) / 60 if st and sp else 0
+            if is_cat or mins >= 80:
+                unknown[0] += 1
+                return p[:t.start(2)] + plain.strip() + " (???)" + badge + p[t.end(2):]
             return p
         added[0] += 1
         return p[:t.start(2)] + plain.strip() + f" ({next(iter(y))})" + badge + p[t.end(2):]
     text = re.sub(r"<programme\b.*?</programme>", add_year, text, flags=re.S)
     body = io.StringIO(); body.write(text)
-    report.append(f"movie years borrowed from elsewhere in the guide: {added[0]}")
+    report.append(f"movie years borrowed from elsewhere in the guide: {added[0]}; films with no known year marked (???): {unknown[0]}")
 
     missing = sorted(ids - filled)
     with gzip.open(OUTPUT, "wt", encoding="utf-8") as out:
