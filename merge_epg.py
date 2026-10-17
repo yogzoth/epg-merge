@@ -586,6 +586,7 @@ def main():
                 sources.append(l.strip())
     index = {}                                  # label -> {channel id: [name, listings]} (discovery)
     fills = fill_map()
+    slot_years = {}                             # (channel, 10-minute slot) -> (title key, year) from backup guides
     backup_ids = {b for bs in fills.values() for b in bs} - ids
     backup = {}                                 # backup id -> list of programme xml (first source that has it)
     backup_done = set()
@@ -677,6 +678,12 @@ def main():
         for cid, bs in fills.items():
             if cid not in ids:
                 continue
+            for b in bs:                                   # the backup's film years, by time slot
+                for x in backup.get(b, []):
+                    ty = re.search(r"<title[^>]*>([^<]+?) \(((?:19|20)\d\d)\)", x)
+                    st0 = re.search(r'start="([^"]+)"', x)
+                    if ty and st0 and _epoch(st0.group(1)):
+                        slot_years[(cid, _epoch(st0.group(1)) // 600)] = (_title_key(ty.group(1))[:12], ty.group(2))
             spans = sorted(have.get(cid, []))
             n0 = added
             for b in bs:
@@ -834,6 +841,20 @@ def main():
             p = p[:d.end(1)] + p[d.end():]
             t = re.search(r"(<title[^>]*>)([^<]+)(</title>)", p)
             return p[:t.start(2)] + plain.strip() + f" ({d.group(2)})" + badge + p[t.end(2):]
+        st1 = re.search(r'start="([^"]+)"', p)
+        slot = None
+        if st1 and slot_years:
+            cid0, t0 = ch.group(1), _epoch(st1.group(1)) or 0
+            if cid0.startswith("west."):
+                cid0, t0 = cid0[5:], t0 - 3 * 3600
+            for k in (0, -1, 1):
+                got = slot_years.get((cid0, t0 // 600 + k))
+                if got and got[0] == _title_key(plain)[:12]:
+                    slot = got
+                    break
+        if slot:                       # same film, same time, in the backup guide
+            added[0] += 1
+            return p[:t.start(2)] + plain.strip() + f" ({slot[1]})" + badge + p[t.end(2):]
         seen = years.get(plain.strip().lower()) or {}
         best = max(seen, key=seen.get) if seen else None
         y = [best] if best and seen[best] >= 0.75 * sum(seen.values()) else None   # one clear year (remakes stay unknown)
