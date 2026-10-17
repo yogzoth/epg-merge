@@ -256,13 +256,14 @@ def parse_event(raw):
         if start > time.time() + 180 * 86400:
             start = _utc(yr - 1, mon, int(m.group(1)), int(m.group(3)), int(m.group(4)), tz="America/New_York")
         s = s[:m.start()]
-    m = re.search(r"\s+(\d{1,2}):(\d\d)\s*(AM|PM)\s*ET\s*$", s, re.I)
-    if m and not start:                                              # league game slots: "8:00 PM ET", today
+    s = re.sub(r"\s*\[[^\]]*\]\s*$", "", s)                           # trailing tags such as [BK] or [PARAMOUNT+]
+    m = re.search(r"\s+(\d{1,2})(?::(\d\d))?\s*(AM|PM)\s*ET\s*$", s, re.I)
+    if m and not start:                                              # league game slots: "8:00 PM ET" or "7PM ET", today
         from datetime import datetime
         from zoneinfo import ZoneInfo
         h = int(m.group(1)) % 12 + (12 if m.group(3).upper() == "PM" else 0)
         today = datetime.now(ZoneInfo("America/New_York"))
-        start = _utc(today.year, today.month, today.day, h, int(m.group(2)), tz="America/New_York")
+        start = _utc(today.year, today.month, today.day, h, int(m.group(2) or 0), tz="America/New_York")
         if start - time.time() > 14 * 3600:                         # last night's game still in the name
             start -= 86400
         s = s[:m.start()]
