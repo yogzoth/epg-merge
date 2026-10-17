@@ -309,12 +309,12 @@ def event_listings(cid, event, fallback):
             if t < start:
                 blocks.append((t, start, fallback[0], fallback[1]))
             if t <= start < nxt:
-                blocks.append((start, stop, title, "Live event. Time from the provider listing."))
+                blocks.append((start, stop, f"{title} {LIVE_TAG}", "Live event. Time from the provider listing."))
             if t < stop < nxt:
                 blocks.append((stop, nxt, fallback[0], fallback[1]))
         t = nxt
     if start < t0 or start >= t1:
-        blocks.append((start, stop, title, "Live event. Time from the provider listing."))
+        blocks.append((start, stop, f"{title} {LIVE_TAG}", "Live event. Time from the provider listing."))
     rows = []
     for a, b, ti, de in sorted(blocks):
         rows.append(f'<programme start="{time.strftime("%Y%m%d%H%M%S +0000", time.gmtime(a))}" '
@@ -439,6 +439,8 @@ def drop_late_copies(items):
 # ---------------------------------------------------------------- clean titles
 # The browsing guide shows only the title, so keep it to the show's name and move
 # episode names, "Live"/"New" tags and season notes into the show info instead.
+NEW_TAG, LIVE_TAG = "\u1d3a\u1d49\u02b7", "\u1d38\u1da6\u1d5b\u1d49"   # small "New" / "Live" badges TiviMate shows
+_BADGE = re.compile(r"\s+(%s|%s)$" % (NEW_TAG, LIVE_TAG))
 _TAGS = re.compile(r"\s*([\u1d2c-\u1d6a\u1d9b-\u1dbf\u02b0-\u02ff\u2070-\u209f]{2,})\s*$")
 _MATCH = re.compile(r"\s(x|vs\.?|v)\s", re.I)
 
@@ -484,6 +486,10 @@ def clean_programme(el):
     if any(c in ("movie", "movies", "film", "feature film") for c in cats) and re.fullmatch(r"(19|20)\d\d", year) \
             and not re.search(r"\(\d{4}\)$", t.text):
         t.text = f"{t.text} ({year})"
+    live = "Live" in notes or el.find("live") is not None
+    new = "New" in notes or el.find("premiere") is not None or el.find("new") is not None
+    if live or new:
+        t.text = f"{t.text} {LIVE_TAG if live else NEW_TAG}"
     # Some apps glue the sub-title and episode number onto the title in the grid
     # ("Gold Rush: The Weasel. S16 E6"), so fold them into the description instead.
     parts = []
@@ -505,7 +511,7 @@ def clean_programme(el):
         ET.SubElement(el, "new")
     d = el.find("desc")
     body = (d.text or "").strip() if d is not None else ""
-    head = [p for p in notes + parts if p.lower() not in body.lower()[:200]]
+    head = [p for p in [n for n in notes if n not in ("Live", "New")] + parts if p.lower() not in body.lower()[:200]]
     if head:
         if d is None:
             d = ET.Element("desc"); el.insert(list(el).index(t) + 1, d)
@@ -795,7 +801,7 @@ def main():
     # Movie channels whose guide has no year: borrow it from the same film elsewhere in the guide.
     text = body.getvalue()
     years = {k: set(v) for k, v in all_years.items()}
-    for m in re.finditer(r"<title[^>]*>([^<]+?) \((\d{4})\)</title>", text):
+    for m in re.finditer(r"<title[^>]*>([^<]+?) \((\d{4})\)(?:\s+(?:%s|%s))?</title>" % (NEW_TAG, LIVE_TAG), text):
         years.setdefault(m.group(1).strip().lower(), set()).add(m.group(2))
     movie_ch = re.compile(r"cinema|film|movie|hbo|starz|cinemax|showtime|tcm|mgm|crave|screenpix|encore|tvcine|hollywood"
                           r"|plex|thriller|cinelife|detective|silver.?screen|sky.?family|fxm|indie", re.I)
@@ -806,19 +812,24 @@ def main():
         if not ch or not movie_ch.search(ch.group(1)):
             return p
         t = re.search(r"(<title[^>]*>)([^<]+)(</title>)", p)
-        if not t or re.search(r"\(\d{4}\)\s*$", t.group(2)):
+        if not t:
+            return p
+        b = _BADGE.search(t.group(2))
+        badge = b.group(0) if b else ""
+        plain = t.group(2)[:b.start()] if b else t.group(2)
+        if re.search(r"\(\d{4}\)\s*$", plain):
             return p
         d = re.search(r"(<desc[^>]*>)\s*\(((?:19|20)\d\d)\)\s*", p)      # description that opens with "(1959) ..."
         if d:
             added[0] += 1
             p = p[:d.end(1)] + p[d.end():]
             t = re.search(r"(<title[^>]*>)([^<]+)(</title>)", p)
-            return p[:t.start(2)] + t.group(2).strip() + f" ({d.group(2)})" + p[t.end(2):]
-        y = years.get(t.group(2).strip().lower())
+            return p[:t.start(2)] + plain.strip() + f" ({d.group(2)})" + badge + p[t.end(2):]
+        y = years.get(plain.strip().lower())
         if not y or len(y) != 1:
             return p
         added[0] += 1
-        return p[:t.start(2)] + t.group(2).strip() + f" ({next(iter(y))})" + p[t.end(2):]
+        return p[:t.start(2)] + plain.strip() + f" ({next(iter(y))})" + badge + p[t.end(2):]
     text = re.sub(r"<programme\b.*?</programme>", add_year, text, flags=re.S)
     body = io.StringIO(); body.write(text)
     report.append(f"movie years borrowed from elsewhere in the guide: {added[0]}")
