@@ -48,6 +48,41 @@ PLACEHOLDER_DAYS = 4
 OUTPUT = "epg.xml.gz"
 PLAIN_OUTPUT = "epg.xml"     # same guide, unzipped, for apps that prefer it
 DAYS_BACK_KEPT = 1          # drop listings that ended more than this many days ago
+FILL_FILE = "fill.txt"      # "channel<TAB>backup[<TAB>backup2]": backups fill the holes in a patchy guide
+_YEAR_CATS = ("movie", "movies", "film", "feature film")
+
+
+def fill_map():
+    out = {}
+    if os.path.exists(FILL_FILE):
+        for l in open(FILL_FILE, encoding="utf-8"):
+            p = [x.strip() for x in l.rstrip("\n").split("\t")]
+            if len(p) > 1 and p[0] and not p[0].startswith("#"):
+                out[p[0]] = [x for x in p[1:] if x]
+    return out
+
+
+def tidy_overlaps(text):
+    """Some guides list a channel's schedule twice a few minutes apart. Keep one clean run:
+    drop exact repeats and any listing that starts before the previous one has ended."""
+    progs = re.findall(r"<programme\b.*?</programme>", text, re.S)
+    by = {}
+    for x in progs:
+        a = re.search(r"<programme\b([^>]*)>", x).group(1)
+        c, st, sp = (re.search(r'%s="([^"]+)"' % k, a) for k in ("channel", "start", "stop"))
+        t0, t1 = (_epoch(st.group(1)) if st else None), (_epoch(sp.group(1)) if sp else None)
+        by.setdefault(c.group(1) if c else "", []).append((t0 if t0 is not None else 0, t1 if t1 is not None else 0, x))
+    out, dropped = [], 0
+    for cid, items in by.items():
+        items.sort(key=lambda i: (i[0], -i[1]))
+        last_end = None
+        for t0, t1, x in items:
+            if last_end is not None and t0 < last_end - 300:
+                dropped += 1
+                continue
+            out.append(x)
+            last_end = max(t1, last_end or 0)
+    return "".join(out), dropped
 
 
 def wanted_ids():
@@ -536,12 +571,18 @@ def main():
             if l.strip() and not l.startswith("#") and l.strip() not in sources:
                 sources.append(l.strip())
     index = {}                                  # label -> {channel id: [name, listings]} (discovery)
+    fills = fill_map()
+    backup_ids = {b for bs in fills.values() for b in bs} - ids
+    backup = {}                                 # backup id -> list of programme xml (first source that has it)
+    backup_done = set()
+    all_years = {}                              # film title -> years seen anywhere in any guide
     for src in sources:
         fh, label = open_source(src, tmpdir)
         if fh is None:
             report.append(label)
             continue
         got = set()
+        bgot = set()
         n_prog = 0
         is_prov = src.startswith("env:")
         try:
@@ -555,10 +596,20 @@ def main():
                     el.clear()
                 elif el.tag == "programme":
                     cid = el.get("channel")
+                    yr = (el.findtext("date") or "").strip()[:4]
+                    if re.fullmatch(r"(19|20)\d\d", yr) and el.find("category") is not None:
+                        if any((c.text or "").strip().lower() in _YEAR_CATS for c in el.findall("category")):
+                            tt = (el.findtext("title") or "").strip()
+                            tt = re.sub(r"\s*\((19|20)\d\d\)$", "", tt).lower()
+                            if tt:
+                                all_years.setdefault(tt, set()).add(yr)
                     if DISCOVER:
                         index.setdefault(label, {}).setdefault(cid, ["", 0])[1] += 1
-                    if cid in ids or cid in p_anchor_ids or cid in r_anchor_ids:
+                    if cid in ids or cid in p_anchor_ids or cid in r_anchor_ids or cid in backup_ids:
                         clean_programme(el)
+                    if cid in backup_ids and cid not in backup_done and el.get("stop", "")[:14] >= cutoff:
+                        backup.setdefault(cid, []).append(ET.tostring(el, encoding="unicode"))
+                        bgot.add(cid)
                     if cid in p_anchor_ids and is_prov:
                         anchor_p.setdefault(src, {}).setdefault(_title_key(el.findtext("title")), []).append(_epoch(el.get("start")))
                     if cid in r_anchor_ids and not is_prov:
@@ -576,6 +627,7 @@ def main():
         finally:
             fh.close()
         filled |= got
+        backup_done |= bgot
         report.append(f"{label}: {len(got)} channels, {n_prog} listings")
 
     # Provider 2 repeats each channel's schedule two or three times in one file,
@@ -598,6 +650,37 @@ def main():
             return f'{m.group(1)}="{time.strftime("%Y%m%d%H%M%S", time.gmtime(t - shift))} +0000"' if t is not None else m.group(0)
         for x in items:
             body.write(_re.sub(r'(start|stop)="([^"]+)"', fix, x) if shift else x)
+
+    # Patchy guides: fill their holes from a backup guide for the same channel.
+    if fills:
+        have = {}
+        for x in re.findall(r"<programme\b[^>]*>", body.getvalue()):
+            c, st, sp = (re.search(r'%s="([^"]+)"' % k, x) for k in ("channel", "start", "stop"))
+            if c and st and sp and c.group(1) in fills:
+                have.setdefault(c.group(1), []).append((_epoch(st.group(1)) or 0, _epoch(sp.group(1)) or 0))
+        added = touched = 0
+        extra = []
+        for cid, bs in fills.items():
+            if cid not in ids:
+                continue
+            spans = sorted(have.get(cid, []))
+            n0 = added
+            for b in bs:
+                for x in backup.get(b, []):
+                    st = _epoch(re.search(r'start="([^"]+)"', x).group(1)) or 0
+                    sp = _epoch(re.search(r'stop="([^"]+)"', x).group(1)) or 0
+                    if sp <= st or any(st < e - 300 and sp > s + 300 for s, e in spans):
+                        continue
+                    extra.append(x.replace(f'channel={quoteattr(b)}', f'channel={quoteattr(cid)}', 1).replace(f'channel="{b}"', f'channel={quoteattr(cid)}', 1))
+                    spans.append((st, sp)); added += 1
+            if added > n0:
+                touched += 1
+                filled.add(cid)
+        body.write("".join(extra))
+        report.append(f"backup guides: {added} listings filled holes on {touched} of {len(fills)} patchy channels")
+    tidied, n_over = tidy_overlaps(body.getvalue())
+    body = io.StringIO(); body.write(tidied)
+    report.append(f"overlapping listings removed: {n_over}")
 
     if west:
         import re as _re
@@ -703,10 +786,11 @@ def main():
 
     # Movie channels whose guide has no year: borrow it from the same film elsewhere in the guide.
     text = body.getvalue()
-    years = {}
+    years = {k: set(v) for k, v in all_years.items()}
     for m in re.finditer(r"<title[^>]*>([^<]+?) \((\d{4})\)</title>", text):
         years.setdefault(m.group(1).strip().lower(), set()).add(m.group(2))
-    movie_ch = re.compile(r"cinema|film|movie|hbo|starz|cinemax|showtime|tcm|mgm|crave|screenpix|encore|tvcine|hollywood", re.I)
+    movie_ch = re.compile(r"cinema|film|movie|hbo|starz|cinemax|showtime|tcm|mgm|crave|screenpix|encore|tvcine|hollywood"
+                          r"|plex|thriller|cinelife|detective|silver.?screen|sky.?family|fxm|indie", re.I)
     added = [0]
     def add_year(m):
         p = m.group(0)
@@ -716,6 +800,12 @@ def main():
         t = re.search(r"(<title[^>]*>)([^<]+)(</title>)", p)
         if not t or re.search(r"\(\d{4}\)\s*$", t.group(2)):
             return p
+        d = re.search(r"(<desc[^>]*>)\s*\(((?:19|20)\d\d)\)\s*", p)      # description that opens with "(1959) ..."
+        if d:
+            added[0] += 1
+            p = p[:d.end(1)] + p[d.end():]
+            t = re.search(r"(<title[^>]*>)([^<]+)(</title>)", p)
+            return p[:t.start(2)] + t.group(2).strip() + f" ({d.group(2)})" + p[t.end(2):]
         y = years.get(t.group(2).strip().lower())
         if not y or len(y) != 1:
             return p

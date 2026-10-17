@@ -1282,3 +1282,8 @@ ph.CHILL.STARDUST
 ph.CHILL.MYZEN
 ph.CHILL.NORWAY
 ph.CHILL.ICELAND
+TBS.us
+TBSPacific.us
+truTV.us
+truTVPacific.us
+WSFL-DT.us_locals1
