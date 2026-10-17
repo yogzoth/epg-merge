@@ -1203,7 +1203,6 @@ CNA.HD.my
 TRT.World.HD.uk
 Wion.in
 i24.News.English.us2
-ph.G.VANCOUVER.CANUCKS
 ph.G.NHL.01
 ph.G.NHL.02
 ph.G.NHL.03
@@ -1232,6 +1231,14 @@ ph.G.TSN.01
 ph.G.TSN.02
 ph.G.TSN.03
 ph.G.TSN.04
+ph.G.MLS.01
+ph.G.MLS.02
+ph.G.MLS.03
+ph.G.MLS.04
+ph.G.TENNIS.01
+ph.G.TENNIS.02
+ph.G.TENNIS.03
+ph.G.TENNIS.04
 ph.G.UFC.01
 ph.G.UFC.02
 ph.G.NETFLIX.01

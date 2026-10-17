@@ -119,7 +119,6 @@ ph.G.NFL.03	NFL · No game yet	NFL games show up here on game day, a few hours b
 ph.G.NFL.04	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
 ph.G.NFL.05	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
 ph.G.NFL.06	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
-ph.G.VANCOUVER.CANUCKS	Vancouver Canucks	Canucks team channel. Live on game nights, replays and shows in between.
 ph.G.NHL.01	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
 ph.G.NHL.02	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
 ph.G.NHL.03	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
@@ -140,6 +139,14 @@ ph.G.PARAMOUNT.03	Paramount+ · No event yet	Live events like UFC and PBR show u
 ph.G.PARAMOUNT.04	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
 ph.G.PARAMOUNT.05	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
 ph.G.PARAMOUNT.06	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.G.TENNIS.01	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.G.TENNIS.02	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.G.TENNIS.03	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.G.TENNIS.04	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.G.MLS.01	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.G.MLS.02	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.G.MLS.03	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.G.MLS.04	MLS · No match yet	MLS matches show up here a few hours before kickoff.
 ph.CHILL.OCEAN	Ocean · Ambient	Open water and rolling waves, around the clock.
 ph.CHILL.TROPICAL.BEACH	Tropical Beach · Ambient	White sand, palms and turquoise water.
 ph.CHILL.FOREST	Forest · Ambient	Deep forest scenes and natural sound.
