@@ -9,7 +9,7 @@ merge_epg.py: builds one guide (epg.xml.gz and epg.xml) for the jordan-tv and tv
    clock against CNN.
 3. Fills holes in patchy guides from a backup guide (fill.txt) and removes
    overlapping listings.
-4. Builds West feeds ("west.<id>") from their East guide, 3 hours later.
+4. Builds West feeds ("west.<id>") from their East guide, 3 hours later (live games stay at their real time).
 5. Carries over the previous guide to cover any gap, then adds placeholder and
    live-event listings (placeholders.txt, event_slots.txt).
 6. Cleans titles: episode details move to the description, movies get "(year)".
@@ -740,14 +740,38 @@ def main():
             t = _epoch(m.group(2))
             return f'{m.group(1)}="{time.strftime("%Y%m%d%H%M%S", time.gmtime(t + 3 * 3600))} +0000"' if t is not None else m.group(0)
         src_ids = set(west.values())
-        copies = []
+        fmt = lambda t: time.strftime("%Y%m%d%H%M%S", time.gmtime(t)) + " +0000"
+        by_east = {}
         for x in _re.findall(r"<programme\b.*?</programme>", body.getvalue(), _re.S):
             cid = _re.search(r'channel="([^"]+)"', x).group(1)
             if cid in src_ids:
-                for w_id, e_id in west.items():
-                    if e_id == cid:
-                        y = x.replace(f'channel="{cid}"', f'channel={quoteattr(w_id)}', 1)
-                        copies.append(_re.sub(r'(start|stop)="([^"]+)"', later, y))
+                a, b = (_epoch(v) for v in _re.search(r'start="([^"]+)"\s+stop="([^"]+)"', x).groups()) \
+                    if _re.search(r'start="([^"]+)"\s+stop="([^"]+)"', x) else (None, None)
+                if a is not None and b is not None:
+                    by_east.setdefault(cid, []).append((a, b, x))
+        copies = []
+        for w_id, e_id in west.items():
+            progs = sorted(by_east.get(e_id, []), key=lambda p: p[0])
+            # A live game is shown at the same moment on both coasts; everything else runs 3 hours later.
+            live = [(a, b) for a, b, x in progs if LIVE_TAG in x]
+            for a, b, x in progs:
+                if (a, b) not in live:
+                    a, b = a + 3 * 3600, b + 3 * 3600
+                    for la, lb in live:
+                        if a < lb and b > la:
+                            if a < la:
+                                b = la
+                            else:
+                                a = lb
+                            if b - a < 300:
+                                a = b = None
+                                break
+                    if a is None:
+                        continue
+                y = x.replace(f'channel="{e_id}"', f'channel={quoteattr(w_id)}', 1)
+                y = _re.sub(r'start="[^"]+"', f'start="{fmt(a)}"', y, count=1)
+                y = _re.sub(r'stop="[^"]+"', f'stop="{fmt(b)}"', y, count=1)
+                copies.append(y)
         body.write("".join(copies))
         made = 0
         for w_id, e_id in west.items():
