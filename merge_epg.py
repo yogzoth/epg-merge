@@ -439,7 +439,7 @@ def drop_late_copies(items):
 # ---------------------------------------------------------------- clean titles
 # The browsing guide shows only the title, so keep it to the show's name and move
 # episode names, "Live"/"New" tags and season notes into the show info instead.
-NEW_TAG, LIVE_TAG = "\u1d3a\u1d49\u02b7", "\u1d38\u1da6\u1d5b\u1d49"   # small "New" / "Live" badges TiviMate shows
+NEW_TAG, LIVE_TAG = "\u1d3a\u1d49\u02b7", "\u1d38\u2071\u1d5b\u1d49"   # small "New" / "Live" badges TiviMate shows
 _BADGE = re.compile(r"\s+(%s|%s)$" % (NEW_TAG, LIVE_TAG))
 _TAGS = re.compile(r"\s*([\u1d2c-\u1d6a\u1d9b-\u1dbf\u02b0-\u02ff\u2070-\u209f]{2,})\s*$")
 _MATCH = re.compile(r"\s(x|vs\.?|v)\s", re.I)
