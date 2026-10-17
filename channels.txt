@@ -1166,7 +1166,6 @@ LRT.Televizija.lt
 1+1.International.[UA-RU].ua
 Первый.канал.(Россия).[RU].ua
 TRT1.tr
-כאן.11.il
 Abu.Dhabi.HD.ae
 EN:.MBC1.sa
 MBC.Masr.HD.ae
@@ -1178,11 +1177,9 @@ Kuwait.TV.1.HD.ae
 2M.Monde.ae
 SABC.1.HD.za
 Channels.ng
-[275].K24.ke
 MBC.kr
 CCTV-4.hk
 Colors.HD.in
-AmarinTV.HD.th
 RCTI.HD.id
 TV1.HD.my
 Ch.5.(HD).sg
@@ -1190,7 +1187,6 @@ Canal.2.de.México.(Canal.Las.Estrellas.-.XEW).mx
 Telefe.ar
 RCN.co
 Canal.TVN.(Chile).cl
-PANAMERICANA.TELEVISION.HD.(Panamericana.HD).pe
 CANAL.10.HD.uy
 Canal.11.de.Costa.Rica.cr
 Canal.2.de.Panamá.(TVN-2).pa
