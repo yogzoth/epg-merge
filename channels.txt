@@ -834,7 +834,7 @@ CleoTV.us
 ComedyTV.us
 ComedyDynamics.us
 FOXSOUL.us
-TheRottenTomatoesChannel.us
+Universal.Movies.us2
 PixL.us
 HellsKitchen_KitchenNightmares.us
 LOCALNOW.us
@@ -1280,3 +1280,7 @@ ph.CHILL.ICELAND
 west.TBS.HD.us2
 west.TNT.HD.us2
 west.truTV.HD.us2
+Universal.Action.us2
+Universal.Monsters.us2
+Universal.Crime.us2
+Universal.Westerns.us2
