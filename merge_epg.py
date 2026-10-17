@@ -509,7 +509,7 @@ def clean_programme(el):
     title = re.sub(r"\s{2,}", " ", title)
     t.text = title.strip()
     dd = el.find("desc")
-    mu = sports_matchup(t.text, (dd.text or "") if dd is not None else "")
+    mu = sports_matchup(t.text, "\n".join(x for x in (subtext, episode, (dd.text or "") if dd is not None else "") if x))
     if mu:
         t.text = f"{t.text}: {mu}"
     # Movies get their year in the title, so remakes and same-named films are easy to tell apart.
