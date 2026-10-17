@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
 """
-merge_epg.py  -  builds ONE small guide (epg.xml.gz) for your playlist.
+merge_epg.py: builds one guide (epg.xml.gz and epg.xml) for the jordan-tv and tv-general playlists.
 
-It downloads your provider's guide plus the epgshare01 files, keeps only the
-channels listed in channels.txt, and writes them into a single XMLTV file.
+1. Reads both providers' guides plus the epgshare01 country files and keeps only
+   the channels listed in channels.txt. The first source with listings for a
+   channel wins.
+2. Fixes the provider guide: drops its late duplicate schedules and checks its
+   clock against CNN.
+3. Fills holes in patchy guides from a backup guide (fill.txt) and removes
+   overlapping listings.
+4. Builds West feeds ("west.<id>") from their East guide, 3 hours later.
+5. Carries over the previous guide to cover any gap, then adds placeholder and
+   live-event listings (placeholders.txt, event_slots.txt).
+6. Cleans titles: episode details move to the description, movies get "(year)".
 
-Precedence: sources are read in the order listed in SOURCES. The first source
-that has listings for a channel wins; later sources only fill gaps.
-
-The provider link contains your login, so it is never written in this file.
-It comes from the environment variable PROVIDER_EPG_URL (a GitHub secret).
+Provider links contain logins, so they are never written in this repo. They come
+from the PROVIDER_EPG_URL and PROVIDER2_EPG_URL secrets.
 """
 import gzip
 import io
@@ -469,6 +475,8 @@ def clean_programme(el):
             if len(a) >= 3 and b and not _MATCH.search(b) and not re.match(r"(?i)part\b", b):
                 title, episode = a.strip(), b.strip()
             break
+    title = re.sub(r"\s*\[(Broadcast Edit|HD|CC|Subtitled)\]\s*$", "", title, flags=re.I)
+    title = re.sub(r"\s{2,}", " ", title)
     t.text = title.strip()
     # Movies get their year in the title, so remakes and same-named films are easy to tell apart.
     cats = [(c.text or "").strip().lower() for c in el.findall("category")]

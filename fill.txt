@@ -1,4 +1,4 @@
-# Patchy guides: channel<TAB>backup guide(s). Backups only fill the holes; they never replace listings.
+# Patchy guides: channel<TAB>backup guide(s). Backups only fill holes; they never replace listings.
 UP.us	UPtv.us2
 HGTV.us	Home.and.Garden.Television.HD.us2
 HGTV.ca	Home.and.Garden.Television.ca2

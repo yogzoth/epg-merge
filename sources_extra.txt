@@ -1,4 +1,4 @@
-# Country guide files for the WORLD shelves (found by the channel scan)
+# Extra country guide files for the World channels (found with the manual-run channel index)
 https://epgshare01.online/epgshare01/epg_ripper_AE1.xml.gz
 https://epgshare01.online/epgshare01/epg_ripper_AL1.xml.gz
 https://epgshare01.online/epgshare01/epg_ripper_AT1.xml.gz

@@ -1,24 +1,41 @@
 # epg-merge
 
-Builds one guide for the jordan-tv playlist every 3 hours, from your provider's guide plus the epgshare01 guides.
+One clean TV guide for the **jordan-tv** and **tv-general** playlists, rebuilt every hour by GitHub Actions.
 
-Your guide links (replace YOUR-USERNAME):
+## Guide links
 
-- Zipped: `https://raw.githubusercontent.com/YOUR-USERNAME/epg-merge/guide/epg.xml.gz`
-- Plain: `https://raw.githubusercontent.com/YOUR-USERNAME/epg-merge/guide/epg.xml`
+| Format | Link |
+| --- | --- |
+| Zipped (smaller, faster) | `https://raw.githubusercontent.com/yogzoth/epg-merge/guide/epg.xml.gz` |
+| Plain | `https://raw.githubusercontent.com/yogzoth/epg-merge/guide/epg.xml` |
 
-`status.txt` on the guide branch shows the last run and which channels had no
-listings anywhere.
+The playlists already point at the guide, so most apps pick it up on their own.
 
-Two providers feed it. Secrets (Settings > Secrets and variables > Actions):
-- `PROVIDER_EPG_URL`: jordan-tv's provider guide link (xmltv.php)
-- `PROVIDER2_EPG_URL`: tv-general's provider guide link (xmltv.php)
-When a login changes, update that secret.
+## What each run does
 
-When the lineup changes, upload the new `channels.txt` here.
+1. Downloads both providers' guides and the epgshare01 country guides, keeping only the channels in `channels.txt`.
+2. Repairs the provider guide: removes its late duplicate schedules and checks its clock against CNN.
+3. Fills holes in patchy guides from a backup guide for the same channel (`fill.txt`) and removes overlapping listings.
+4. Makes West feeds from their East guide, 3 hours later.
+5. Covers any remaining gap with the previous run's guide, then adds placeholder and live-event listings for event slots.
+6. Cleans titles for the grid: episode details go to the description, movies get their year.
 
-PPV and event slots: `event_slots.txt` lists which provider stream each slot is.
-Every run reads today's event names from your provider's playlist and puts them
-in the guide. Upload a new `event_slots.txt` whenever the playlist is rebuilt.
+`status.txt` on the `guide` branch shows when the guide was last built, what each source gave, and any channel with no listings.
 
-art/ holds the CHILL icons and the section divider logos and clips the playlist points at.
+## Files
+
+| File | What it is |
+| --- | --- |
+| `merge_epg.py` | The guide builder. |
+| `channels.txt` | Every guide ID the two playlists use. |
+| `fill.txt` | Backup guides for channels whose main guide has holes. |
+| `placeholders.txt` | Simple listings for channels with no schedule anywhere. |
+| `event_slots.txt` | Which provider stream each live sports and PPV slot is, so the guide can show the event name. |
+| `sources_extra.txt` | Extra country guide files used by the World channels. |
+| `art/` | Logos for the Chill channels, event slots and a few channels the logo library is missing. |
+
+## Upkeep
+
+- **Login changes:** update the `PROVIDER_EPG_URL` (jordan-tv) or `PROVIDER2_EPG_URL` (tv-general) secret under Settings > Secrets and variables > Actions. Logins are never stored in the repo.
+- **Lineup changes:** upload the new `channels.txt`, `placeholders.txt` and `event_slots.txt` together.
+- **Manual run:** Actions > Build merged guide > Run workflow. Manual runs also refresh `index.txt`, a list of every channel in every guide source, used to match new channels.
