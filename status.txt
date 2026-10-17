@@ -1,0 +1,69 @@
+Built 2026-10-17 13:44 UTC
+provider guide: download failed (HTTPError)
+provider 2 guide: 334 channels, 58233 listings
+epg_ripper_CA2.xml.gz: 76 channels, 7795 listings
+epg_ripper_US2.xml.gz: 202 channels, 19037 listings
+epg_ripper_US_LOCALS1.xml.gz: 9 channels, 1039 listings
+epg_ripper_US_SPORTS1.xml.gz: 0 channels, 0 listings
+epg_ripper_UK1.xml.gz: 71 channels, 7093 listings
+epg_ripper_IE1.xml.gz: 10 channels, 1288 listings
+epg_ripper_AU1.xml.gz: 26 channels, 4360 listings
+epg_ripper_PT1.xml.gz: 32 channels, 2749 listings
+epg_ripper_PLEX1.xml.gz: 2 channels, 62 listings
+epg_ripper_AE1.xml.gz: 8 channels, 865 listings
+epg_ripper_AL1.xml.gz: 1 channels, 55 listings
+epg_ripper_AT1.xml.gz: 1 channels, 162 listings
+epg_ripper_BA1.xml.gz: 2 channels, 213 listings
+epg_ripper_CH1.xml.gz: 2 channels, 316 listings
+epg_ripper_CL1.xml.gz: 1 channels, 57 listings
+epg_ripper_CO1.xml.gz: 1 channels, 58 listings
+epg_ripper_CR1.xml.gz: 1 channels, 42 listings
+epg_ripper_CY1.xml.gz: 1 channels, 81 listings
+epg_ripper_CZ1.xml.gz: 1 channels, 83 listings
+epg_ripper_DE1.xml.gz: 1 channels, 133 listings
+epg_ripper_DK1.xml.gz: 1 channels, 132 listings
+epg_ripper_DO1.xml.gz: 1 channels, 59 listings
+epg_ripper_ES1.xml.gz: 1 channels, 15 listings
+epg_ripper_FI1.xml.gz: 1 channels, 163 listings
+epg_ripper_GR1.xml.gz: 1 channels, 82 listings
+epg_ripper_HK1.xml.gz: 1 channels, 132 listings
+epg_ripper_HU1.xml.gz: 1 channels, 169 listings
+epg_ripper_ID1.xml.gz: 1 channels, 30 listings
+epg_ripper_IL1.xml.gz: 1 channels, 75 listings
+epg_ripper_IN1.xml.gz: 2 channels, 315 listings
+epg_ripper_JM1.xml.gz: 1 channels, 85 listings
+epg_ripper_KE1.xml.gz: 1 channels, 71 listings
+epg_ripper_KR1.xml.gz: 1 channels, 90 listings
+epg_ripper_LT1.xml.gz: 1 channels, 110 listings
+epg_ripper_LU1.xml.gz: 1 channels, 39 listings
+epg_ripper_MT1.xml.gz: 1 channels, 59 listings
+epg_ripper_MX1.xml.gz: 1 channels, 63 listings
+epg_ripper_MY1.xml.gz: 2 channels, 210 listings
+epg_ripper_NG1.xml.gz: 1 channels, 142 listings
+epg_ripper_NL1.xml.gz: 1 channels, 170 listings
+epg_ripper_NO1.xml.gz: 1 channels, 72 listings
+epg_ripper_NZ1.xml.gz: 12 channels, 930 listings
+epg_ripper_PA1.xml.gz: 1 channels, 21 listings
+epg_ripper_PE1.xml.gz: 1 channels, 49 listings
+epg_ripper_PL1.xml.gz: 1 channels, 161 listings
+epg_ripper_RO1.xml.gz: 1 channels, 51 listings
+epg_ripper_RS1.xml.gz: 1 channels, 123 listings
+epg_ripper_SA2.xml.gz: 1 channels, 145 listings
+epg_ripper_SE1.xml.gz: 1 channels, 122 listings
+epg_ripper_SG1.xml.gz: 1 channels, 197 listings
+epg_ripper_SV1.xml.gz: 1 channels, 59 listings
+epg_ripper_TH1.xml.gz: 1 channels, 75 listings
+epg_ripper_UA1.xml.gz: 2 channels, 99 listings
+epg_ripper_UY1.xml.gz: 1 channels, 70 listings
+epg_ripper_ZA1.xml.gz: 1 channels, 128 listings
+provider 2 guide: dropped late duplicate schedules on 320 channels
+provider 2 guide clock shift: +0 min (measured against CNN)
+west feeds: 30 of 30 made from their East guide, 3 hours later
+last guide: 27 listings carried over to fill gaps (0 channels kept from last time)
+event names: provider 1: read 0 channel names
+event names: provider 2: read 756444 channel names
+placeholders: 141 channels, 8 of them showing a live event
+movie years borrowed from elsewhere in the guide: 1505
+Channels with listings: 1002 of 1284
+No listings: 5Action.uk, 5star.uk, ABC.au, AXSTV.us, AandE.us, AdultSwim.ca, AdultSwim.us, AnimalPlanet.ca, BBC1.uk, BBC2.uk, BBC3CBBC.uk, BBC4CBeebies.uk, BBCEarth.ca, BBCFirst.ca, BBCNews.uk, BETjams.us, BenficaTV1.pt, BigTenNetwork.us, BloombergTV.us, Bravo.us, CA| YTV E, CBC.ca, CBCOttawa.ca, CBHT.ca, CBUT.ca, CBWT.ca, CBXT.ca, CFRN.ca, CITV.ca, CKVR.ca, CMT.us, CTVComedy.ca, CTVDrama.ca, CTVLife.ca, CTVOH.ca, CTVSciFi.ca, CanalHollywood.pt, CancaoNova.pt, Channel9.au, CityTVMontreal.ca, CityTVToronto.ca, CityTVVancouver.ca, Cmtv.pt, CrimeAndInvestigationNetwork.uk, CrimeInvestigation.ca, DeutscheWelleEn.de, DiscoveryDMAX.uk, DiscoveryFamily.us, DiscoveryLife.us, DiscoveryScience.ca, DiscoveryVelocity.ca, DocumentaryChannel.ca, Dtour.ca, EEntertainment.ca, EEntertainment.us, ESPNNews.us, EuroNews.uk, FXNow.ca, FXX.ca, Fanduel.us, FiveUSA.uk, FoxNews.us, FuseTV.us, GameTV.ca, GlobalCalgary.ca, GlobalMontrealCKMI.ca, GreatAction.uk, GreatMovies.uk, GreatRomance.uk, HBO.ca, HBOSignature.us, Hallmark.us, HallmarkFamily.us, HallmarkMoviesMysteries.us, History2.ca, History2.uk, HistoryChannel.ca, HistoryChannel.uk, HistoryChannel.us, HollywoodSuite70s.ca, ION.us, ITV1.uk, IndependentFilmChannel.us, LifetimeTV.ca, LiverpoolFCTV.uk, LoveNature.ca, MAVTV.us, MGMPlusDriveIn.us, MGMPlusHits.us, MGMPlusMarquee.us, MSNBC.us, MTV.us, MTV2.us, MTVClassic.us, MTVLive.us, Makeful.ca, NHKWorld.jp, NatGeo.ca, NatGeo.uk, NatGeo.us, NatGeoWild.ca, NatGeoWild.uk, Newsmax.us, Now70s.uk, One.nz, OprahWinfreyNetwork.us, OutTV.ca, OutdoorLifeNetwork.ca, OutsideTV.us, Ovation.us, PopTV.us, Porto.pt, RTEJr.ie, RTENewsNow.ie, RTEOne.ie, Rtp1.pt, Rtp2.pt, Rtp3.pt, RtpMemoria.pt, SBS.au, SBSFood.au, SBSWorldMovies.au, SaltLightTV.ca, ScreenPixWestern.us, Showtime.us, ShowtimeFamilyZone.us, ShowtimeXBet.us, Sic.pt, SicMulher.pt, SicNoticias.pt, SicRadical.pt, SkyAction.uk, SkyComedy.uk, SkyPremiere.uk, SkySportsAction.uk, SkySportsPlus.uk, SkyThriller.uk, Smithsonian.ca, SmithsonianChannel.us, SpectrumSportsNet.us, SportTV1.pt, SportTV2.pt, SportTV3.pt, SportTV4.pt, SportTV5.pt, SportTVPlus.pt, SportsnetWorld.ca, StarzEncoreClassics.us, StarzKidsFamily.us, SuperChannelHeartHome.ca, SuperChannelVAULT.ca, TG4.ie, TMC.us, Tvcine1.pt, Tvcine2.pt, Tvcine3.pt, Tvcine4.pt, Tvi.pt, US-American Heroes Channel, US-CBS Sports Network USA, US-CNBC USA, US-Cartoon Network USA - Pacific Feed, US-Cinemax - Pacific Feed, US-Comedy Central (US) - Eastern Feed, US-Discovery Channel (US) - Eastern Feed, US-Disney - Pacific Feed, US-FX Movie Channel, US-Fox Business, US-HBO - Pacific Feed, US-HDNet Movies, US-INDIEplex - Eastern, US-Lifetime Movies - East, US-Lifetime Network US - Eastern Feed, US-MGM HD (USA), US-Motor Trend, US-NBA TV USA, US-NBC Sports Boston, US-NBC Sports Philadelphia, US-NFL Network, US-NFL Red Zone, US-NHL Network USA, US-New England Sports Network, US-PBS (KCTS) Seattle, WA, US-PBS Kids (KCTS-TV2) Seattle, WA, US-Paramount Network USA - Eastern Feed, US-ReelzChannel, US-Science, US-Showtime West, US-Starz - Pacific, US-Starz Encore - Pacific, US-TBS - East, US-TLC USA - Eastern, US-TeenNick - Eastern, US-The Tennis Channel, US-Turner Classic Movies USA, US| ANIMAL PLANET WEST HD, US| BRAVO WEST HD, US| CINEMAX EAST HD, US| CINEMAX MOREMAX HD, US| DISCOVERY WEST HD, US| DISNEY JR WEST HD, US| DISNEY XD WEST HD, US| E! ENTERTAINMENT WEST HD, US| FOOD NETWORK WEST HD, US| FREEFORM WEST HD, US| FX WEST HD, US| FXX WEST HD, US| HGTV WEST HD, US| ID WEST HD, US| OXYGEN WEST HD, US| SMITHSONIAN CHANNEL WEST HD, US| SYFY WEST HD, US| TBS WEST HD, US| TNT WEST HD, US| TRAVEL CHANNEL WEST HD, US| TRUTV WEST HD, US| USA NETWORK WEST HD, ViceOnTV.us, VirginMediaOne.ie, VirginMediaThree.ie, VirginMediaTwo.ie, WMEU4.us, WPBT.us, WPIX.us, WTTW.us, WeatherChannel.us, YESNetwork.us, ca.ABC (KOMO) Seattle, WA HD, ca.BNN Bloomberg, ca.CBC (CBMT) Montreal, QC, ca.CBC (CBRT) Calgary, AB, ca.CBC News Network, ca.CITY Calgary, AB HD, ca.CITY Montreal, QC, ca.CP24 (CablePulse 24), ca.CPAC Ottawa, ca.CTV (CFCN) Calgary, AB HD, ca.CTV (CFTO) Toronto, ON HD, ca.CTV (CJCH) Halifax, ca.CTV Montreal (CFCF), QC HD, ca.CTV News Channel, ca.CTV2 Ottawa, ON, ca.CTV2 Vancouver Island. BC DV, ca.FYI Canada, ca.Global (CIHF) Dartmouth, ca.Global (CIII-DT-41) Toronto, ca.Global BC DV, ca.Hollywood Suite 80s, ca.KTLA Los Angeles, CA, ca.Much Music HD, ca.NBC (KING) Seattle, WA HD, ca.Slice, ca.TVO (TV Ontario) DV, ca.Turner Classic Movies Canada, ca.WGN Canada, ca.Weather Network, ca.starz1-east, ca.starz2-east, loc.ABC (KABC) Los Angeles, CA, loc.ABC (WABC) New York, NY, loc.ABC (WLS) Chicago, IL, loc.ABC (WPLG) Miami, FL, loc.CBS (KCBS) Los Angeles, CA, loc.CBS (WBBM) Chicago, IL, loc.CBS (WFOR) Miami, FL, loc.FOX (KTTV) Los Angeles, CA, loc.FOX (WFLD) Chicago, IL, loc.FOX (WNYW) New York, NY, loc.FOX (WSVN) Miami, FL HD, loc.MNT (WBFS) Miami, FL, loc.NBC (KNBC) Los Angeles, CA, loc.NBC (WMAQ) Chicago, IL, loc.NBC (WNBC) New York, NY, loc.NBC (WTVJ) Miami, FL, national-geographic-wild, tmc-us-pacific, uk.Alibi HD, uk.GOLD HD, uk.Sky Sports Premier League HD, uk.W, us.Court TV, us.Nickelodeon USA - Pacific Feed
+Catch-up streams (400): 353:3,354:3,355:3,356:3,357:3,359:2,360:2,361:2,370:2,377:2,382:2,387:3,388:2,390:2,392:3,397:2,438:2,444:3,521:2,746:3,747:3,748:3,749:3,750:2,751:3,843:2,1065:3,1066:3,1067:3,1068:3,1069:3,1070:3,1073:3,1076:3,1078:3,1079:3,1080:3,1082:3,1083:3,1084:3,1085:3,1086:3,1087:3,1088:3,1092:3,1093:3,1094:3,1096:3,1102:3,1104:3,1105:3,1111:3,1112:3,1113:3,1252:2,1278:3,1279:3,1280:3,1281:3,1282:3,1284:3,1285:3,1288:3,1290:3,1291:3,1292:3,1294:3,1295:3,1511:3,1517:2,1807:2,1811:2,1812:2,1838:2,1840:2,1852:2,1877:2,1885:2,1936:2,1937:2,1943:2,1953:2,2153:2,2154:3,2250:3,2251:3,2253:3,2254:3,2255:3,2256:3,2257:3,2258:3,2259:3,2263:3,2264:3,2265:3,2288:2,2334:2,2410:2,2552:3,2553:3,2555:3,2556:3,2557:3,2558:3,2559:3,2560:3,2561:3,2562:3,2563:3,2587:3,2588:2,2589:3,2590:2,2591:2,2593:3,2596:2,2599:3,2600:3,2602:3,2606:3,2632:2,2665:3,2666:2,2668:3,2671:3,2683:3,2709:3,2794:2,2803:3,2804:3,2815:3,2842:3,2883:3,2892:3,2943:3,2952:3,2953:3,2955:3,3013:2,3016:2,3017:2,3053:3,18939:2,73723:2,79961:3,79962:3,94562:2,94563:2,94564:2,94565:2,94566:2,94568:2,94570:2,94573:2,94574:2,94577:2,94581:2,94586:2,94587:2,94590:2,94592:2,94594:2,94596:2,94600:2,94605:2,94608:2,94641:3,94643:2,94646:2,94662:2,94671:2,94674:2,94675:2,94711:2,94725:2,94743:2,94801:2,94802:2,94803:2,94804:2,94882:2,94963:3,95017:2,95060:3,95083:3,95084:2,95085:3,95087:3,95093:2,95447:3,95454:3,95462:3,95463:3,95469:3,95490:3,95493:3,95624:3,95626:3,95857:3,95952:3,96025:3,96205:2,96253:3,96280:3,96315:3,96325:2,96327:2,96329:2,96331:2,96333:2,96335:2,96337:2,96339:2,96341:2,96343:2,96345:2,96347:2,96349:2,96350:2,96351:2,96352:2,96353:2,96354:2,96355:2,96356:2,96357:2,96362:2,96364:2,96365:2,96366:2,96367:2,96368:2,96377:2,96378:2,96380:2,96383:2,96385:2,96386:2,96388:2,96389:2,96390:2,96391:2,96392:2,96393:2,96397:2,96404:2,101861:3,101863:3,102131:2,103159:2,104157:2,104167:2,104213:2,104221:2,115371:3,115621:3,115623:3,115625:3,115669:3,115679:3,115683:3,115685:3,115699:3,115701:3,115703:3,115705:3,115795:3,116401:3,116403:3,116417:3,116423:3,116429:3,116497:3,116505:2,116561:3,116567:3,116593:3,116609:3,116699:2,116701:2,116709:3,116721:2,116795:3,116797:2,116839:2,116965:3,133175:3,133617:3,134045:3,134297:3,134321:3,134323:3,134331:3,135541:3,135713:3,136181:3,136199:3,136327:2,136331:3,136333:2,136347:2,136385:2,136387:2,136389:2,136767:2,136769:2,137153:2,137175:3,138491:3,138497:3,138499:2,138629:3,142939:2,150455:3,150457:3,150515:3,150521:3,159953:3,171381:2,235471:3,238267:2,238269:2,246281:2,248777:2,248779:3,248781:2,248783:2,248785:2,248787:2,248789:2,248791:2,248801:2,248807:3,248815:2,248817:2,248819:2,248821:2,248823:2,248825:2,248835:2,248837:2,248841:2,248843:2,248851:2,248853:2,248855:2,248857:2,248859:2,248861:2,248863:2,249105:3,249107:2,249177:2,249183:2,249185:2,249187:2,249189:2,249191:3,249195:2,249199:2,249203:2,249207:2,249211:2,249215:3,249223:2,249311:2,249313:2,249317:2,249319:2,249323:2,249325:2,249341:2,249351:2,249353:3,249355:2,249393:2,269537:2,269541:2,269543:2,269681:2,269683:2,269911:2,269913:3,269915:2,270655:2,270657:3,270659:2,345761:2,425165:3,489103:2,515291:2,515293:2,527175:2,529945:3,778127:2,932889:2,1054241:2,1217144:3,1283151:3
