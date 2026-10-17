@@ -654,10 +654,8 @@ Treehouse.HD.ca2
 Cartoon.Network.HD.Canada.ca2
 Omni1-CFMT.ca
 Omni2-CJMT.ca
-VisionTV.ca
 YesTV.ca
 WILDTV.ca
-OneTV.ca
 Discovery.Channel.ca2
 National.Geographic.Canada.HD.ca2
 NationalGeographicWild.ca
@@ -728,6 +726,7 @@ ABCWSVNDT2.us
 CBSWFOR.us
 NBCWTVJ.us
 FOXWSVN.us
+WSFL-DT.us_locals1
 TNT.HD.(Pacific).us2
 TNT.HD.us2
 TBS.HD.(Pacific).us2
@@ -829,7 +828,6 @@ FOXSOUL.us
 TheRottenTomatoesChannel.us
 PixL.us
 HellsKitchen_KitchenNightmares.us
-BestofDr.Phil.pluto
 LOCALNOW.us
 DogTV.us
 Discovery.Channel.HD.us2
@@ -1011,7 +1009,6 @@ NOW.70s.uk
 NOW.80s.uk
 Clubland.TV.uk
 Sky.Kids.HD.uk
-STV.uk
 BBCScotland.uk
 BBCAlba.uk
 5SELECT.uk
@@ -1193,7 +1190,6 @@ Wion.in
 i24.News.English.us2
 Law.and.Crime.us2
 FilmRiseTrueCrime.us
-UnsolvedMysteries.us
 Food52.us
 SoYummy.us
 Gusto.us
@@ -1282,8 +1278,3 @@ ph.CHILL.STARDUST
 ph.CHILL.MYZEN
 ph.CHILL.NORWAY
 ph.CHILL.ICELAND
-TBS.us
-TBSPacific.us
-truTV.us
-truTVPacific.us
-WSFL-DT.us_locals1

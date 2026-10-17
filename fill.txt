@@ -39,3 +39,4 @@ NECN.us	NECN.New.England.Cable.News.us2
 NESNplus.us	NESN+.New.England.Sports.Network.Plus.us2
 SkySportsPremierLeague.uk	Sky.Sports.Premier.League.ie
 DiscoveryHistory.uk	Discovery.History.ie
+La.1.es	LA1.es
