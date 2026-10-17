@@ -589,7 +589,7 @@ def main():
     backup_ids = {b for bs in fills.values() for b in bs} - ids
     backup = {}                                 # backup id -> list of programme xml (first source that has it)
     backup_done = set()
-    all_years = {}                              # film title -> years seen anywhere in any guide
+    all_years = {}                              # film title -> {year: times seen} across every guide
     for src in sources:
         fh, label = open_source(src, tmpdir)
         if fh is None:
@@ -616,7 +616,7 @@ def main():
                             tt = (el.findtext("title") or "").strip()
                             tt = re.sub(r"\s*\((19|20)\d\d\)$", "", tt).lower()
                             if tt:
-                                all_years.setdefault(tt, set()).add(yr)
+                                all_years.setdefault(tt, {}).setdefault(yr, 0); all_years[tt][yr] += 1
                     if DISCOVER:
                         index.setdefault(label, {}).setdefault(cid, ["", 0])[1] += 1
                     if cid in ids or cid in p_anchor_ids or cid in r_anchor_ids or cid in backup_ids:
@@ -800,14 +800,16 @@ def main():
 
     # Movie channels whose guide has no year: borrow it from the same film elsewhere in the guide.
     text = body.getvalue()
-    years = {k: set(v) for k, v in all_years.items()}
+    years = {k: dict(v) for k, v in all_years.items()}
     for m in re.finditer(r"<title[^>]*>([^<]+?) \((\d{4})\)(?:\s+(?:%s|%s))?</title>" % (NEW_TAG, LIVE_TAG), text):
-        years.setdefault(m.group(1).strip().lower(), set()).add(m.group(2))
+        yy = years.setdefault(m.group(1).strip().lower(), {}); yy[m.group(2)] = yy.get(m.group(2), 0) + 1
     movie_ch = re.compile(r"cinema|film|movie|hbo|starz|cinemax|showtime|tcm|mgm|crave|screenpix|encore|tvcine|hollywood"
                           r"|(movie|retro|indie)plex|thriller|cinelife|detective|silver.?screen|sky.?family|fxm", re.I)
     not_films = re.compile(r"true.?crime|western|mysteries|kids", re.I)   # film-named channels that mostly air series
     movie_cat = re.compile(r"<category[^>]*>\s*(movie|movies|film|feature film)\s*</category>", re.I)
     unknown = [0]
+    not_film_title = re.compile(r"teleshopping|paid program|infomercial|medicare|vacuum|makeover|close ?down|sign ?off|"
+                                r"behind.the.scenes|the cinema list|preview|^movie$|^film$", re.I)
     added = [0]
     def add_year(m):
         p = m.group(0)
@@ -832,17 +834,19 @@ def main():
             p = p[:d.end(1)] + p[d.end():]
             t = re.search(r"(<title[^>]*>)([^<]+)(</title>)", p)
             return p[:t.start(2)] + plain.strip() + f" ({d.group(2)})" + badge + p[t.end(2):]
-        y = years.get(plain.strip().lower())
-        if not y or len(y) != 1:
+        seen = years.get(plain.strip().lower()) or {}
+        best = max(seen, key=seen.get) if seen else None
+        y = [best] if best and seen[best] >= 0.75 * sum(seen.values()) else None   # one clear year (remakes stay unknown)
+        if not y:
             # A film with no known year still gets "(???)", so films stand out in the grid.
             st, sp = re.search(r'start="([^"]+)"', p), re.search(r'stop="([^"]+)"', p)
             mins = ((_epoch(sp.group(1)) or 0) - (_epoch(st.group(1)) or 0)) / 60 if st and sp else 0
-            if is_cat or mins >= 80:
+            if (is_cat or mins >= 80) and not not_film_title.search(plain):
                 unknown[0] += 1
                 return p[:t.start(2)] + plain.strip() + " (???)" + badge + p[t.end(2):]
             return p
         added[0] += 1
-        return p[:t.start(2)] + plain.strip() + f" ({next(iter(y))})" + badge + p[t.end(2):]
+        return p[:t.start(2)] + plain.strip() + f" ({y[0]})" + badge + p[t.end(2):]
     text = re.sub(r"<programme\b.*?</programme>", add_year, text, flags=re.S)
     body = io.StringIO(); body.write(text)
     report.append(f"movie years borrowed from elsewhere in the guide: {added[0]}; films with no known year marked (???): {unknown[0]}")
