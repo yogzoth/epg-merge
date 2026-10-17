@@ -462,13 +462,14 @@ def sports_matchup(title, body):
     """'College Football' + 'The Texas Longhorns host Florida Gators in Week 7...' -> 'Florida Gators at Texas Longhorns'."""
     if not body or not _SPORT_TITLE.search(title) or _NOT_GAME.search(title) or re.search(r"\b(at|vs?|v)\b", title):
         return None
-    first = body.strip().split("\n")[-1] if body.lstrip().startswith(("S1", "E1")) else body.strip()
-    for rx, fmt in _MATCHUPS:
-        m = rx.match(first[:200])
-        if m:
-            d = {k: re.sub(r"^The ", "", v).strip() for k, v in m.groupdict().items()}
-            if all(2 < len(v) <= 40 for v in d.values()):
-                return fmt.format(**d)
+    lines = [ln.strip() for ln in body.strip().split("\n") if ln.strip()][:2]
+    for first in lines:
+        for rx, fmt in _MATCHUPS:
+            m = rx.match(first[:200])
+            if m:
+                d = {k: re.sub(r"^The ", "", v).strip() for k, v in m.groupdict().items()}
+                if all(2 < len(v) <= 40 for v in d.values()):
+                    return fmt.format(**d)
     return None
 
 
