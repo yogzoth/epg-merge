@@ -1,14 +1,20 @@
 name: Guide source check
 on: workflow_dispatch
+permissions:
+  contents: write
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
       - run: |
           U=https://epgshare01.online/epgshare01/epg_ripper_CA2.xml.gz
-          for ua in "Mozilla/5.0 (epg-merge)" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36" "curl/8.5.0" "TiviMate/5.1.6"; do
-            echo "UA: $ua"; curl -s -o /dev/null -w "%{http_code} %{size_download}\n" -A "$ua" "$U"
+          {
+          for ua in "Mozilla/5.0 (epg-merge)" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36" "curl/8.5.0"; do
+            echo "UA: $ua -> $(curl -s -o /dev/null -w '%{http_code} %{size_download}' -A "$ua" "$U")"
           done
           curl -sI -A "Mozilla/5.0" "$U" | head -20
-          curl -s -o /dev/null -w "index %{http_code}\n" https://epgshare01.online/epgshare01/
-          curl -s -o /dev/null -w "pdf %{http_code}\n" https://epgshare01.online/epgshare01/epg_ripper_CA2.pdf
+          echo "index $(curl -s -o /dev/null -w '%{http_code}' https://epgshare01.online/epgshare01/)"
+          echo "http $(curl -s -o /dev/null -w '%{http_code}' http://epgshare01.online/epgshare01/epg_ripper_CA2.xml.gz)"
+          curl -s -A "Mozilla/5.0" "$U" | head -c 400
+          } > /tmp/diag.txt 2>&1
+          mkdir /tmp/o && cp /tmp/diag.txt /tmp/o/ && cd /tmp/o && git init -q -b diag && git add . && git -c user.name=bot -c user.email=bot@x commit -qm diag && git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag
