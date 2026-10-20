@@ -118,7 +118,7 @@ def open_source(src, tmpdir, tries=3):
             break
         except Exception as e:  # network hiccup: retry, then give up on this source only
             if attempt == tries - 1:
-                return None, f"{label}: download failed ({e.__class__.__name__})"
+                return None, f"{label}: download failed ({e.__class__.__name__}{' ' + str(e.code) if hasattr(e, 'code') else ''})"
             time.sleep(10)
     with open(path, "rb") as fh:
         magic = fh.read(2)
