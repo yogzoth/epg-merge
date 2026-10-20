@@ -163,7 +163,7 @@ UNTIMED_MAX_HOURS = 36      # a name with no date is trusted this long; provider
 STATE_FILE = "slot_state.json"
 
 GENERIC_WORDS = set("""hd fhd uhd sd d raw event events only fite tv netflix ppv nfl ufc us uk ca ar prime wwe
-sky sports box office tnt live dazn now streaming exclusive 8k 4k 1080 720 next no""".split())
+sky sports box office tnt live dazn now streaming exclusive 8k 4k 1080 720 next no espn mg motogp""".split())
 
 
 def provider_names(n=1):
@@ -230,12 +230,26 @@ def parse_event(raw):
     s = re.sub(r"[^\x00-\x7FÀ-ſ]+", " ", raw)            # drop superscript tags
     if re.search(r"no event", s, re.I):
         return None
+    # Trex slot formats
+    s = re.sub(r"\s*:\s*(NBA|NHL|NFL|MLB|Tennis|Paramount\+)\s+\d+\s*$", "", s, flags=re.I)
+    s = re.sub(r"^\s*(MLB\s+\d+\s*:|\(Apple\)\s*\(MLS\)\s*\d+\s*\|)\s*", "", s, flags=re.I)
+    m = re.match(r"^\s*(?:NHL|NFL)\s*\|\s*\d+\s*-\s*(\d{1,2})(?::(\d\d))?\s*(am|pm)\s+(.+)$", s, re.I)
+    if m:                                                            # "NHL | 01 - 7pm Sharks at Canadiens"
+        s = f"{m.group(4)} {m.group(1)}:{m.group(2) or '00'} {m.group(3).upper()} ET"
+    trex_start = None
+    m = re.search(r"\s*@\s*([A-Za-z]{3})\s+(\d{1,2})\s+(\d{1,2}):(\d\d)\s*(AM|PM)\s*(?:-\s*(.+))?$", s)
+    if m:                                                            # "Pistons vs Celtics @ Oct 20 3:00 PM - WTA Osaka"
+        mon = "jan feb mar apr may jun jul aug sep oct nov dec".split().index(m.group(1).lower()) + 1
+        h = int(m.group(3)) % 12 + (12 if m.group(5) == "PM" else 0)
+        yr = time.gmtime().tm_year
+        trex_start = _utc(yr, mon, int(m.group(2)), h, int(m.group(4)), tz="America/New_York")
+        s = s[:m.start()] + (f" ({m.group(6).strip()})" if m.group(6) else "")
     m = "\u2605" in raw and re.match(r"^\s*(?:US|CA|UK|TRILLERTV)?\s*(?:UFC|BOXING|EVENT|DAZN|SN\+|TSN\+|PPV|NFL|NHL GAME|NBA|MLB|PARAMOUNT)\s*0*\d+\s*(?:HD)?\s*:\s*(.*)$", s, re.I)
     if m:
         s = m.group(1)
         if not s.strip(" :-"):
             return None
-    start = stop = None
+    start, stop = trex_start, None
     m = re.search(r"start:(\d{4})-(\d\d)-(\d\d) (\d\d):(\d\d):\d\d(?:\s*stop:(\d{4})-(\d\d)-(\d\d) (\d\d):(\d\d):\d\d)?", s)
     if m:                                                            # UFC slots, UTC
         g = [int(x) if x else None for x in m.groups()]
