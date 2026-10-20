@@ -41,3 +41,124 @@ SkySportsPremierLeague.uk	Sky.Sports.Premier.League.ie
 DiscoveryHistory.uk	Discovery.History.ie
 La.1.es	LA1.es
 FXMovies.us	FX.Movie.Channel.HD.us2
+# tv-general: backups so these keep a guide without the old provider
+CBCVancouver-CBUT.ca	CBC.Vancouver.HD.ca2	CBUT.ca
+CTV2VancouverVictoria-CIVI.ca	CTV.Two.-.Vancouver/Victoria.ca2
+GlobalBC-CHAN.ca	Global.BC.HD.ca2
+CityTvVancouver-CKVU.ca	Citytv.Vancouver.HD.ca2	CityTVVancouver.ca
+CBCToronto-CBLT.ca	CBC.Toronto.HD.ca2	CBC.ca
+CTVToronto-CFTO.ca	CTV.Toronto.HD.ca2	CTVToronto.ca
+CTV2Barrie-CKVR.ca	CTV.Two.-.Barrie.ca2	CTV2Toronto.ca
+GlobalToronto-CIII.ca	Global.Toronto.HD.ca2
+CityTv.ca	Citytv.Toronto.HD.ca2	CityTVToronto.ca
+CHCH.ca	CHCH-DT.ca2
+CBCCalgary-CBRT.ca	CBC.Calgary.HD.ca2
+CTVCalgary-CFCN.ca	CTV.Calgary.HD.ca2
+GlobalCalgary-CICT.ca	Global.Calgary.HD.ca2	GlobalCalgary.ca
+CityTvCalgary-CKAL.ca	Citytv.Calgary.HD.ca2
+CBCEdmonton-CBXT.ca	CBC.Edmonton.HD.ca2	CBXT.ca
+CTVEdmonton-CFRN.ca	CTV.Edmonton.HD.ca2	CFRN.ca
+GlobalEdmonton-CITV.ca	Global.Edmonton.ca2	CITV.ca
+CBCWinnipeg-CBWT.ca	CBC.Winnipeg.HD.ca2	CBWT.ca
+CBCOttawa-CBOT.ca	CBC.Ottawa.HD.ca2	CBCOttawa.ca
+CTVOttawa-CJOH.ca	CJOH-DT.ca2	CTVOH.ca
+CTV2Ottawa-CHRO.ca	CTV.Two.-.Ottawa.ca2
+CBCMontreal-CBMT.ca	CBMT.-.CBC.Montreal.ca2
+CTVMontreal-CFCF.ca	CFCF-DT.ca2
+GlobalMontreal-CKMI.ca	Global.Montreal.HD.ca2	GlobalMontrealCKMI.ca
+CityTvMontreal-CJNT.ca	Citytv.Montreal.HD.ca2
+CBCHalifax-CBHT.ca	CBC.Halifax.HD.ca2	CBHT.ca
+CTVHalifax-CJCH.ca	CTV.Halifax.HD.ca2
+EEntertainmentTelevision.ca	E!.Entertainment.Television.Canada.HD.ca2	EEntertainment.ca
+CMT.ca	CMT.HD.us2
+MuchMusic.ca	Much.Music.HD.ca2
+Omni1-CFMT.ca	OMNI1.HD.ca2	OMNI1.ca
+Omni2-CJMT.ca	OMNI2.HD.ca2	OMNI2.ca
+YesTV.ca	YesTV.ca2
+TVOntario-CICA.ca	TVO.ca2
+WILDTV.ca	WILD.TV.ca2	Wild.ca
+CPAC.ca	[CPAC].Cable.Public.Affairs.Channel.HD.ca2
+ATNCricketPlus.ca	ATN.Cricket.Plus.us2
+ABCWABC.us	WABC-DT.us_locals1
+NBCWNBC.us	WNBC-DT.us_locals1
+CWWPIX.us	WPIX-DT.us_locals1	WPIX.us
+ABCKABC.us	KABC-DT.us_locals1
+CBSKCBS.us	KCBS-DT.us_locals1
+NBCKNBC.us	KNBC-DT.us_locals1
+FOXKTTV.us	KTTV-DT.us_locals1
+ABCWLS.us	WLS-DT.us_locals1
+CBSWBBM.us	WBBM-DT.us_locals1
+NBCWMAQ.us	WMAQ-DT.us_locals1
+FOXWFLD.us	WFLD-DT.us_locals1
+PBSWTTW.us	WTTW-DT.us_locals1	WTTW.us
+ABCWSVNDT2.us	WSVN-DT2.us_locals1
+CBSWFOR.us	WFOR-DT.us_locals1
+NBCWTVJ.us	WTVJ-DT.us_locals1
+FOXWSVN.us	WSVN-DT.us_locals1
+Dabl.us	Dabl.us2	WKMGDT2.us
+FETV.us	Family.Entertainment.Television.us2	FamilyEntertainment.us
+ComedyDynamics.us	plex.tv.Comedy.Dynamics.plex
+BETHer.us	BET.Her.us2
+FOXSOUL.us	FOX.SOUL.us2
+INSP.us	INSP.HD.us2
+TheCowboyChannel.us	The.Cowboy.Channel.us2
+PursuitChannel.us	Pursuit.Channel.us2
+BETSOUL.us	BET.Soul.us2	BETSoul.us
+PixL.us	PixL.us2	PixLTV.us
+MilitaryHistoryChannel.us	Military.History.Channel.us2	MilitaryHistory.us
+MagellanTVWildest.us	plex.tv.MagellanTV.Wildest.plex
+NationalGeographicWild.us	National.Geographic.Wild.HD.us2	national-geographic-wild
+ThePetCollective.us	plex.tv.The.Pet.Collective.plex
+Gusto.us	plex.tv.GUSTOTV.plex
+OutdoorChannel.us	Outdoor.Channel.HD.us2
+EWTN.us	EWTN.-.Eternal.Word.Television.Network.HD.us2
+MoviePlex.us	MoviePlex.HD.us2	MOVIEplex.us
+RetroPlex.us	RetroPlex.HD.us2	RETROplex.us
+AMCThrillers.us	plex.tv.AMC.Thrillers.plex
+MyTimeMovieNetwork.us	plex.tv.MyTime.Movie.Network.plex
+TheFilmDetective.us	The.Film.Detective.us2	TFD.us
+NBCNewsNow.us	plex.tv.NBC.News.NOW.plex
+Cheddar.us	Cheddar.us2	CheddarNews.us
+TYT.us	TYT.The.Young.Turks.us2	TYTNetwork.us
+FreeSpeechTV.us	Free.Speech.TV.us2	FreeSpeech.us
+FoxSoccerPlus.us	Fox.Soccer.Plus.HD.us2
+SportsGrid.us	SportsGrid.us2
+fuboSportsNetwork.us	plex.tv.Fubo.Sports.Network.plex	FuboSportsNetwork.us
+WorldFishingNetwork.us	World.Fishing.Network.HD.(US).us2
+MSGSNZone1.us	MSG.Plus.us2	MadisonSquareGardenPlus.us
+SpectrumSportsNetLALakers.us	Spectrum.SportsNet.Lakers.HD.us2	SpectrumSportsNet.us
+BBCScotland.uk	BBCScotlandHD.uk
+BBCAlba.uk	BBC.ALBA.HD.uk
+CBBC.uk	CBBC.HD.uk
+CartoonNetwork.uk	Cartoon.Network.ie
+Boomerang.uk	Boomerang.HD.uk
+Nickelodeon.uk	NickelodeonHD.uk
+DiscoveryScience.uk	Disc.Science.uk
+NationalGeographicChannel.uk	Nat.Geo.HD.uk	NatGeo.uk
+SkyHistory.uk	Sky.History.HD.ie	HistoryChannel.uk
+DiscoveryTurbo.uk	Disc.Turbo.uk
+InvestigationDiscovery.uk	ID.uk
+Crime+Investigation.uk	Crime+Inv.HD.uk	CrimeAndInvestigationNetwork.uk
+HorseAndCountry.uk	Horse.&.Country.TV.nl	horsecountrytv.nl
+SkyCinemaPremiere.uk	Sky.Premiere.uk
+SkyCinemaGreats.uk	Sky.Greats.uk
+SkyCinemaAction.uk	Sky.Action.HD.uk	SkyAction.uk
+SkyCinemaThriller.uk	Sky.Thriller.HD.uk	SkyThriller.uk
+SkyCinemaSci-fiAndHorror.uk	Sky.Sci-Fi.HD.uk
+SkyCinemaDrama.uk	Sky.Drama.HD.uk
+SkySportsMainEventUHD.uk	Sky.Sports.Main.Event.HD.ie	SkySportsMainEvent.uk
+SkySportsCricket.uk	Sky.Sports.Cricket.HD.ie
+SkySportsGolf.uk	Sky.Sports.Golf.HD.ie
+SkySportsF1UHD.uk	Sky.Sports.F1.HD.ie	SkySportsF1.uk
+SkySportsTennis.uk	Sky.Sports.Tennis.HD.ie
+SkySportsMix.uk	Sky.Sports.Mix.HD.ie
+SkySportsNews.uk	Sky.Sports.News.HD.ie
+SkySportsRacing.uk	Sky.Sports.Racing.HD.ie
+LFCTV.uk	LFCTV.HD.uk	LiverpoolFCTV.uk
+RTP3.pt	RTP.3.ch	Rtp3.pt
+VRT1.be	VRT.1.nl
+TRT1.tr	TRT.1.al
+Telefe.ar	Telefe.Internacional.us2
+CNN.uk	CNN.International.us2
+AlJazeeraEnglish.uk	Al.Jazeera.HD.uk
+DWEnglish.us	DW.HD.ca2

@@ -155,3 +155,52 @@ ph.CHILL.STARDUST	Stardust · Ambient	Stars, nebulae and deep space.
 ph.CHILL.MYZEN	MyZen · Ambient	Calm visuals and soft music.
 ph.CHILL.NORWAY	Norway · Ambient	Fjords, peaks and northern light.
 ph.CHILL.ICELAND	Iceland · Ambient	Volcanic coasts, glaciers and waterfalls.
+# tv-general on the Trex line
+ph.T.NHL.01	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.02	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.03	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.04	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.05	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.06	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.07	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.08	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.09	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NBA.01	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.02	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.03	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.04	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.05	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.06	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.07	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.08	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.MLB.01	MLB · No game yet	Today's MLB games show up here a few hours before first pitch.
+ph.T.MLB.02	MLB · No game yet	Today's MLB games show up here a few hours before first pitch.
+ph.T.MLB.BIG.INNING	MLB Big Inning	Live look-ins from around MLB on game days.
+ph.T.MLS.01	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.T.MLS.02	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.T.MLS.03	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.T.MLS.04	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.T.TENNIS.01	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.T.TENNIS.02	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.T.TENNIS.03	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.T.TENNIS.04	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.T.ESPNPLUS.01	ESPN+ · No event yet	ESPN+ games and events show up here on the day.
+ph.T.ESPNPLUS.02	ESPN+ · No event yet	ESPN+ games and events show up here on the day.
+ph.T.ESPNPLUS.03	ESPN+ · No event yet	ESPN+ games and events show up here on the day.
+ph.T.ESPNPLUS.04	ESPN+ · No event yet	ESPN+ games and events show up here on the day.
+ph.T.PEACOCK.01	Peacock · No event yet	Peacock games and events show up here on the day.
+ph.T.PEACOCK.02	Peacock · No event yet	Peacock games and events show up here on the day.
+ph.T.PEACOCK.03	Peacock · No event yet	Peacock games and events show up here on the day.
+ph.T.PEACOCK.04	Peacock · No event yet	Peacock games and events show up here on the day.
+ph.T.F1.TV	F1 TV	Formula 1 sessions and shows on race weekends.
+ph.T.F1.PIT	F1 Pit Lane	The pit lane feed during Formula 1 sessions.
+ph.T.F1.TRACKER	F1 Driver Tracker	Live track map during Formula 1 sessions.
+ph.T.F1.DATA	F1 Data	Live timing and data during Formula 1 sessions.
+ph.T.MOTOGP.01	MotoGP · No session yet	MotoGP sessions show up here on race weekends.
+ph.T.MOTOGP.02	MotoGP · No session yet	MotoGP sessions show up here on race weekends.
+ph.T.PARAMOUNT.01	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.T.PARAMOUNT.02	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.T.PARAMOUNT.03	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.T.PARAMOUNT.04	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.T.PPV.05	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.T.PPV.06	UK PPV · No event yet	UK pay-per-view events show up here on event day.
