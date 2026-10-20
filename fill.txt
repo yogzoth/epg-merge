@@ -544,3 +544,41 @@ BBC.World.News.ch	BBCWorld.ca
 CNN.International.us2	CNN.uk
 Al.Jazeera.HD.uk	us.Al Jazeera
 TRT.World.HD.uk	TRTWorld.tr
+UP.us	UPtv.us2
+HGTV.us	Home.and.Garden.Television.HD.us2
+HGTV.ca	Home.and.Garden.Television.ca2
+CNBCWorld.us	CNBC.World.us2
+IONPlus.us	plex.tv.ION.Plus.plex
+IonMysteryKXLNDT3.us	ION.Mystery.us2	plex.tv.Ion.Mystery.plex
+WeatherSpy.us	plex.tv.WeatherSpy.plex
+FYIChannel.us	FYI.Channel.HD.us2
+TMZ.us	plex.tv.TMZ.plex
+DogTV.us	DOG.TV.us2
+Charge!.us	CHARGE!.us2
+EEntertainmentTelevision.us	E!.Entertainment.Television.HD.us2
+Crunchyroll.us	plex.tv.Crunchyroll.plex
+NationalGeographicWild.ca	National.Geographic.Wild.Canada.HD.ca2
+CP24.ca	Cable.Pulse.24.(CP24).HD.ca2
+USANetwork.us	USA.Network.HD.us2
+CleoTV.us	Cleo.TV.HD.us2
+OneAmericaNewsNetwork.us	One.America.News.Network.HD.us2
+BET.us	BET.HD.us2
+ComedyTV.us	Comedy.TV.HD.us2
+ReelzChannel.us	ReelzChannel.HD.us2
+BounceTV.us	Bounce.TV.us2
+Comet.us	Comet.us2
+5USA.uk	5.USA.uk
+TCM.ca	Turner.Classic.Movies.Canada.HD.ca2
+TCM.us	Turner.Classic.Movies.HD.us2
+FilmRiseSci-Fi.us	plex.tv.FilmRise.Sci-Fi.plex
+FilmRiseAction.us	plex.tv.FilmRise.Action.plex
+FilmRiseHorror.us	plex.tv.FilmRise.Horror.plex
+FilmRiseTrueCrime.us	plex.tv.FilmRise.True.Crime.plex
+FilmRiseFreeMovies.us	plex.tv.FilmRise.Free.Movies.plex
+FilmRiseWestern.us	plex.tv.FilmRise.Western.plex
+SoYummy.us	So.Yummy.us2	plex.tv.So.Yummy.plex
+NECN.us	NECN.New.England.Cable.News.us2
+NESNplus.us	NESN+.New.England.Sports.Network.Plus.us2
+SkySportsPremierLeague.uk	Sky.Sports.Premier.League.ie
+DiscoveryHistory.uk	Discovery.History.ie
+FXMovies.us	FX.Movie.Channel.HD.us2

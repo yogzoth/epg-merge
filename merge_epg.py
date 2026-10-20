@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-merge_epg.py: builds one guide (epg.xml.gz and epg.xml) for the tv-general playlist.
+merge_epg.py: builds one guide (epg.xml.gz and epg.xml) for the tv-general-trex and tv-general playlists.
 
-1. Reads the provider's guide plus the epgshare01 country files and keeps only
+1. Reads both lines' guides plus the epgshare01 country files and keeps only
    the channels listed in channels.txt. The first source with listings for a
    channel wins.
 2. Fixes the provider guide: drops its late duplicate schedules and checks its
@@ -15,7 +15,7 @@ merge_epg.py: builds one guide (epg.xml.gz and epg.xml) for the tv-general playl
 6. Cleans titles: episode details move to the description, movies get "(year)".
 
 Provider links contain logins, so they are never written in this repo. They come
-from the PROVIDER2_EPG_URL secret.
+from the PROVIDER_EPG_URL (Trex) and PROVIDER2_EPG_URL (old tv-general) secrets.
 """
 import gzip
 import io
@@ -28,7 +28,8 @@ import xml.etree.ElementTree as ET
 from xml.sax.saxutils import escape, quoteattr
 
 SOURCES = [
-    "env:PROVIDER2_EPG_URL",  # Trex line xmltv.php link (secret)
+    "env:PROVIDER_EPG_URL",   # Trex line (tv-general-trex) xmltv.php link (secret)
+    "env:PROVIDER2_EPG_URL",  # old tv-general provider xmltv.php link (secret), until it ends
     "https://epgshare01.online/epgshare01/epg_ripper_CA2.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_US2.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_US_LOCALS1.xml.gz",
@@ -98,7 +99,7 @@ def wanted_ids():
 def open_source(src, tmpdir, tries=3):
     """Download a source to a temp file and return a readable (un-gzipped) stream."""
     if src.startswith("env:"):
-        label = "provider guide"
+        label = "Trex guide" if src == "env:PROVIDER_EPG_URL" else "old tv-general guide"
         src = os.environ.get(src[4:], "")
         if not src:
             return None, f"{label}: skipped (secret not set)"
@@ -350,7 +351,7 @@ def event_slots():
             for line in fh:
                 if line.strip() and not line.startswith("#"):
                     parts = line.rstrip("\n").split("\t")
-                    out[parts[0].strip()] = ("2", parts[1].strip())
+                    out[parts[0].strip()] = (parts[2].strip() if len(parts) > 2 else "1", parts[1].strip())
     return out
 
 
@@ -836,12 +837,12 @@ def main():
     names = {}
     for tag in sorted({t for t, _ in slots.values()}):
         names[tag] = provider_names(int(tag))
-        report.append(f"event names: read {len(names[tag])} channel names")
+        report.append(f"event names: provider {tag}: read {len(names[tag])} channel names")
     old_state, new_state = (load_state() if slots else {}), {}
     ph_used = ev_used = 0
     for cid in sorted(ids - filled):
         if cid in ph:
-            tag, num = slots.get(cid, ("2", None))
+            tag, num = slots.get(cid, ("1", None))
             raw = names.get(tag, {}).get(num)
             event = parse_event(raw) if raw else None
             if event and not event[1]:
