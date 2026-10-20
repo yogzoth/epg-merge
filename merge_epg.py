@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-merge_epg.py: builds one guide (epg.xml.gz and epg.xml) for the jordan-tv and tv-general playlists.
+merge_epg.py: builds one guide (epg.xml.gz and epg.xml) for the tv-general playlist.
 
-1. Reads both providers' guides plus the epgshare01 country files and keeps only
+1. Reads the provider's guide plus the epgshare01 country files and keeps only
    the channels listed in channels.txt. The first source with listings for a
    channel wins.
 2. Fixes the provider guide: drops its late duplicate schedules and checks its
@@ -15,7 +15,7 @@ merge_epg.py: builds one guide (epg.xml.gz and epg.xml) for the jordan-tv and tv
 6. Cleans titles: episode details move to the description, movies get "(year)".
 
 Provider links contain logins, so they are never written in this repo. They come
-from the PROVIDER_EPG_URL and PROVIDER2_EPG_URL secrets.
+from the PROVIDER2_EPG_URL secret.
 """
 import gzip
 import io
@@ -28,8 +28,7 @@ import xml.etree.ElementTree as ET
 from xml.sax.saxutils import escape, quoteattr
 
 SOURCES = [
-    "env:PROVIDER_EPG_URL",   # provider 1 (jordan-tv) xmltv.php link (secret)
-    "env:PROVIDER2_EPG_URL",  # provider 2 (tv-general, Trex line) xmltv.php link (secret)
+    "env:PROVIDER2_EPG_URL",  # Trex line xmltv.php link (secret)
     "https://epgshare01.online/epgshare01/epg_ripper_CA2.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_US2.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_US_LOCALS1.xml.gz",
@@ -99,7 +98,7 @@ def wanted_ids():
 def open_source(src, tmpdir, tries=3):
     """Download a source to a temp file and return a readable (un-gzipped) stream."""
     if src.startswith("env:"):
-        label = "provider guide" if src == "env:PROVIDER_EPG_URL" else "provider 2 guide"
+        label = "provider guide"
         src = os.environ.get(src[4:], "")
         if not src:
             return None, f"{label}: skipped (secret not set)"
@@ -351,7 +350,7 @@ def event_slots():
             for line in fh:
                 if line.strip() and not line.startswith("#"):
                     parts = line.rstrip("\n").split("\t")
-                    out[parts[0].strip()] = (parts[2].strip() if len(parts) > 2 else "1", parts[1].strip())
+                    out[parts[0].strip()] = ("2", parts[1].strip())
     return out
 
 
@@ -359,7 +358,7 @@ def event_slots():
 # Some providers write their guide in their own local time but label it UTC
 # (+0000), which pushes every show 1 to 2 hours late. Each run compares the
 # provider's CNN schedule with epgshare's and shifts the provider's listings by
-# the difference. If CNN isn't there, provider 2 falls back to Central European
+# the difference. If CNN isn't there, the provider falls back to Central European
 # time, which is what it used when this was set up.
 ANCHORS = [("CNN.us", "CNN.HD.us2")]
 
@@ -687,14 +686,14 @@ def main():
     for src, items in held.items():
         items, n_dupe = drop_late_copies(items)
         if n_dupe:
-            report.append(f"{'provider 2' if '2' in src else 'provider'} guide: dropped late duplicate schedules on {n_dupe} channels")
+            report.append(f"provider guide: dropped late duplicate schedules on {n_dupe} channels")
         prov_cnn = {}
         for x in items:
             if f'channel="{ANCHORS[0][0]}"' in x:
                 m = _re.search(r"<title[^>]*>([^<]*)", x)
                 prov_cnn.setdefault(_title_key(m.group(1) if m else ""), []).append(_epoch(_re.search(r'start="([^"]+)"', x).group(1)))
         shift = find_shift(prov_cnn, anchor_r) or 0
-        report.append(f"{'provider 2' if '2' in src else 'provider'} guide clock shift: {shift // 60:+d} min (measured against CNN)")
+        report.append(f"provider guide clock shift: {shift // 60:+d} min (measured against CNN)")
         def fix(m):
             t = _epoch(m.group(2))
             return f'{m.group(1)}="{time.strftime("%Y%m%d%H%M%S", time.gmtime(t - shift))} +0000"' if t is not None else m.group(0)
@@ -835,16 +834,15 @@ def main():
     ph = placeholders()
     slots = event_slots()
     names = {}
-    for tag in sorted({t for t, _ in slots.values()} | {"1", "2"}):
+    for tag in sorted({t for t, _ in slots.values()}):
         names[tag] = provider_names(int(tag))
-        report.append(f"event names: provider {tag}: read {len(names[tag])} channel names")
+        report.append(f"event names: read {len(names[tag])} channel names")
     old_state, new_state = (load_state() if slots else {}), {}
     ph_used = ev_used = 0
     for cid in sorted(ids - filled):
         if cid in ph:
-            tag, num = slots.get(cid, ("1", None))
-            # both lines are Trex, so a slot's stream number means the same thing on either one
-            raw = names.get(tag, {}).get(num) or next((n[num] for n in names.values() if num in n), None)
+            tag, num = slots.get(cid, ("2", None))
+            raw = names.get(tag, {}).get(num)
             event = parse_event(raw) if raw else None
             if event and not event[1]:
                 prev = old_state.get(cid)
@@ -936,7 +934,7 @@ def main():
     missing = sorted(ids - filled)
     with gzip.open(OUTPUT, "wt", encoding="utf-8") as out:
         out.write('<?xml version="1.0" encoding="UTF-8"?>\n')
-        out.write('<tv generator-info-name="jordan-tv merged guide">\n')
+        out.write('<tv generator-info-name="tv-general merged guide">\n')
         for cid in sorted(ids):
             if cid in channels:
                 out.write(channels[cid])
@@ -959,7 +957,7 @@ def main():
         fh.write(f"Channels with listings: {len(filled)} of {len(ids)}\n")
         if missing:
             fh.write("No listings: " + ", ".join(missing) + "\n")
-        # Which provider 2 streams have catch-up (stream number:days). No login in here.
+        # Which streams have catch-up (stream number:days). No login in here.
         cu = catchup_streams(2)
         if cu is not None:
             fh.write(f"Catch-up streams ({len(cu)}): " + ",".join(f"{k}:{v}" for k, v in sorted(cu.items(), key=lambda kv: int(kv[0]) if kv[0].isdigit() else 0)) + "\n")

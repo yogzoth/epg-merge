@@ -19,7 +19,6 @@ jobs:
           python-version: "3.12"
       - name: Merge guides
         env:
-          PROVIDER_EPG_URL: ${{ secrets.PROVIDER_EPG_URL }}
           PROVIDER2_EPG_URL: ${{ secrets.PROVIDER2_EPG_URL }}
         run: python merge_epg.py
       - name: Publish to the "guide" branch

@@ -1,24 +1,15 @@
 # id<TAB>title<TAB>description  (used only when no real listings exist)
 ph.CITYNEWS.24.7	CityNews 24/7	Live news, weather and traffic around the clock.
-ph.CMT.MUSIC	Country Music Videos	Nonstop country music videos.
 ph.UFC	UFC	UFC fights, replays and shows.
 ph.WWE	WWE	WWE shows, replays and live events.
 ph.TRILLERTV	TrillerTV	Combat sports, replays and live events.
 ph.SKY.SPORTS.BOX.OFFICE	Sky Sports Box Office	Pay-per-view events when scheduled.
-ph.UFC.MAIN.CARD	UFC Main Card	Live UFC main card on fight nights.
 ph.UFC.01	UFC 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.UFC.02	UFC 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.UFC.03	UFC 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.UFC.04	UFC 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.UFC.05	UFC 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.UFC.06	UFC 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.BOXING.01	Boxing 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.BOXING.02	Boxing 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.BOXING.03	Boxing 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.BOXING.04	Boxing 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.BOXING.05	Boxing 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.BOXING.06	Boxing 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
-ph.BOXING.07	Boxing 07 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.PPV.01	PPV 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.PPV.02	PPV 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.PPV.03	PPV 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
@@ -58,11 +49,6 @@ ph.NFL.04	NFL 04 · Event slot	Shows a live event when one is scheduled. Check t
 ph.NFL.05	NFL 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.NFL.06	NFL 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
 ph.CHILL.NATURESCAPE	Naturescape · Ambient	Nature scenes and natural sound, around the clock.
-ph.CHILL.BEACH.DAY	Beach Day · Ambient	Beaches and shorelines from around the world.
-ph.CHILL.EARTHDAY.365	Earthday 365 · Ambient	The natural world, every day of the year.
-ph.CHILL.SPACE...BEYOND	Space & Beyond · Ambient	Stars, planets and deep space.
-ph.CHILL.NASA	NASA · Ambient	Live views from orbit, launches and missions.
-ph.CHILL.PLACES...SPACES	Places & Spaces · Ambient	Beautiful homes, places and spaces.
 ph.CHILL.TOURIST	Tourist · Ambient	Walking tours through cities and towns, in 4K.
 ph.CHILL.SLOW.TV	Slow TV · Ambient	Slow, unhurried journeys in 4K.
 ph.CHILL.MUSEUM	Museum · Ambient	Art and masterpieces up close, in 4K.
@@ -74,7 +60,6 @@ ph.CHILL.STARDUST	Stardust · Ambient	Stars, nebulae and deep space.
 ph.CHILL.MYZEN	MyZen · Ambient	Calm visuals and soft music.
 ph.CHILL.NORWAY	Norway · Ambient	Fjords, peaks and northern light.
 ph.CHILL.ICELAND	Iceland · Ambient	Volcanic coasts, glaciers and waterfalls.
-# tv-general on the Trex line
 ph.T.NHL.01	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
 ph.T.NHL.02	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
 ph.T.NHL.03	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
