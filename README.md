@@ -13,7 +13,7 @@ The playlists already point at the guide, so most apps pick it up on their own.
 
 ## What each run does
 
-1. Downloads both providers' guides and the epgshare01 country guides, keeping only the channels in `channels.txt`.
+1. Downloads both lines' guides and the epgshare01 country guides, keeping only the channels in `channels.txt`. Both lines are Trex, so event slots read their names from whichever line has them.
 2. Repairs the provider guide: removes its late duplicate schedules and checks its clock against CNN.
 3. Fills holes in patchy guides from a backup guide for the same channel (`fill.txt`) and removes overlapping listings.
 4. Makes West feeds from their East guide, 3 hours later.
@@ -36,6 +36,6 @@ The playlists already point at the guide, so most apps pick it up on their own.
 
 ## Upkeep
 
-- **Login changes:** update the `PROVIDER_EPG_URL` (jordan-tv) or `PROVIDER2_EPG_URL` (tv-general) secret under Settings > Secrets and variables > Actions. Logins are never stored in the repo.
+- **Login changes:** update the `PROVIDER_EPG_URL` (jordan-tv) or `PROVIDER2_EPG_URL` (tv-general, Trex line) secret under Settings > Secrets and variables > Actions. Logins are never stored in the repo.
 - **Lineup changes:** upload the new `channels.txt`, `placeholders.txt` and `event_slots.txt` together.
 - **Manual run:** Actions > Build merged guide > Run workflow. Manual runs also refresh `index.txt`, a list of every channel in every guide source, used to match new channels.

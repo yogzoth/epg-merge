@@ -29,7 +29,7 @@ from xml.sax.saxutils import escape, quoteattr
 
 SOURCES = [
     "env:PROVIDER_EPG_URL",   # provider 1 (jordan-tv) xmltv.php link (secret)
-    "env:PROVIDER2_EPG_URL",  # provider 2 (tv-general) xmltv.php link (secret)
+    "env:PROVIDER2_EPG_URL",  # provider 2 (tv-general, Trex line) xmltv.php link (secret)
     "https://epgshare01.online/epgshare01/epg_ripper_CA2.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_US2.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_US_LOCALS1.xml.gz",
@@ -105,6 +105,9 @@ def open_source(src, tmpdir, tries=3):
             return None, f"{label}: skipped (secret not set)"
     else:
         label = src.rsplit("/", 1)[-1]
+        # epgshare01's CDN sometimes caches a "not found" for hours while a file is being replaced;
+        # an hourly query string asks it for the current file instead.
+        src += ("&" if "?" in src else "?") + "t=" + str(int(time.time()) // 3600)
     path = os.path.join(tmpdir, "src.bin")
     req = urllib.request.Request(src, headers={"User-Agent": "Mozilla/5.0 (epg-merge)"})
     for attempt in range(tries):
@@ -832,7 +835,7 @@ def main():
     ph = placeholders()
     slots = event_slots()
     names = {}
-    for tag in sorted({t for t, _ in slots.values()}):
+    for tag in sorted({t for t, _ in slots.values()} | {"1", "2"}):
         names[tag] = provider_names(int(tag))
         report.append(f"event names: provider {tag}: read {len(names[tag])} channel names")
     old_state, new_state = (load_state() if slots else {}), {}
@@ -840,7 +843,9 @@ def main():
     for cid in sorted(ids - filled):
         if cid in ph:
             tag, num = slots.get(cid, ("1", None))
-            event = parse_event(names.get(tag, {})[num]) if num in names.get(tag, {}) else None
+            # both lines are Trex, so a slot's stream number means the same thing on either one
+            raw = names.get(tag, {}).get(num) or next((n[num] for n in names.values() if num in n), None)
+            event = parse_event(raw) if raw else None
             if event and not event[1]:
                 prev = old_state.get(cid)
                 first = prev[1] if prev and prev[0] == event[0] else int(time.time())
