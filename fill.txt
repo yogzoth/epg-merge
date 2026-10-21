@@ -582,3 +582,4 @@ NESNplus.us	NESN+.New.England.Sports.Network.Plus.us2
 SkySportsPremierLeague.uk	Sky.Sports.Premier.League.ie
 DiscoveryHistory.uk	Discovery.History.ie
 FXMovies.us	FX.Movie.Channel.HD.us2
+MeTV.Toons.us2	MeTvToons.us
