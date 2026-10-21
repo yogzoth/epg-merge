@@ -28,6 +28,7 @@ The playlists already point at the guide, so most apps pick it up on their own.
 | --- | --- |
 | `merge_epg.py` | The guide builder. |
 | `channels.txt` | Every guide ID the two playlists use. |
+| `shift.txt` | Channels whose stream runs ahead of or behind its guide, in minutes. |
 | `fill.txt` | Backup guides for channels whose main guide has holes (often the Trex line's own guide). |
 | `placeholders.txt` | Simple listings for channels with no schedule anywhere. |
 | `event_slots.txt` | Which Trex stream each live sports and PPV slot is, so the guide can show the event name. |

@@ -54,6 +54,7 @@ PLACEHOLDER_DAYS = 4
 OUTPUT = "epg.xml.gz"
 PLAIN_OUTPUT = "epg.xml"     # same guide, unzipped, for apps that prefer it
 DAYS_BACK_KEPT = 1          # drop listings that ended more than this many days ago
+SHIFT_FILE = "shift.txt"     # "channel<TAB>minutes": move a channel's guide to match its stream
 FILL_FILE = "fill.txt"      # "channel<TAB>backup[<TAB>backup2]": backups fill the holes in a patchy guide
 _YEAR_CATS = ("movie", "movies", "film", "feature film")
 
@@ -751,6 +752,29 @@ def main():
     tidied, n_over = tidy_overlaps(body.getvalue())
     body = io.StringIO(); body.write(tidied)
     report.append(f"overlapping listings removed: {n_over}")
+
+    # Channels whose stream runs ahead of or behind its guide: shift.txt is "channel<TAB>minutes".
+    shifts = {}
+    if os.path.exists(SHIFT_FILE):
+        for l in open(SHIFT_FILE, encoding="utf-8"):
+            p = l.rstrip("\n").split("\t")
+            if len(p) == 2 and not p[0].startswith("#"):
+                shifts[p[0]] = int(p[1]) * 60
+    if shifts:
+        def move(m):
+            x = m.group(0)
+            c = re.search(r'channel="([^"]+)"', x)
+            d = shifts.get(c.group(1)) if c else None
+            if not d:
+                return x
+            for k in ("start", "stop"):
+                t = _epoch(re.search(r'%s="([^"]+)"' % k, x).group(1))
+                if t is not None:
+                    x = re.sub(r'%s="[^"]+"' % k, f'{k}="{time.strftime("%Y%m%d%H%M%S", time.gmtime(t + d))} +0000"', x, count=1)
+            return x
+        shifted = re.sub(r"<programme\b[^>]*>", move, body.getvalue())
+        body = io.StringIO(); body.write(shifted)
+        report.append(f"time shifts: {len(shifts)} channels moved to match their stream")
 
     if west:
         import re as _re

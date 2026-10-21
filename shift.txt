@@ -1,0 +1,2 @@
+# channel<TAB>minutes: moves a guide to match its stream (negative = earlier)
+MeTV.Toons.us2	-120
