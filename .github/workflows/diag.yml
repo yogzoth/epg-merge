@@ -1,0 +1,31 @@
+name: Guide source check
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          T: ${{ secrets.PROVIDER_EPG_URL }}
+          O: ${{ secrets.PROVIDER2_EPG_URL }}
+        run: |
+          curl -s "https://epgshare01.online/epgshare01/epg_ripper_US2.xml.gz?t=$(date +%s)" | gunzip > us2.xml
+          curl -s -A "Mozilla/5.0" "$T" -o trex.xml; head -c 2 trex.xml | grep -q $'\x1f\x8b' && { mv trex.xml t.gz; gunzip -c t.gz > trex.xml; }
+          curl -s -A "Mozilla/5.0" "$O" -o old.xml; head -c 2 old.xml | grep -q $'\x1f\x8b' && { mv old.xml o.gz; gunzip -c o.gz > old.xml; }
+          {
+          date -u
+          for f in us2 trex old; do
+            echo "== $f $(wc -c < $f.xml) bytes"
+            grep -oiE '<channel id="[^"]*toons[^"]*"' $f.xml | head -5
+            python3 - "$f.xml" <<'PY'
+          import re, sys
+          x = open(sys.argv[1], encoding='utf-8', errors='replace').read()
+          for m in re.finditer(r'<programme\b([^>]*)>\s*<title[^>]*>([^<]*GoBots[^<]*)', x):
+              a = m.group(1)
+              c = re.search(r'channel="([^"]+)"', a).group(1)
+              if 'oon' in c.lower(): print(c, re.search(r'start="([^"]+)"', a).group(1), m.group(2))
+          PY
+          done
+          } > /tmp/diag.txt 2>&1
+          mkdir /tmp/o && cp /tmp/diag.txt /tmp/o/ && cd /tmp/o && git init -q -b diag && git add . && git -c user.name=bot -c user.email=bot@x commit -qm diag && git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag
