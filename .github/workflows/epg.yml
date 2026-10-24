@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   build:
@@ -38,3 +39,28 @@ jobs:
           git add .
           git commit -q -m "Guide $(date -u +%F)"
           git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" guide
+      - name: Warn when the guide is running dry
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          n=$(python3 - <<'PY'
+          import re, time
+          soon = time.strftime("%Y%m%d%H%M", time.gmtime(time.time() + 6 * 3600))
+          last = {}
+          for m in re.finditer(r'<programme ([^>]*)>', open("epg.xml", encoding="utf-8").read()):
+              c, e = re.search(r'channel="([^"]+)"', m.group(1)), re.search(r'stop="(\d{12})', m.group(1))
+              if c and e:
+                  last[c.group(1)] = max(last.get(c.group(1), ""), e.group(1))
+          ids = set(re.findall(r'<channel id="([^"]+)"', open("epg.xml", encoding="utf-8").read()))
+          print(sum(1 for i in ids if last.get(i, "") < soon))
+          PY
+          )
+          echo "channels with under 6 hours of guide left: $n"
+          open=$(gh issue list -R "${{ github.repository }}" --label guide-alert --state open --json number --jq '.[0].number')
+          if [ "$n" -gt 150 ] && [ -z "$open" ]; then
+            gh label create guide-alert -R "${{ github.repository }}" --color d93f0b 2>/dev/null || true
+            gh issue create -R "${{ github.repository }}" --label guide-alert --title "Guide running dry: $n channels" \
+              --body "$n channels have less than 6 hours of listings left. See status.txt on the guide branch for which source stopped."
+          elif [ "$n" -le 150 ] && [ -n "$open" ]; then
+            gh issue close "$open" -R "${{ github.repository }}" --comment "Recovered: $n channels short now."
+          fi
