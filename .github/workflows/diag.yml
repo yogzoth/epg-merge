@@ -6,33 +6,27 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - env:
-          T: ${{ secrets.PROVIDER_EPG_URL }}
-        run: |
+      - run: |
           set +e
           {
           date -u
-          for ua in "Mozilla/5.0" "Mozilla/5.0 (epg-merge)" "TiviMate/5.1.6 (Android 12)"; do
-            echo "curl UA=$ua -> $(curl -s -o /dev/null -w '%{http_code} %{size_download}' -A "$ua" "$T")"
+          curl -s https://epgshare01.online/epgshare01/ | grep -oE 'epg_ripper_(US|CA)[^"<]*\.xml\.gz[^<]*<[^>]*>[^<]*' | sed -E 's/<[^>]*>/ /g' | head -40
+          for u in https://epgshare01.online/epgshare01/epg_ripper_US2.xml.gz https://epgshare01.online/epgshare01/epg_ripper_US1.xml.gz https://epgshare01.online/epgshare01/epg_ripper_CA2.xml.gz https://epg.pw/xmltv/epg_US.xml.gz https://epg.pw/xmltv/epg_CA.xml.gz; do
+            f=$(basename $u); echo "$f -> $(curl -sL -o $f -w '%{http_code} %{size_download}' $u)"
+            python3 - "$f" <<'PY'
+          import gzip, re, sys, collections
+          try:
+              x = gzip.open(sys.argv[1]).read().decode("utf-8", "replace")
+          except Exception as e:
+              print("  unreadable", e); sys.exit()
+          ends = collections.defaultdict(str)
+          for m in re.finditer(r'<programme\b([^>]*)>', x):
+              a = m.group(1); c = re.search(r'channel="([^"]+)"', a); s = re.search(r'stop="(\d{12})', a)
+              if c and s and s.group(1) > ends[c.group(1)]: ends[c.group(1)] = s.group(1)
+          v = sorted(ends.values())
+          print("  channels", len(ends), "programmes", x.count("<programme"), "median end", v[len(v)//2] if v else "", "max end", v[-1] if v else "")
+          for k in [k for k in ends if re.search(r'(?i)^ion|tvland|tv\.land|buzzr|^tbs', k)][:8]: print("   ", k, ends[k])
+          PY
           done
-          python3 - <<'PY'
-          import os, urllib.request
-          for ua in ("Mozilla/5.0", "Mozilla/5.0 (epg-merge)", None):
-              h = {"User-Agent": ua} if ua else {}
-              try:
-                  with urllib.request.urlopen(urllib.request.Request(os.environ["T"], headers=h), timeout=120) as r:
-                      print("python UA", ua, r.status, len(r.read()))
-              except Exception as e:
-                  print("python UA", ua, "ERR", e)
-          PY
-          echo "us2 -> $(curl -s -o us2.gz -w "%{http_code} %{size_download}" "https://epgshare01.online/epgshare01/epg_ripper_US2.xml.gz")"; gunzip -c us2.gz > us2.xml
-          python3 - <<'PY'
-          import re
-          x = open("us2.xml", encoding="utf-8", errors="replace").read()
-          st = re.findall(r'<programme start="(\d{12})', x)
-          print("us2 programmes", len(st), "first", min(st), "last", max(st))
-          ion = re.findall(r'<programme start="(\d{12})[^>]*channel="ION.Television.HD.us2"', x)
-          print("ION us2", len(ion), min(ion) if ion else "", max(ion) if ion else "")
-          PY
           } > /tmp/diag.txt 2>&1
           mkdir /tmp/o && cp /tmp/diag.txt /tmp/o/ && cd /tmp/o && git init -q -b diag && git add . && git -c user.name=bot -c user.email=bot@x commit -qm diag && git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag
