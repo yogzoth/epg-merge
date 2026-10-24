@@ -1,7 +1,7 @@
 # Patchy guides: channel<TAB>backup guide(s). Backups only fill holes; they never replace listings.
-Euronews.uk	Euronews.ie
-Really.uk	Really.ie
-5SELECT.uk	5SELECT.ch
+Euronews.uk	Euronews.ie	12529
+Really.uk	Really.ie	12462
+5SELECT.uk	5SELECT.ch	12054
 La.1.es	LA1.es
 CBC.Vancouver.HD.ca2	CBUT.ca	470384
 CTV.Vancouver.HD.ca2	CTVVancouver.ca	470456
@@ -345,103 +345,103 @@ NBC.Sports.California.SAT.us2	NBCSportsCalifornia.us	465054
 Spectrum.SportsNet.Lakers.HD.us2	SpectrumSportsNet.us	464806
 SNY.SportsNet.New.York.HD.us2	us.SNY Sportsnet NY	464777
 plex.tv.Stadium.plex	Stadium.us
-BBC.One.West.HD.uk	uk.BBC1 West
-BBC.Two.HD.uk	uk.BBC2 N Ireland
-BBCScotlandHD.uk	BBCScotland.uk
-ITV1.HD.uk	ITV1.uk
-ITV2.HD.uk	ITV2.uk
-ITV3.HD.uk	ITV3.uk
-ITV4.HD.uk	ITV4.uk
-Channel.4.HD.uk	Channel4.uk
-E4.HD.uk	E4.uk
-More4.HD.uk	More4.uk
-Channel.5.HD.uk	Channel5.uk
-5.USA.uk	FiveUSA.uk
-5STAR.uk	5star.uk
+BBC.One.West.HD.uk	uk.BBC1 West	12383
+BBC.Two.HD.uk	uk.BBC2 N Ireland	12499
+BBCScotlandHD.uk	BBCScotland.uk	12229
+ITV1.HD.uk	ITV1.uk	12086
+ITV2.HD.uk	ITV2.uk	12203
+ITV3.HD.uk	ITV3.uk	12274
+ITV4.HD.uk	ITV4.uk	12271
+Channel.4.HD.uk	Channel4.uk	12113
+E4.HD.uk	E4.uk	12116
+More4.HD.uk	More4.uk	12164
+Channel.5.HD.uk	Channel5.uk	12370
+5.USA.uk	FiveUSA.uk	12058
+5STAR.uk	5star.uk	12057
 RTE.One.HD.ie	RTEOne.ie
 RTE.Two.HD.ie	uk.RTÉ Two
 Virgin.Media.One.HD.ie	VirginMediaOne.ie	564559
 Virgin.Media.Two.HD.ie	VirginMediaTwo.ie	564541
-Virgin.Media.Three.HD.ie	VirginMediaThree.ie
-Sky.Atlantic.HD.uk	SkyAtlantic.uk
-Sky.Witness.HD.uk	SkyWitness.uk
-Sky.Arts.HD.uk	SkyArts.uk
+Virgin.Media.Three.HD.ie	VirginMediaThree.ie	564567
+Sky.Atlantic.HD.uk	SkyAtlantic.uk	12366
+Sky.Witness.HD.uk	SkyWitness.uk	12095
+Sky.Arts.HD.uk	SkyArts.uk	12135
 U.and.Dave.HD.uk	UandDave.uk	486757
 U.and.GOLD.HD.uk	GOLD.uk	486852
 U.and.W.HD.uk	uk.W	380436
 U.and.alibi.HD.uk	Alibi.uk	486759
 U.and.Drama.uk	Drama.uk	486795
-NOW.70s.uk	Now70s.uk
-NOW.80s.uk	NOW80s.uk
-Clubland.TV.uk	ClublandTV.uk
-CBBC.HD.uk	CBBC.uk
-Cartoon.Network.ie	CartoonNetwork.uk
+NOW.70s.uk	Now70s.uk	12343
+NOW.80s.uk	NOW80s.uk	12243
+Clubland.TV.uk	ClublandTV.uk	12141
+CBBC.HD.uk	CBBC.uk	12497
+Cartoon.Network.ie	CartoonNetwork.uk	12482
 Boomerang.HD.uk	Boomerang.uk	486836
-NickelodeonHD.uk	Nickelodeon.uk
-Nick.Jr..HD.uk	NickJunior.uk
-Sky.Comedy.HD.uk	SkyComedy.uk
-4seven.uk	Channel4.uk
+NickelodeonHD.uk	Nickelodeon.uk	12520
+Nick.Jr..HD.uk	NickJunior.uk	12201
+Sky.Comedy.HD.uk	SkyComedy.uk	12136
+4seven.uk	Channel4.uk	12242
 STV.HD.uk	STV.uk	350685
-S4C.HD.uk	S4C.uk
+S4C.HD.uk	S4C.uk	12378
 NOW.90s.uk	Now90s.uk	9357
 Sky.Documentaries.HD.uk	SkyDocumentaries.uk	454797
-Discovery.HD.uk	DiscoveryChannel.uk
-Disc.Science.uk	DiscoveryScience.uk
-Nat.Geo.HD.uk	NatGeo.uk
-PBS.America.uk	PBSAmerica.uk
-Sky.History.HD.ie	HistoryChannel.uk
-Sky.History2.uk	History2.uk
-Discovery.History.ie	DiscoveryHistory.uk
-QUEST.HD.uk	Quest.uk
-DMAX.uk	DiscoveryDMAX.uk
-Disc.Turbo.uk	DiscoveryTurbo.uk
-BLAZE.uk	Blaze.uk
-Sky.Nature.HD.uk	SkyNature.uk
-NatGeoWild.HD.uk	NatGeoWild.uk
-Animal.Planet.uk	AnimalPlanet.uk
+Discovery.HD.uk	DiscoveryChannel.uk	12185
+Disc.Science.uk	DiscoveryScience.uk	12179
+Nat.Geo.HD.uk	NatGeo.uk	12197
+PBS.America.uk	PBSAmerica.uk	12333
+Sky.History.HD.ie	HistoryChannel.uk	12272
+Sky.History2.uk	History2.uk	12226
+Discovery.History.ie	DiscoveryHistory.uk	12180
+QUEST.HD.uk	Quest.uk	12041
+DMAX.uk	DiscoveryDMAX.uk	12374
+Disc.Turbo.uk	DiscoveryTurbo.uk	12189
+BLAZE.uk	Blaze.uk	12036
+Sky.Nature.HD.uk	SkyNature.uk	12131
+NatGeoWild.HD.uk	NatGeoWild.uk	12023
+Animal.Planet.uk	AnimalPlanet.uk	12183
 U.and.Eden.uk	Eden.uk	399724
-Sky.Crime.HD.uk	SkyCrime.uk
-ID.uk	InvestigationDiscovery.uk
-Crime+Inv.HD.uk	CrimeAndInvestigationNetwork.uk
-Quest.Red.uk	QuestRed.uk
-Food.Network.uk	FoodNetwork.uk
-TLC.HD.uk	TLC.uk
+Sky.Crime.HD.uk	SkyCrime.uk	12394
+ID.uk	InvestigationDiscovery.uk	12354
+Crime+Inv.HD.uk	CrimeAndInvestigationNetwork.uk	12436
+Quest.Red.uk	QuestRed.uk	12353
+Food.Network.uk	FoodNetwork.uk	12263
+TLC.HD.uk	TLC.uk	12163
 Horse.&.Country.TV.nl	horsecountrytv.nl
 True.Crime.uk	TrueCrime.uk	486749
 Sky.Premiere.uk	SkyCinemaPremiere.uk	494415
 Sky.Cinema.Hits.HD.uk	SkyCinemaHits.uk	454796
 Sky.Greats.uk	SkyCinemaGreats.uk	494412
-Sky.Action.HD.uk	SkyAction.uk
-Sky.Thriller.HD.uk	SkyThriller.uk
-Sky.Sci-Fi.HD.uk	uk.Sky Cinema Sci Fi & Horror
+Sky.Action.HD.uk	SkyAction.uk	12457
+Sky.Thriller.HD.uk	SkyThriller.uk	12227
+Sky.Sci-Fi.HD.uk	uk.Sky Cinema Sci Fi & Horror	12038
 Sky.Cinema.Comedy.uk	SkyCinemaComedy.uk	494411
-Sky.Drama.HD.uk	SkyCinemaDrama.uk
-Sky.Family.HD.uk	uk.Sky Cinema Family
-Film4.HD.uk	Film4.uk
-GREAT!.movies.uk	GreatMovies.uk
-GREAT!.action.uk	GreatAction.uk
-5ACTION.uk	5Action.uk
-BBC.NEWS.HD.uk	BBCNews.uk
-Sky.News.HD.uk	SkyNews.uk
-GB.News.HD.uk	GBNews.uk
-BBC.Parliament.HD.uk	BBCParliament.uk
+Sky.Drama.HD.uk	SkyCinemaDrama.uk	12455
+Sky.Family.HD.uk	uk.Sky Cinema Family	12449
+Film4.HD.uk	Film4.uk	12111
+GREAT!.movies.uk	GreatMovies.uk	12143
+GREAT!.action.uk	GreatAction.uk	12142
+5ACTION.uk	5Action.uk	12401
+BBC.NEWS.HD.uk	BBCNews.uk	12162
+Sky.News.HD.uk	SkyNews.uk	12069
+GB.News.HD.uk	GBNews.uk	12133
+BBC.Parliament.HD.uk	BBCParliament.uk	12060
 TalkRadio.(TalkTV).uk	TalkTV.uk	572484
-Sky.Sports.Main.Event.HD.ie	SkySportsMainEvent.uk
-Sky.Sports.Premier.League.ie	uk.Sky Sports Premier League
+Sky.Sports.Main.Event.HD.ie	SkySportsMainEvent.uk	12306
+Sky.Sports.Premier.League.ie	uk.Sky Sports Premier League	12453
 Sky.Sports.Football.HD.uk	SkySportsFootball.uk	450289
-Sky.Sports.Cricket.HD.ie	SkySportsCricket.uk
-Sky.Sports.Golf.HD.ie	SkySportsGolf.uk
-Sky.Sports.F1.HD.ie	SkySportsF1.uk
-Sky.Sports.Plus.HD.ie	SkySportsArena.uk
-Sky.Sports.Mix.HD.ie	SkySportsMix.uk
-Sky.Sports.News.HD.ie	SkySportsNews.uk
-Sky.Sports.Racing.HD.ie	SkySportsRacing.uk
-Racing.TV.HD.uk	RacingUK.uk
+Sky.Sports.Cricket.HD.ie	SkySportsCricket.uk	12434
+Sky.Sports.Golf.HD.ie	SkySportsGolf.uk	12022
+Sky.Sports.F1.HD.ie	SkySportsF1.uk	12190
+Sky.Sports.Plus.HD.ie	SkySportsArena.uk	381881
+Sky.Sports.Mix.HD.ie	SkySportsMix.uk	12562
+Sky.Sports.News.HD.ie	SkySportsNews.uk	12223
+Sky.Sports.Racing.HD.ie	SkySportsRacing.uk	12200
+Racing.TV.HD.uk	RacingUK.uk	12534
 Premier.Sports.1.HD.uk	PremierSports1.uk	219100
 Premier.Sports.2.HD.uk	ViaplaySports2.uk	219104
-MUTV.HD.uk	MUTV.uk
-LFCTV.HD.uk	LiverpoolFCTV.uk
-Sky.Sports.Action.HD.ie	SkySportsAction.uk
+MUTV.HD.uk	MUTV.uk	12258
+LFCTV.HD.uk	LiverpoolFCTV.uk	12202
+Sky.Sports.Action.HD.ie	SkySportsAction.uk	9536
 9Sydney.au	Channel9.au
 7TWOSydney.au	7TWO.au
 7mateSydney.au	7Mate.au
@@ -542,8 +542,8 @@ Canal.TVN.(Chile).cl	cl.TVN - Televisión Nacional de Chile (TVN) [53]
 CANAL.10.HD.uy	uy.TV NACIONAL
 BBC.World.News.ch	BBCWorld.ca
 CNN.International.us2	CNN.uk	465021
-Al.Jazeera.HD.uk	us.Al Jazeera
-TRT.World.HD.uk	TRTWorld.tr
+Al.Jazeera.HD.uk	us.Al Jazeera	12532
+TRT.World.HD.uk	TRTWorld.tr	12173
 UP.us	UPtv.us2
 HGTV.us	Home.and.Garden.Television.HD.us2
 HGTV.ca	Home.and.Garden.Television.ca2
@@ -567,7 +567,7 @@ ComedyTV.us	Comedy.TV.HD.us2
 ReelzChannel.us	ReelzChannel.HD.us2
 BounceTV.us	Bounce.TV.us2
 Comet.us	Comet.us2
-5USA.uk	5.USA.uk
+5USA.uk	5.USA.uk	12058
 TCM.ca	Turner.Classic.Movies.Canada.HD.ca2
 TCM.us	Turner.Classic.Movies.HD.us2
 FilmRiseSci-Fi.us	plex.tv.FilmRise.Sci-Fi.plex
@@ -579,8 +579,8 @@ FilmRiseWestern.us	plex.tv.FilmRise.Western.plex
 SoYummy.us	So.Yummy.us2	plex.tv.So.Yummy.plex
 NECN.us	NECN.New.England.Cable.News.us2
 NESNplus.us	NESN+.New.England.Sports.Network.Plus.us2
-SkySportsPremierLeague.uk	Sky.Sports.Premier.League.ie
-DiscoveryHistory.uk	Discovery.History.ie
+SkySportsPremierLeague.uk	Sky.Sports.Premier.League.ie	12453
+DiscoveryHistory.uk	Discovery.History.ie	12180
 FXMovies.us	FX.Movie.Channel.HD.us2
 # epg.pw backups (updated daily) for when epgshare stops updating
 Global.Manitoba.ca2	470633
@@ -647,3 +647,38 @@ Nickelodeon.uk	12084
 SkyHistory.uk	12272
 TSN.4K.ca2	496137
 Virgin.Media.Four.HD.ie	564533
+Travelxp.uk	12170
+BBC.Three.HD.uk	12158
+BBC.Four.HD.uk	12300
+BBC.ALBA.HD.uk	12059
+ComedyCentral.uk	12431
+Challenge.uk	12390
+Sky.Kids.HD.uk	12324
+E4.Extra.uk	12134
+Legend.uk	12121
+TalkingPictures.uk	12561
+Sky.Sports.Tennis.HD.ie	212145
+FRANCE.24.HD.uk	12048
+NHK.World.HD.uk	12051
+BBCScotland.uk	12229
+BBCAlba.uk	12059
+CartoonNetwork.uk	12482
+DiscoveryScience.uk	12179
+NationalGeographicChannel.uk	12197
+SkySportsMainEventUHD.uk	12306
+SkySportsCricket.uk	12434
+SkySportsGolf.uk	12022
+SkySportsF1UHD.uk	12190
+SkySportsTennis.uk	212145
+SkySportsNews.uk	12223
+SkySportsRacing.uk	12200
+AlJazeeraEnglish.uk	12532
+SkySportsMix.uk	12563
+CBBC.uk	12497
+CNN.uk	12064
+SkyCinemaPremiere.uk	12026
+SkyCinemaGreats.uk	12456
+SkyCinemaAction.uk	12457
+SkyCinemaThriller.uk	12227
+SkyCinemaSci-fiAndHorror.uk	12454
+SkyCinemaDrama.uk	12455
