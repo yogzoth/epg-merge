@@ -39,6 +39,10 @@ SOURCES = [
     "https://epgshare01.online/epgshare01/epg_ripper_AU1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_PT1.xml.gz",
     "https://epgshare01.online/epgshare01/epg_ripper_PLEX1.xml.gz",
+    "https://epg.pw/xmltv/epg_US.xml.gz",   # backups only (fill.txt): epgshare sometimes stops updating for days
+    "https://epg.pw/xmltv/epg_CA.xml.gz",
+    "https://epg.pw/xmltv/epg_GB.xml.gz",
+    "https://epg.pw/xmltv/epg_AU.xml.gz",
 ]
 EXTRA_SOURCES_FILE = "sources_extra.txt"   # more guide files, one link per line (world channels)
 EPGSHARE = "https://epgshare01.online/epgshare01/epg_ripper_{}.xml.gz"
