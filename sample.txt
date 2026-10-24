@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<tv date="20261024080003 +0000" generator-info-name="epg.pw" generator-info-url="https://epg.pw" source-info-name="FREE EPG" source-info-url="https://epg.pw/xmltv/epg_US.xml">
+  <channel id="465510">
+    <display-name lang="US">NBA - Utah Jazz</display-name>
+    <icon src="" />
+  </channel>
+  <channel id="465530">
+    <display-name lang="US">NFL - Dallas Cowboys</display-name>
+    <icon src="" />
+  </channel>
+  <channel id="465532">
+    <display-name lang="US">NFL - Washington Commanders</display-name>
+    <icon src="" />
+  </channel>
+  <channel id="46553
