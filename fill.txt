@@ -1,0 +1,684 @@
+# Patchy guides: channel<TAB>backup guide(s). Backups only fill holes; they never replace listings.
+Euronews.uk	Euronews.ie	12529
+Really.uk	Really.ie	12462
+5SELECT.uk	5SELECT.ch	12054
+La.1.es	LA1.es
+CBC.Vancouver.HD.ca2	CBUT.ca	470384
+CTV.Vancouver.HD.ca2	CTVVancouver.ca	470456
+CTV.Two.-.Vancouver/Victoria.ca2	ca.CTV2 Vancouver Island. BC DV	470678
+Global.BC.HD.ca2	ca.Global BC DV	470600
+Citytv.Vancouver.HD.ca2	CityTVVancouver.ca	470909
+CH.Vancouver.Island.ca2	ChekVancouverIsland.ca	470731
+CBC.Toronto.HD.ca2	CBC.ca	470853
+CTV.Toronto.HD.ca2	CTVToronto.ca	470859
+CTV.Two.-.Barrie.ca2	CTV2Toronto.ca	470639
+Global.Toronto.HD.ca2	ca.Global (CIII-DT-41) Toronto	470729
+Citytv.Toronto.HD.ca2	CityTVToronto.ca	470862
+CHCH-DT.ca2	CHCH.ca	470301
+CBC.Calgary.HD.ca2	ca.CBC (CBRT) Calgary, AB	470700
+CTV.Calgary.HD.ca2	ca.CTV (CFCN) Calgary, AB HD	470522
+Global.Calgary.HD.ca2	GlobalCalgary.ca	470885
+Citytv.Calgary.HD.ca2	ca.CITY Calgary, AB HD	470895
+CBC.Edmonton.HD.ca2	CBXT.ca	470788
+CTV.Edmonton.HD.ca2	CFRN.ca	470761
+Global.Edmonton.ca2	CITV.ca	470488
+CBC.Winnipeg.HD.ca2	CBWT.ca	470790
+CTV.Winnipeg.HD.ca2	CHMI.ca	470524
+CBC.Ottawa.HD.ca2	CBCOttawa.ca	470595
+CJOH-DT.ca2	CTVOH.ca	470334
+CTV.Two.-.Ottawa.ca2	ca.CTV2 Ottawa, ON	470570
+CBMT.-.CBC.Montreal.ca2	ca.CBC (CBMT) Montreal, QC	470320
+CFCF-DT.ca2	ca.CTV Montreal (CFCF), QC HD	470698
+Global.Montreal.HD.ca2	GlobalMontrealCKMI.ca	470319
+Citytv.Montreal.HD.ca2	ca.CITY Montreal, QC	470308
+CBC.Halifax.HD.ca2	CBHT.ca	470503
+CTV.Halifax.HD.ca2	ca.CTV (CJCH) Halifax	470435
+CTV.Two.-.Atlantic.ca2	CJCH.ca	470421
+CTV.DRAMA.CHANNEL.HD.ca2	CTVDrama.ca	470618
+CTV.COMEDY.CHANNEL.ca2	CTVComedy.ca	470829
+CTV.SCI-FI.CHANNEL.HD.ca2	CTVSciFi.ca	470632
+Showcase.Canada.HD.ca2	Showcase.ca	470745
+SLICE.HD.ca2	ca.Slice	470459
+FXX.Canada.ca2	FXX.ca	470820
+AMC.Canada.HD.ca2	AMC.ca	470517
+A.and.E.Canada.HD.ca2	AandE.ca	470651
+E!.Entertainment.Television.Canada.HD.ca2	EEntertainment.ca	470431
+Lifetime.HD.(Canada).ca2	LifetimeTV.ca	470769
+Paramount.Network.HD.us2	ParamountNetwork.ca	464882
+Oprah.Winfrey.Network.HD.us2	OprahWinfreyNetwork.ca	465259
+BET.HD.us2	BET.ca	464968
+CMT.HD.us2	CMT.ca	465107
+Much.Music.HD.ca2	ca.Much Music HD	470474
+OUTtv.ca2	OutTV.ca	470892
+GameTV.Canada.ca2	GameTV.ca	470644
+Deja.View.ca2	DejaView.ca	470467
+DTour.HD.ca2	Dtour.ca	470707
+OMNI1.HD.ca2	OMNI1.ca	470918
+OMNI2.HD.ca2	OMNI2.ca	470864
+YesTV.ca2	ca.Yes TV (CITS) Burlington, ON	470704
+TVO.ca2	ca.TVO (TV Ontario) DV	470611
+Treehouse.HD.ca2	Treehouse.ca	470309
+Cartoon.Network.HD.Canada.ca2	CartoonNetwork.ca	470779
+BBC.First.ca2	HIFI.ca	470669
+Discovery.Channel.ca2	DiscoveryChannel.ca	470674
+National.Geographic.Canada.HD.ca2	NatGeo.ca	470668
+History.Television.HD.(Canada).ca2	HistoryChannel.ca	470609
+HISTORY.2.ca2	History2.ca	470803
+National.Geographic.Wild.Canada.HD.ca2	NatGeoWild.ca	470347
+Love.Nature.ca2	LoveNature.ca	470797
+WILD.TV.ca2	Wild.ca	470710
+Investigation.Discovery.ca2	InvestigationDiscovery.ca	470420
+Crime.Plus.Investigation.SD.ca2	CrimeInvestigation.ca	470867
+Home.and.Garden.Television.ca2	HGTV.ca	470763
+Food.Network.ca2	FoodNetwork.ca	470789
+CTV.LIFE.CHANNEL.HD.ca2	CTVLife.ca	470547
+Cottage.Life.HD.ca2	CottageLife.ca	470444
+Makeful.TV.SD.ca2	Makeful.ca	470737
+BBC.Earth.ca2	BBCEarth.ca	470439
+documentary.HD.ca2	DocumentaryChannel.ca	470414
+T+E.ca2	ca.Travel + Escape	491881
+Crave1.HD.ca2	Crave1.ca	470800
+Crave2.HD.ca2	Crave2.ca	470336
+Crave3.HD.ca2	Crave3.ca	470433
+Crave4.ca2	Crave4.ca	470781
+HBO.Canada.1.HD.ca2	HBO.ca	470851
+STARZ.1.HD.ca2	ca.starz1-east	470661
+STARZ.2.ca2	ca.starz2-east	470623
+Super.Channel.Fuse.HD.ca2	SuperChannelFuse.ca	470497
+Super.Channel.Heart.and.Home.HD.ca2	SuperChannelHeartHome.ca	470755
+Super.Channel.Vault.HD.ca2	SuperChannelVAULT.ca	470325
+MovieTime.HD.ca2	MovieTime.ca	470702
+Turner.Classic.Movies.Canada.HD.ca2	ca.Turner Classic Movies Canada	470818
+Silver.Screen.Classics.ca2	SilverScreenClassics.ca	470616
+W.Network.HD.ca2	WNetwork.ca	470806
+Hollywood.Suite.70s+.ca2	ca.Hollywood Suite 70s	470490
+Hollywood.Suite.2000s.ca2	HollywoodSuite90s.ca	470427
+CBC.News.Network.HD.ca2	ca.CBC News Network	470760
+CTV.News.Channel.HD.ca2	ca.CTV News Channel	470326
+Cable.Pulse.24.(CP24).HD.ca2	ca.CP24 (CablePulse 24)	470621
+BNN.Bloomberg.HD.ca2	ca.BNN Bloomberg	470684
+The.Weather.Network.Canada.HD.ca2	WeatherNetwork.ca	470371
+[CPAC].Cable.Public.Affairs.Channel.HD.ca2	ca.CPAC Ottawa	470901
+Sportsnet.(Pacific).HD.ca2	SportsnetPacific.ca	470817
+Sportsnet.One.HD.ca2	SportsnetOne.ca	470802
+Sportsnet.360.HD.ca2	Sportsnet360.ca	470392
+Sportsnet.World.HD.ca2	SportsnetWorld.ca	470920
+TSN.1.ca2	TSN1.ca	470446
+TSN.2.HD.ca2	TSN2.ca	470401
+TSN.3.HD.ca2	TSN3.ca	470389
+TSN.4.HD.ca2	TSN4.ca	470915
+TSN.5.HD.ca2	TSN5.ca	470513
+NBA.TV.Canada.HD.ca2	NBATV.ca	470366
+One.Soccer.ca2	OneSoccer.ca	470870
+The.Fight.Network.HD.ca2	us.The Fight Network (United States) SDTV	470701
+Sportsnet.East.HD.ca2	SportsnetEast.ca	470812
+Sportsnet.Ontario.HD.ca2	SportsnetOntario.ca	470571
+KOMO-DT.us_locals1	loc.ABC (KOMO) Seattle, WA	469226
+KIRO.7.ca2	loc.CBS (KIRO) Seattle, WA	470568
+KING-DT.us_locals1	loc.NBC (KING) Seattle, WA	469833
+KCPQ-DT.ca2	loc.FOX (KCPQ) Tacoma, WA	470839
+WABC-DT.us_locals1	loc.ABC (WABC) New York, NY	467679
+WCBS-DT.us_locals1	loc.CBS (WCBS) New York, NY
+WNBC-DT.us_locals1	loc.NBC (WNBC) New York, NY	467015
+WNYW-DT.us_locals1	loc.FOX (WNYW) New York, NY	468913
+WPIX-DT.us_locals1	WPIX.us	466511
+WNET-DT.us_locals1	US-PBS (KCTS) Seattle, WA	466139
+KABC-DT.us_locals1	loc.ABC (KABC) Los Angeles, CA	470185
+KCBS-DT.us_locals1	loc.CBS (KCBS) Los Angeles, CA	469378
+KNBC-DT.us_locals1	loc.NBC (KNBC) Los Angeles, CA	469871
+KTTV-DT.us_locals1	loc.FOX (KTTV) Los Angeles, CA	466724
+KTLA-DT.us_locals1	ca.KTLA Los Angeles, CA	467246
+WLS-DT.us_locals1	loc.ABC (WLS) Chicago, IL	468322
+WBBM-DT.us_locals1	loc.CBS (WBBM) Chicago, IL	468836
+WMAQ-DT.us_locals1	loc.NBC (WMAQ) Chicago, IL	467207
+WFLD-DT.us_locals1	loc.FOX (WFLD) Chicago, IL	466751
+WTTW-DT.us_locals1	WTTW.us	466601
+WSVN-DT2.us_locals1	loc.ABC (WPLG) Miami, FL	471825
+WFOR-DT.us_locals1	loc.CBS (WFOR) Miami, FL	469559
+WTVJ-DT.us_locals1	loc.NBC (WTVJ) Miami, FL	468203
+WSVN-DT.us_locals1	loc.FOX (WSVN) Miami, FL HD	469150
+USA.Network.HD.us2	USANetwork.us	465006
+TNT.HD.us2	TNT.us	465114
+TBS.HD.us2	US-TBS - East	465285
+FX.HD.us2	FX.us	464813
+FXX.HD.us2	FXX.us	465357
+AMC.HD.us2	AMC.us	465032
+Comedy.Central.HD.us2	ComedyCentral.us	464922
+truTV.HD.us2	truTV.us	464987
+Freeform.HD.us2	Freeform.us	465331
+A.and.E.HD.East.us2	AandE.us	464992
+FYI.Channel.HD.us2	FYI.us	464774
+Bravo.HD.us2	Bravo.us	464753
+E!.Entertainment.Television.HD.us2	EEntertainment.us	464832
+Syfy.HD.us2	Syfy.us	465053
+BBC.America.HD.us2	BBCAmerica.us	465025
+IFC.HD.us2	IndependentFilmChannel.us	465081
+SundanceTV.HD.us2	SundanceTV.us	465138
+Lifetime.HD.us2	US-Lifetime Network US - Eastern Feed	465290
+WE.tv.HD.us2	WeTV.us	464955
+TV.Land.HD.us2	TVLand.us	465235
+Me.TV.Network.us2	WMEU4.us	465323
+Antenna.TV.us2	AntennaTV.us	496613
+COZI.TV.us2	CoziTV.us	464930
+Catchy.Comedy.us2	CatchyComedy.us
+Laff.us2	Laff.us
+Heroes.and.Icons.Network.SD.us2	HeroesAndIconsTV.us	464942
+Start.TV.Network.us2	StartTV.us	465278
+Grit.us2	Grit.us	465117
+Comet.us2	Comet.us	465305
+CHARGE!.us2	ChargeTV.us	465085
+Dabl.us2	WKMGDT2.us	471427
+Family.Entertainment.Television.us2	FamilyEntertainment.us	465392
+Comedy.TV.HD.us2	CMDTVHD Comedy.TV HD	465056
+ION.Television.HD.us2	ION.us	465354
+plex.tv.ION.Plus.plex	IONPlus.us
+ION.Mystery.us2	IonMystery.us
+Game.Show.Network.HD.us2	GameShowNetwork.us	464810
+BUZZR.Stream.us2	BuzzrTV.us	473210
+POP.HD.us2	PopTV.us	465134
+Logo.us2	Logo.us	465367
+Ovation.HD.us2	Ovation.us	465009
+ReelzChannel.HD.us2	US-ReelzChannel	465018
+BET.Her.us2	US-BET Her	465008
+TV.ONE.HD.us2	TVOne.us	465208
+Cleo.TV.HD.us2	CleoTV.us	465363
+Bounce.TV.us2	BounceTV.us	465292
+UPtv.us2	UpliftingEntertainment.us	465111
+INSP.HD.us2	INSP.us	464786
+The.Cowboy.Channel.us2	TheCowboyChannel.us	465132
+Pursuit.Channel.us2	PursuitChannel.us	465098
+DOG.TV.us2	DogTV.us	465328
+MTV.-.Music.Television.HD.us2	MTV.us	465080
+MTV2:.Music.Television.HD.us2	MTV2.us	465113
+MTVLIVE.us2	MTVLive.us	464825
+MTV.Classic.us2	MTVClassic.us	465050
+VH1.HD.us2	VH1.us	465206
+BET.Jams.us2	BETjams.us	465128
+BET.Soul.us2	BETSoul.us	465030
+Revolt.HD.us2	Revolt.us	465207
+Fuse.HD.us2	FuseTV.us	465105
+AXS.TV.us2	AXSTV.us	464771
+AdultSwim.com.Cartoon.Network.us2	AdultSwim.us	464853
+Cartoon.Network.HD.us2	US-Cartoon Network USA - Pacific Feed	465267
+Boomerang.us2	US-Boomerang	464755
+Nickelodeon.HD.us2	us.Nickelodeon USA - Pacific Feed	465251
+Nick.Jr.HD.us2	NickJr.us	464911
+Teen.Nick.us2	US-TeenNick - Eastern	465180
+Disney.Channel.HD.us2	DisneyChannel.us	465349
+Disney.Junior.HD.us2	DisneyJunior.us	465320
+Disney.XD.HD.us2	DisneyXD.us	464807
+Discovery.Family.Channel.HD.us2	DiscoveryFamily.us	465152
+PBS.KIDS.HD.us2	US-PBS Kids (KCTS-TV2) Seattle, WA	464925
+PixL.us2	PixLTV.us	464896
+plex.tv.GET.plex	GetTV.us
+RETRO.us2	RetroTV.us	465151
+Great.American.Family.HD.us2	GACFamily.us	464846
+Lifetime.Real.Women.us2	LRW.us	465002
+Discovery.Channel.HD.us2	US-Discovery Channel (US) - Eastern Feed	465364
+National.Geographic.HD.us2	NatGeo.us	465089
+History.HD.us2	HistoryChannel.us	465176
+Military.History.Channel.us2	MilitaryHistory.us	465067
+American.Heroes.Channel.HD.us2	US-American Heroes Channel	464895
+Smithsonian.HD.Network.us2	SmithsonianChannel.us	465042
+Vice.HD.us2	ViceOnTV.us	465234
+Destination.America.HD.us2	DestinationAmerica.us	464932
+National.Geographic.Wild.HD.us2	national-geographic-wild	464884
+Animal.Planet.HD.us2	AnimalPlanet.us	465310
+Investigation.Discovery.HD.us2	InvestigationDiscovery.us	465294
+Oxygen.True.Crime.HD.us2	Oxygen.us	464821
+Crime.and.Investigation.Network.HD.us2	CrimeInvestigation.us	465040
+Court.TV.us2	us.Court TV	465226
+Law.and.Crime.us2	LawAndCrime.us	464971
+Home.and.Garden.Television.HD.us2	HGTV.us	465028
+Magnolia.Network.HD.us2	MagnoliaNetwork.us	465012
+Cooking.Channel.HD.us2	CookingChannel.us	465211
+Tastemade.us2	Tastemade.us	465110
+So.Yummy.us2	SoYummy.us	465340
+TLC.HD.(US).us2	US-TLC USA - Eastern	464919
+Discovery.Life.Channel.us2	DiscoveryLife.us	464838
+The.Travel.Channel.HD.us2	TravelChannel.us	465186
+MOTORTREND.HD.us2	US-Motor Trend	465084
+Outside.Television.HD.us2	OutsideTV.us	464880
+Outdoor.Channel.HD.us2	OutdoorChannel.us	465393
+EWTN.-.Eternal.Word.Television.Network.HD.us2	EWTN.us	465352
+Justice.Central.HD.us2	JusticeCentral.us	465216
+HBO.East.us2	US-HBO - Pacific Feed	464745
+HBO.Comedy.HD.us2	HBOComedy.us	464953
+Cinemax.HD.us2	US-Cinemax - Pacific Feed	464917
+Cinemax.Action.us2	ACMAXHD ActionMAX HD	480608
+Showtime.2.HD.us2	Showtime2.us	465402
+Showtime.Extreme.HD.us2	ShowtimeExtreme.us	464877
+Showtime.Next.HD.us2	ShowtimeNext.us	465270
+Showtime.Showcase.HD.us2	ShowtimeShowcase.us	465065
+Showtime.Women.HD.us2	ShowtimeWomen.us	464898
+Showtime.Familyzone.HD.us2	ShowtimeFamilyZone.us	464954
+Starz.HD.us2	US-Starz - Pacific	464975
+Starz.Cinema.HD.us2	StarzCinema.us	465115
+Starz.Comedy.HD.us2	StarzComedy.us	464979
+Starz.Edge.HD.us2	StarzEdge.us	464839
+Starz.Kids.HD.us2	StarzKidsFamily.us	465109
+Starz.Encore.HD.us2	US-Starz Encore - Pacific	464893
+Starz.Encore.Action.HD.us2	StarzEncoreAction.us	465232
+Starz.Encore.Black.us2	StarzEncoreBlack.us	464820
+Starz.Encore.Classic.us2	StarzEncoreClassics.us	465240
+Starz.Encore.Family.SD.us2	StarzEncoreFamily.us	465242
+Starz.Encore.Suspense.us2	StarzEncoreSuspense.us	465122
+Starz.Encore.Westerns.SD.us2	StarzEncoreWesterns.us	464973
+MoviePlex.HD.us2	MOVIEplex.us	465074
+IndiePlex.HD.us2	INDIEplex.us	464878
+RetroPlex.HD.us2	RETROplex.us	465126
+MGM+.HD.us2	US-MGM HD (USA)	465261
+MGM+.Hits.HD.us2	MGMPlusHits.us	465284
+MGM+.Marquee.HD.us2	MGMPlusMarquee.us	464921
+MGM+.Drive-In.us2	MGMPlusDriveIn.us	465375
+ScreenPix.us2	ScreenPix.us	464956
+ScreenPix.Action.us2	ScreenPixAction.us	464775
+ScreenPix.Voices.us2	ScreenPixVoices.us	465412
+ScreenPix.Westerns.us2	ScreenPixWestern.us	464869
+Turner.Classic.Movies.HD.us2	US-Turner Classic Movies USA	465196
+FX.Movie.Channel.HD.us2	US-FX Movie Channel	465400
+Sony.Movie.Channel.HD.us2	SonyMovieChannel.us	464943
+HDNet.Movies.us2	US-HDNet Movies	465212
+Hallmark.Channel.HD.us2	Hallmark.us	465241
+Hallmark.Mystery.HD.us2	HallmarkMoviesMysteries.us	465167
+The.Film.Detective.us2	TFD.us	465075
+HBO2.HD.us2	HBO2.us	465041
+HBO.Signature.HD.us2	HBOSignature.us	465279
+HBO.Zone.HD.us2	HBOZone.us	465104
+The.Movie.Channel.HD.us2	TMC The Movie Channel	465365
+AMC+.us2	AMCPlus.us	465158
+plex.tv.El.Rey.Rebel.plex	US-El Rey Network
+Hallmark.Family.us2	HallmarkFamily.us	464897
+CNN.HD.us2	CNN.us	464857
+HLN.HD.us2	HLN.us	465044
+Fox.News.Channel.HD.us2	FoxNews.us	465372
+MS.NOW.HD.us2	MSNBC.us	464889
+NewsNation.us2	NewsNation.us	465039
+Newsmax.TV.HD.us2	Newsmax.us	464863
+One.America.News.Network.HD.us2	One America News Network	465382
+Cheddar.us2	CheddarNews.us	464798
+TYT.The.Young.Turks.us2	TYTNetwork.us	465298
+Free.Speech.TV.us2	FreeSpeech.us	465153
+CNBC.HD.us2	US-CNBC USA	464791
+CNBC.World.us2	CNBCWorld.us	465282
+Fox.Business.HD.us2	US-Fox Business	464766
+Bloomberg.HD.us2	BloombergTV.us	465324
+The.Weather.Channel.HD.us2	WeatherChannel.us	465272
+LOCALNOW.us	us.Local Programming
+NECN.New.England.Cable.News.us2	NewEnglandCableNews.us	496612
+CSPAN.us2	CSPAN.us	464835
+CSPAN2.us2	CSPAN2.us	465243
+CSPAN3.us2	CSPAN3.us	464828
+ESPN.HD.us2	ESPN.us	465198
+ESPN2.HD.us2	ESPN2.us	465373
+ESPNU.HD.us2	ESPNU.us	465108
+ESPNEWS.HD.us2	ESPNNews.us	465410
+SEC.Network.HD.us2	SECNetwork.us	465266
+ACC.Network.us2	ACCNetwork.us	464879
+Big.Ten.Network.HD.us2	BigTenNetwork.us	465073
+FS1.HD.us2	FoxSports1.us	465248
+FS2.HD.us2	FoxSports2.us	465280
+CBS.Sports.Network.HD.us2	US-CBS Sports Network USA	464937
+CBS.Sports.Golazo.Network.us2	CBSSportsGolazo.us	562308
+NFL.Network.HD.us2	NFLNetwork.us	465311
+NFL.RedZone.HD.us2	US-NFL Red Zone	465401
+NBA.TV.HD.us2	NBATV.us	464912
+MLB.Network.HD.us2	MLBNetwork.us	465239
+NHL.Network.HD.us2	NHLNetwork.us	465348
+Golf.Channel.HD.us2	GolfChannel.us	464783
+Tennis.Channel.HD.us2	TennisChannel.us	465236
+beIN.Sports.USA.HD.us2	beINSports.us	464754
+SHO.x.BET.HD.us2	ShowtimeXBet.us	464890
+Willow.Cricket.HD.us2	WillowCricket.us	465010
+plex.tv.Fubo.Sports.Network.plex	FuboSportsNetwork.us
+World.Fishing.Network.HD.(US).us2	US-WFN-World Fishing Network HD	465358
+Yes.Network.us2	YESNetwork.us	496607
+MSG.National.us2	MadisonSquareGarden.us	465033
+MSG.Plus.us2	MadisonSquareGardenPlus.us
+NESN+.New.England.Sports.Network.Plus.us2	US-New England Sports Network Plus	496625
+NBC.Sports.Boston.HD.us2	SportsBoston.us	464910
+NBC.Sports.Philadelphia.HD.us2	NBCSportsPhiladelphia.us	465037
+CHSN.Chicago.Sports.Network.us2	US-NBC Sports Chicago	465058
+Altitude.Sports.us2	AltitudeSports.us	465288
+NBC.Sports.Bay.Area.HD.us2	NBCSportsBayArea.us	465163
+NBC.Sports.California.SAT.us2	NBCSportsCalifornia.us	465054
+Spectrum.SportsNet.Lakers.HD.us2	SpectrumSportsNet.us	464806
+SNY.SportsNet.New.York.HD.us2	us.SNY Sportsnet NY	464777
+plex.tv.Stadium.plex	Stadium.us
+BBC.One.West.HD.uk	uk.BBC1 West	12383
+BBC.Two.HD.uk	uk.BBC2 N Ireland	12499
+BBCScotlandHD.uk	BBCScotland.uk	12229
+ITV1.HD.uk	ITV1.uk	12086
+ITV2.HD.uk	ITV2.uk	12203
+ITV3.HD.uk	ITV3.uk	12274
+ITV4.HD.uk	ITV4.uk	12271
+Channel.4.HD.uk	Channel4.uk	12113
+E4.HD.uk	E4.uk	12116
+More4.HD.uk	More4.uk	12164
+Channel.5.HD.uk	Channel5.uk	12370
+5.USA.uk	FiveUSA.uk	12058
+5STAR.uk	5star.uk	12057
+RTE.One.HD.ie	RTEOne.ie
+RTE.Two.HD.ie	uk.RTÉ Two
+Virgin.Media.One.HD.ie	VirginMediaOne.ie	564559
+Virgin.Media.Two.HD.ie	VirginMediaTwo.ie	564541
+Virgin.Media.Three.HD.ie	VirginMediaThree.ie	564567
+Sky.Atlantic.HD.uk	SkyAtlantic.uk	12366
+Sky.Witness.HD.uk	SkyWitness.uk	12095
+Sky.Arts.HD.uk	SkyArts.uk	12135
+U.and.Dave.HD.uk	UandDave.uk	486757
+U.and.GOLD.HD.uk	GOLD.uk	486852
+U.and.W.HD.uk	uk.W	380436
+U.and.alibi.HD.uk	Alibi.uk	486759
+U.and.Drama.uk	Drama.uk	486795
+NOW.70s.uk	Now70s.uk	12343
+NOW.80s.uk	NOW80s.uk	12243
+Clubland.TV.uk	ClublandTV.uk	12141
+CBBC.HD.uk	CBBC.uk	12497
+Cartoon.Network.ie	CartoonNetwork.uk	12482
+Boomerang.HD.uk	Boomerang.uk	486836
+NickelodeonHD.uk	Nickelodeon.uk	12520
+Nick.Jr..HD.uk	NickJunior.uk	12201
+Sky.Comedy.HD.uk	SkyComedy.uk	12136
+4seven.uk	Channel4.uk	12242
+STV.HD.uk	STV.uk	350685
+S4C.HD.uk	S4C.uk	12378
+NOW.90s.uk	Now90s.uk	9357
+Sky.Documentaries.HD.uk	SkyDocumentaries.uk	454797
+Discovery.HD.uk	DiscoveryChannel.uk	12185
+Disc.Science.uk	DiscoveryScience.uk	12179
+Nat.Geo.HD.uk	NatGeo.uk	12197
+PBS.America.uk	PBSAmerica.uk	12333
+Sky.History.HD.ie	HistoryChannel.uk	12272
+Sky.History2.uk	History2.uk	12226
+Discovery.History.ie	DiscoveryHistory.uk	12180
+QUEST.HD.uk	Quest.uk	12041
+DMAX.uk	DiscoveryDMAX.uk	12374
+Disc.Turbo.uk	DiscoveryTurbo.uk	12189
+BLAZE.uk	Blaze.uk	12036
+Sky.Nature.HD.uk	SkyNature.uk	12131
+NatGeoWild.HD.uk	NatGeoWild.uk	12023
+Animal.Planet.uk	AnimalPlanet.uk	12183
+U.and.Eden.uk	Eden.uk	399724
+Sky.Crime.HD.uk	SkyCrime.uk	12394
+ID.uk	InvestigationDiscovery.uk	12354
+Crime+Inv.HD.uk	CrimeAndInvestigationNetwork.uk	12436
+Quest.Red.uk	QuestRed.uk	12353
+Food.Network.uk	FoodNetwork.uk	12263
+TLC.HD.uk	TLC.uk	12163
+Horse.&.Country.TV.nl	horsecountrytv.nl
+True.Crime.uk	TrueCrime.uk	486749
+Sky.Premiere.uk	SkyCinemaPremiere.uk	494415
+Sky.Cinema.Hits.HD.uk	SkyCinemaHits.uk	454796
+Sky.Greats.uk	SkyCinemaGreats.uk	494412
+Sky.Action.HD.uk	SkyAction.uk	12457
+Sky.Thriller.HD.uk	SkyThriller.uk	12227
+Sky.Sci-Fi.HD.uk	uk.Sky Cinema Sci Fi & Horror	12038
+Sky.Cinema.Comedy.uk	SkyCinemaComedy.uk	494411
+Sky.Drama.HD.uk	SkyCinemaDrama.uk	12455
+Sky.Family.HD.uk	uk.Sky Cinema Family	12449
+Film4.HD.uk	Film4.uk	12111
+GREAT!.movies.uk	GreatMovies.uk	12143
+GREAT!.action.uk	GreatAction.uk	12142
+5ACTION.uk	5Action.uk	12401
+BBC.NEWS.HD.uk	BBCNews.uk	12162
+Sky.News.HD.uk	SkyNews.uk	12069
+GB.News.HD.uk	GBNews.uk	12133
+BBC.Parliament.HD.uk	BBCParliament.uk	12060
+TalkRadio.(TalkTV).uk	TalkTV.uk	572484
+Sky.Sports.Main.Event.HD.ie	SkySportsMainEvent.uk	12306
+Sky.Sports.Premier.League.ie	uk.Sky Sports Premier League	12453
+Sky.Sports.Football.HD.uk	SkySportsFootball.uk	450289
+Sky.Sports.Cricket.HD.ie	SkySportsCricket.uk	12434
+Sky.Sports.Golf.HD.ie	SkySportsGolf.uk	12022
+Sky.Sports.F1.HD.ie	SkySportsF1.uk	12190
+Sky.Sports.Plus.HD.ie	SkySportsArena.uk	381881
+Sky.Sports.Mix.HD.ie	SkySportsMix.uk	12562
+Sky.Sports.News.HD.ie	SkySportsNews.uk	12223
+Sky.Sports.Racing.HD.ie	SkySportsRacing.uk	12200
+Racing.TV.HD.uk	RacingUK.uk	12534
+Premier.Sports.1.HD.uk	PremierSports1.uk	219100
+Premier.Sports.2.HD.uk	ViaplaySports2.uk	219104
+MUTV.HD.uk	MUTV.uk	12258
+LFCTV.HD.uk	LiverpoolFCTV.uk	12202
+Sky.Sports.Action.HD.ie	SkySportsAction.uk	9536
+9Sydney.au	Channel9.au
+7TWOSydney.au	7TWO.au
+7mateSydney.au	7Mate.au
+7flixSydney.au	7Flix.au
+ABCKidsSydney.au	ABC Kids
+SBSVicelandSydney.au	SBSViceland.au
+SBSFoodSydney.au	SBSFood.au
+Shine.nz	ShineTV.nz
+FoxSports503.au	FoxSports3.au
+FoxSports505.au	FoxSports5.au
+FoxSports506.au	FoxSports6.au
+Racingcom.au	RacingCom.au	40886
+SkyRacing1.au	SKYRacing.au
+Sky.Sport.1.nz	SkySport1.nz
+ABCSydney.au	ABC.au
+10BoldSydney.au	10Bold.au
+10PeachSydney.au	10Peach.au
+ABCEntertainsSydney.au	ABCME.au
+SBSWorldMoviesSydney.au	SBSWorldMovies.au
+FoxCricket.au	FOXCricket.au
+TVNZ.1.nz	One.nz
+TVNZ.2.nz	TV2.nz
+RTP.1.HD.pt	Rtp1.pt
+RTP.2.HD.pt	Rtp2.pt
+SIC.HD.pt	Sic.pt
+TVI.HD.pt	Tvi.pt
+RTP.Memória.pt	RtpMemoria.pt
+SIC.Radical.HD.pt	SicRadical.pt
+24Kitchen.HD.pt	24Kitchen.pt
+Porto.Canal.HD.pt	Porto.pt
+Canção.Nova.pt	CancaoNova.pt
+RTP.3.ch	Rtp3.pt
+SIC.Notícias.HD.pt	SicNoticias.pt
+CMTV.HD.pt	Cmtv.pt
+TVCine.TOP.HD.pt	Tvcine2.pt
+TVCine.EDITION.HD.pt	Tvcine1.pt
+TVCine.EMOTION.HD.pt	Tvcine3.pt
+TVCine.ACTION.HD.pt	Tvcine4.pt
+Canal.Hollywood.HD.pt	CanalHollywood.pt
+SPORT.TV1.HD.pt	SportTV1.pt
+SPORT.TV2.HD.pt	SportTV2.pt
+SPORT.TV3.HD.pt	SportTV3.pt
+SPORT.TV4.HD.pt	SportTV4.pt
+SPORT.TV5.HD.pt	SportTV5.pt
+SPORT.TV+.HD.pt	SportTVPlus.pt
+Sporting.TV.HD.pt	SportingTV.pt
+Canal.11.HD.pt	Canal11.pt
+DAZN.1.pt	ElevenSports1.pt
+DAZN.2.pt	ElevenSports2.pt
+DAZN.3.pt	ElevenSports3.pt
+DAZN.4.pt	ElevenSports4.pt
+DAZN.5.pt	ElevenSports5.pt
+RTP.Internacional.pt	RTPInternacional.pt
+SIC.Caras.HD.pt	SicCaras.pt
+Canal.História.HD.pt	HistoryChannel.pt
+ODISSEIA.HD.pt	Odisseia.pt
+AXN.HD.pt	AXN.pt
+AXN.White.HD.pt	AXNWhite.pt
+Star.Crime.HD.pt	foxcrime.pt
+Sport.TV.6.HD.pt	SportTV6.pt
+Eurosport.1.HD.pt	Eurosport1.pt
+ARTV.pt	Artv.pt
+Das.Erste.de	ARD.de
+Rai1.it	RaiUno.it
+NPO.1.nl	npo1.nl
+RTL.Lëtzebuerg.lu	RTL.de
+SRF.1.ch	SRF1.ch
+ORF.1.at	ORF1.at
+[SVT1HD].SVT1.HD.se	SVT1.se
+NRK1.Norway.(NO,NO).no	nrk1.no
+DR1.dk	dr1.dk
+YLE.TV1.fi	YleTV1.fi
+LRT.Televizija.lt	LRTTelevizija.lt
+TVP.1.pl	TVP1.pl
+m1.HD.hu	M1.HD.sk
+PRO.TV.ro	ProTV.ro
+БНТ1.bg	BNT1.bg
+MEGA.HD.gr	Mega.gr
+Happy.(RS).rs	happytv.rs
+HRT.1.HD.(BIH).ba	Htv1.hr
+TOP.Channel.al	TopChannel.al
+TRT.1.al	TRT1.tr
+כאן.11.il	Kan11.il
+LBC.ae	LBC.lb
+MBC.Iraq.HD.ae	MBCIraq.iq
+EN:.MBC1.sa	MBC1.ae
+Abu.Dhabi.HD.ae	abudhabi.ae
+MBC.Masr.HD.ae	MbcMasr.eg
+2M.Monde.ae	2MMonde.ma
+SABC.1.HD.za	SABC1.za
+CCTV-4.hk	CCTV4.cn
+Colors.HD.in	Colors.in
+Canal.11.de.Costa.Rica.cr	cr.Repretel: Canal 11 (CR11) [11]
+Canal.2.de.El.Salvador.sv	sv.Canal 2 de El Salvador
+RCN.co	CO - RCN
+PANAMERICANA.TELEVISION.HD.(Panamericana.HD).pe	pe.Panamericana (PANTEL) [105]
+Canal.TVN.(Chile).cl	cl.TVN - Televisión Nacional de Chile (TVN) [53]
+CANAL.10.HD.uy	uy.TV NACIONAL
+BBC.World.News.ch	BBCWorld.ca
+CNN.International.us2	CNN.uk	465021
+Al.Jazeera.HD.uk	us.Al Jazeera	12532
+TRT.World.HD.uk	TRTWorld.tr	12173
+UP.us	UPtv.us2
+HGTV.us	Home.and.Garden.Television.HD.us2
+HGTV.ca	Home.and.Garden.Television.ca2
+CNBCWorld.us	CNBC.World.us2
+IONPlus.us	plex.tv.ION.Plus.plex
+IonMysteryKXLNDT3.us	ION.Mystery.us2	plex.tv.Ion.Mystery.plex
+WeatherSpy.us	plex.tv.WeatherSpy.plex
+FYIChannel.us	FYI.Channel.HD.us2
+TMZ.us	plex.tv.TMZ.plex
+DogTV.us	DOG.TV.us2
+Charge!.us	CHARGE!.us2
+EEntertainmentTelevision.us	E!.Entertainment.Television.HD.us2
+Crunchyroll.us	plex.tv.Crunchyroll.plex
+NationalGeographicWild.ca	National.Geographic.Wild.Canada.HD.ca2
+CP24.ca	Cable.Pulse.24.(CP24).HD.ca2
+USANetwork.us	USA.Network.HD.us2
+CleoTV.us	Cleo.TV.HD.us2
+OneAmericaNewsNetwork.us	One.America.News.Network.HD.us2
+BET.us	BET.HD.us2
+ComedyTV.us	Comedy.TV.HD.us2
+ReelzChannel.us	ReelzChannel.HD.us2
+BounceTV.us	Bounce.TV.us2
+Comet.us	Comet.us2
+5USA.uk	5.USA.uk	12058
+TCM.ca	Turner.Classic.Movies.Canada.HD.ca2
+TCM.us	Turner.Classic.Movies.HD.us2
+FilmRiseSci-Fi.us	plex.tv.FilmRise.Sci-Fi.plex
+FilmRiseAction.us	plex.tv.FilmRise.Action.plex
+FilmRiseHorror.us	plex.tv.FilmRise.Horror.plex
+FilmRiseTrueCrime.us	plex.tv.FilmRise.True.Crime.plex
+FilmRiseFreeMovies.us	plex.tv.FilmRise.Free.Movies.plex
+FilmRiseWestern.us	plex.tv.FilmRise.Western.plex
+SoYummy.us	So.Yummy.us2	plex.tv.So.Yummy.plex
+NECN.us	NECN.New.England.Cable.News.us2
+NESNplus.us	NESN+.New.England.Sports.Network.Plus.us2
+SkySportsPremierLeague.uk	Sky.Sports.Premier.League.ie	12453
+DiscoveryHistory.uk	Discovery.History.ie	12180
+FXMovies.us	FX.Movie.Channel.HD.us2
+# epg.pw backups (updated daily) for when epgshare stops updating
+Global.Manitoba.ca2	470633
+Global.Maritimes.(CIHF).ca2	470518
+Global.Okanagan.ca2	470329
+YTV.HD.ca2	470898
+Magnolia.Network.ca2	470440
+Home.Network.HD.ca2	470529
+Flavour.Network.HD.ca2	470722
+Hollywood.Suite.80s.and.90s.ca2	470652
+Hollywood.Suite.2010s+.ca2	470917
+Super.Channel.Quest.HD.ca2	470877
+ATN.Cricket.Plus.us2	496601
+Sportsnet.West.HD.ca2	470443
+Sportsnet.4K.ca2	496138
+KCTS-DT.us_locals1	467316
+WCIU-DT.us_locals1	469751
+WSFL-DT.us_locals1	465913
+FOX.SOUL.us2	529205
+MeTV.Toons.us2	464773
+Nicktoons.us2	465038
+Science.Channel.HD.us2	464805
+Food.Network.HD.us2	464984
+HBO.Hits.us2	465255
+HBO.Drama.us2	465201
+HBO.Movies.us2	480609
+Cinemax.Classics.us2	480607
+Cinemax.Hits.us2	464945
+Paramount+.with.Showtime.HD.us2	465332
+Starz.in.Black.HD.us2	465293
+LMN.HD.us2	464929
+HBO.Latino.HD.us2	464960
+The.Movie.Channel.Extra.HD.us2	465397
+Tribeca.Festival.+.us2	465277
+Shorts.TV.us2	465024
+ABC.News.Live.us2	465150
+CBS.News.National.Stream.us2	464941
+Scripps.News.us2	464874
+Fox.Soccer.Plus.HD.us2	465214
+SportsGrid.us2	489130
+MASN.-.Mid.Atlantic.Sports.Network.us2	465409
+Monumental.Sports.Network.HD.us2	465347
+Marquee.Sports.Network.HD.us2	465271
+Space.City.Home.Network.HD.us2	465220
+Spectrum.SportsNet.LA.Dodgers.HD.us2	465077
+ESPN8.The.Ocho.us2	561885
+NBC.Sports.4K.us2	464779
+UTV.uk	486703
+U.and.YESTERDAY.uk	380437
+True.Crime.Xtra.uk	205306
+Sky.Cinema.Select.uk	9315
+TNT.Sports.1.HD.uk	400477
+TNT.Sports.2.HD.uk	400480
+TNT.Sports.3.HD.uk	400479
+TNT.Sports.4.HD.uk	400478
+TNT.Sports.5.HD.uk	463026
+Telefe.Internacional.us2	464927
+DW.HD.ca2	472364
+i24.News.English.us2	464920
+CTV.Nature.HD.ca2	470809
+CTV.Wild.HD.ca2	470491
+Boomerang.uk	12486
+Nickelodeon.uk	12084
+SkyHistory.uk	12272
+TSN.4K.ca2	496137
+Virgin.Media.Four.HD.ie	564533
+Travelxp.uk	12170
+BBC.Three.HD.uk	12158
+BBC.Four.HD.uk	12300
+BBC.ALBA.HD.uk	12059
+ComedyCentral.uk	12431
+Challenge.uk	12390
+Sky.Kids.HD.uk	12324
+E4.Extra.uk	12134
+Legend.uk	12121
+TalkingPictures.uk	12561
+Sky.Sports.Tennis.HD.ie	212145
+FRANCE.24.HD.uk	12048
+NHK.World.HD.uk	12051
+BBCScotland.uk	12229
+BBCAlba.uk	12059
+CartoonNetwork.uk	12482
+DiscoveryScience.uk	12179
+NationalGeographicChannel.uk	12197
+SkySportsMainEventUHD.uk	12306
+SkySportsCricket.uk	12434
+SkySportsGolf.uk	12022
+SkySportsF1UHD.uk	12190
+SkySportsTennis.uk	212145
+SkySportsNews.uk	12223
+SkySportsRacing.uk	12200
+AlJazeeraEnglish.uk	12532
+SkySportsMix.uk	12563
+CBBC.uk	12497
+CNN.uk	12064
+SkyCinemaPremiere.uk	12026
+SkyCinemaGreats.uk	12456
+SkyCinemaAction.uk	12457
+SkyCinemaThriller.uk	12227
+SkyCinemaSci-fiAndHorror.uk	12454
+SkyCinemaDrama.uk	12455

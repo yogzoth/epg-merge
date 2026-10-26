@@ -1,0 +1,1 @@
+# channel<TAB>minutes: moves a guide to match its stream (negative = earlier)

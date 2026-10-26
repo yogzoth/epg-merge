@@ -1,0 +1,183 @@
+# id<TAB>title<TAB>description  (used only when no real listings exist)
+ph.CITYNEWS.24.7	CityNews 24/7	Live news, weather and traffic around the clock.
+ph.UFC	UFC	UFC fights, replays and shows.
+ph.WWE	WWE	WWE shows, replays and live events.
+ph.TRILLERTV	TrillerTV	Combat sports, replays and live events.
+ph.SKY.SPORTS.BOX.OFFICE	Sky Sports Box Office	Pay-per-view events when scheduled.
+ph.UFC.01	UFC 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.UFC.02	UFC 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.BOXING.01	Boxing 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.BOXING.02	Boxing 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.BOXING.03	Boxing 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.BOXING.04	Boxing 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.PPV.01	PPV 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.PPV.02	PPV 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.PPV.03	PPV 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.PPV.04	PPV 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.DAZN.01	DAZN 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.DAZN.02	DAZN 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.DAZN.03	DAZN 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.DAZN.04	DAZN 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TRILLERTV.01	TrillerTV 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TRILLERTV.02	TrillerTV 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TRILLERTV.03	TrillerTV 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TRILLERTV.04	TrillerTV 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.01	Live Event 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.02	Live Event 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.03	Live Event 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.04	Live Event 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.05	Live Event 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.06	Live Event 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.07	Live Event 07 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.08	Live Event 08 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.09	Live Event 09 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.LIVE.EVENT.10	Live Event 10 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NETFLIX.01	Netflix 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NETFLIX.02	Netflix 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.SPORTSNET.01	Sportsnet+ 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.SPORTSNET.02	Sportsnet+ 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.SPORTSNET.03	Sportsnet+ 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.SPORTSNET.04	Sportsnet+ 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TSN.01	TSN+ 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TSN.02	TSN+ 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TSN.03	TSN+ 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.TSN.04	TSN+ 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.01	NFL 01 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.02	NFL 02 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.03	NFL 03 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.04	NFL 04 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.05	NFL 05 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.NFL.06	NFL 06 · Event slot	Shows a live event when one is scheduled. Check the channel for today's card.
+ph.CHILL.NATURESCAPE	Naturescape · Ambient	Nature scenes and natural sound, around the clock.
+ph.CHILL.TOURIST	Tourist · Ambient	Walking tours through cities and towns, in 4K.
+ph.CHILL.SLOW.TV	Slow TV · Ambient	Slow, unhurried journeys in 4K.
+ph.CHILL.MUSEUM	Museum · Ambient	Art and masterpieces up close, in 4K.
+ph.CHILL.OCEAN	Ocean · Ambient	Open water and rolling waves, around the clock.
+ph.CHILL.TROPICAL.BEACH	Tropical Beach · Ambient	White sand, palms and turquoise water.
+ph.CHILL.FOREST	Forest · Ambient	Deep forest scenes and natural sound.
+ph.CHILL.WINTER	Winter · Ambient	Falling snow and quiet winter scenes.
+ph.CHILL.STARDUST	Stardust · Ambient	Stars, nebulae and deep space.
+ph.CHILL.MYZEN	MyZen · Ambient	Calm visuals and soft music.
+ph.CHILL.NORWAY	Norway · Ambient	Fjords, peaks and northern light.
+ph.CHILL.ICELAND	Iceland · Ambient	Volcanic coasts, glaciers and waterfalls.
+ph.T.NHL.01	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.02	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.03	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.04	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.05	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.06	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.07	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.08	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NHL.09	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.T.NBA.01	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.02	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.03	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.04	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.05	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.06	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.07	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.NBA.08	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.T.MLB.01	MLB · No game yet	Today's MLB games show up here a few hours before first pitch.
+ph.T.MLB.02	MLB · No game yet	Today's MLB games show up here a few hours before first pitch.
+ph.T.MLB.BIG.INNING	MLB Big Inning	Live look-ins from around MLB on game days.
+ph.T.MLS.01	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.T.MLS.02	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.T.MLS.03	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.T.MLS.04	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.T.TENNIS.01	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.T.TENNIS.02	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.T.TENNIS.03	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.T.TENNIS.04	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.T.ESPNPLUS.01	ESPN+ · No event yet	ESPN+ games and events show up here on the day.
+ph.T.ESPNPLUS.02	ESPN+ · No event yet	ESPN+ games and events show up here on the day.
+ph.T.ESPNPLUS.03	ESPN+ · No event yet	ESPN+ games and events show up here on the day.
+ph.T.ESPNPLUS.04	ESPN+ · No event yet	ESPN+ games and events show up here on the day.
+ph.T.PEACOCK.01	Peacock · No event yet	Peacock games and events show up here on the day.
+ph.T.PEACOCK.02	Peacock · No event yet	Peacock games and events show up here on the day.
+ph.T.PEACOCK.03	Peacock · No event yet	Peacock games and events show up here on the day.
+ph.T.PEACOCK.04	Peacock · No event yet	Peacock games and events show up here on the day.
+ph.T.F1.TV	F1 TV	Formula 1 sessions and shows on race weekends.
+ph.T.F1.PIT	F1 Pit Lane	The pit lane feed during Formula 1 sessions.
+ph.T.F1.TRACKER	F1 Driver Tracker	Live track map during Formula 1 sessions.
+ph.T.F1.DATA	F1 Data	Live timing and data during Formula 1 sessions.
+ph.T.MOTOGP.01	MotoGP · No session yet	MotoGP sessions show up here on race weekends.
+ph.T.MOTOGP.02	MotoGP · No session yet	MotoGP sessions show up here on race weekends.
+ph.T.PARAMOUNT.01	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.T.PARAMOUNT.02	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.T.PARAMOUNT.03	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.T.PARAMOUNT.04	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.T.PPV.05	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.T.PPV.06	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.SKY.SPORTS.BOX.OFFICE	Sky Sports Box Office	Pay-per-view events when scheduled.
+ph.G.UFC.01	UFC · No event yet	UFC events show up here on fight day.
+ph.G.UFC.02	UFC · No event yet	UFC events show up here on fight day.
+ph.G.BOXING.01	Boxing · No fight yet	Boxing cards show up here on fight night.
+ph.G.BOXING.02	Boxing · No fight yet	Boxing cards show up here on fight night.
+ph.G.BOXING.03	Boxing · No fight yet	Boxing cards show up here on fight night.
+ph.G.BOXING.04	Boxing · No fight yet	Boxing cards show up here on fight night.
+ph.G.PPV.01	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.PPV.02	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.PPV.03	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.PPV.04	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.PPV.05	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.PPV.06	UK PPV · No event yet	UK pay-per-view events show up here on event day.
+ph.G.DAZN.01	DAZN · No event yet	DAZN fights and matches show up here on the day.
+ph.G.DAZN.02	DAZN · No event yet	DAZN fights and matches show up here on the day.
+ph.G.DAZN.03	DAZN · No event yet	DAZN fights and matches show up here on the day.
+ph.G.DAZN.04	DAZN · No event yet	DAZN fights and matches show up here on the day.
+ph.G.TRILLERTV.01	TrillerTV · No event yet	TrillerTV fights and events show up here on the day.
+ph.G.TRILLERTV.02	TrillerTV · No event yet	TrillerTV fights and events show up here on the day.
+ph.G.TRILLERTV.03	TrillerTV · No event yet	TrillerTV fights and events show up here on the day.
+ph.G.TRILLERTV.04	TrillerTV · No event yet	TrillerTV fights and events show up here on the day.
+ph.G.LIVE.EVENT.01	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.02	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.03	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.04	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.05	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.06	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.07	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.08	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.09	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.LIVE.EVENT.10	Live Event · No event yet	Live sports and specials show up here on the day.
+ph.G.NETFLIX.01	Netflix · No event yet	Netflix live events show up here on event day.
+ph.G.NETFLIX.02	Netflix · No event yet	Netflix live events show up here on event day.
+ph.G.SPORTSNET.01	Sportsnet+ · No event yet	Sportsnet+ games and events show up here on the day.
+ph.G.SPORTSNET.02	Sportsnet+ · No event yet	Sportsnet+ games and events show up here on the day.
+ph.G.SPORTSNET.03	Sportsnet+ · No event yet	Sportsnet+ games and events show up here on the day.
+ph.G.SPORTSNET.04	Sportsnet+ · No event yet	Sportsnet+ games and events show up here on the day.
+ph.G.TSN.01	TSN+ · No event yet	TSN+ games and events show up here on the day.
+ph.G.TSN.02	TSN+ · No event yet	TSN+ games and events show up here on the day.
+ph.G.TSN.03	TSN+ · No event yet	TSN+ games and events show up here on the day.
+ph.G.TSN.04	TSN+ · No event yet	TSN+ games and events show up here on the day.
+ph.G.NFL.01	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
+ph.G.NFL.02	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
+ph.G.NFL.03	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
+ph.G.NFL.04	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
+ph.G.NFL.05	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
+ph.G.NFL.06	NFL · No game yet	NFL games show up here on game day, a few hours before kickoff.
+ph.G.NHL.01	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NHL.02	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NHL.03	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NHL.04	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NHL.05	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NHL.06	NHL · No game yet	Tonight's NHL games show up here a few hours before puck drop.
+ph.G.NBA.01	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.NBA.02	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.NBA.03	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.NBA.04	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.NBA.05	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.NBA.06	NBA · No game yet	Tonight's NBA games show up here a few hours before tip-off.
+ph.G.MLB.01	MLB · No game yet	Today's MLB games show up here a few hours before first pitch.
+ph.G.MLB.02	MLB · No game yet	Today's MLB games show up here a few hours before first pitch.
+ph.G.PARAMOUNT.01	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.G.PARAMOUNT.02	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.G.PARAMOUNT.03	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.G.PARAMOUNT.04	Paramount+ · No event yet	Live events like UFC and PBR show up here on event day.
+ph.G.TENNIS.01	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.G.TENNIS.02	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.G.TENNIS.03	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.G.TENNIS.04	Tennis · No match yet	Live tennis matches show up here on match days.
+ph.G.MLS.01	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.G.MLS.02	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.G.MLS.03	MLS · No match yet	MLS matches show up here a few hours before kickoff.
+ph.G.MLS.04	MLS · No match yet	MLS matches show up here a few hours before kickoff.

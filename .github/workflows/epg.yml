@@ -1,0 +1,66 @@
+name: Build merged guide
+
+on:
+  schedule:
+    - cron: "17,47 * * * *"   # twice an hour; GitHub often skips scheduled runs, so this keeps the guide fresh
+  workflow_dispatch:           # adds a "Run workflow" button for manual runs
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Merge guides
+        env:
+          PROVIDER_EPG_URL: ${{ secrets.PROVIDER_EPG_URL }}
+          PROVIDER2_EPG_URL: ${{ secrets.PROVIDER2_EPG_URL }}
+        run: python merge_epg.py
+      - name: Publish to the "guide" branch
+        # The guide branch only ever holds today's files, so the repo never grows.
+        run: |
+          mkdir /tmp/out
+          cp epg.xml.gz epg.xml status.txt /tmp/out/
+          cp slot_state.json /tmp/out/ 2>/dev/null || true
+          # channel index from manual runs; hourly runs keep the last one
+          [ -f index.txt ] || curl -sfL "https://raw.githubusercontent.com/${{ github.repository }}/guide/index.txt" -o index.txt || true
+          cp index.txt /tmp/out/ 2>/dev/null || true
+          cd /tmp/out
+          git init -q -b guide
+          git config user.name "epg-bot"
+          git config user.email "epg-bot@users.noreply.github.com"
+          git add .
+          git commit -q -m "Guide $(date -u +%F)"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" guide
+      - name: Warn when the guide is running dry
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          n=$(python3 - <<'PY'
+          import re, time
+          soon = time.strftime("%Y%m%d%H%M", time.gmtime(time.time() + 6 * 3600))
+          last = {}
+          for m in re.finditer(r'<programme ([^>]*)>', open("epg.xml", encoding="utf-8").read()):
+              c, e = re.search(r'channel="([^"]+)"', m.group(1)), re.search(r'stop="(\d{12})', m.group(1))
+              if c and e:
+                  last[c.group(1)] = max(last.get(c.group(1), ""), e.group(1))
+          ids = set(re.findall(r'<channel id="([^"]+)"', open("epg.xml", encoding="utf-8").read()))
+          print(sum(1 for i in ids if last.get(i, "") < soon))
+          PY
+          )
+          echo "channels with under 6 hours of guide left: $n"
+          open=$(gh issue list -R "${{ github.repository }}" --label guide-alert --state open --json number --jq '.[0].number')
+          if [ "$n" -gt 150 ] && [ -z "$open" ]; then
+            gh label create guide-alert -R "${{ github.repository }}" --color d93f0b 2>/dev/null || true
+            gh issue create -R "${{ github.repository }}" --label guide-alert --title "Guide running dry: $n channels" \
+              --body "$n channels have less than 6 hours of listings left. See status.txt on the guide branch for which source stopped."
+          elif [ "$n" -le 150 ] && [ -n "$open" ]; then
+            gh issue close "$open" -R "${{ github.repository }}" --comment "Recovered: $n channels short now."
+          fi
